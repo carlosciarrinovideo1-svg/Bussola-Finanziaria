@@ -15,3 +15,11 @@
 - [ ] BF-0008 - Visualizzazione del tasso SELIC
 - [ ] BF-0009 - Gestione errori delle fonti
 - [ ] BF-0010 - Versione 1.0
+
+---
+
+# Versione 1.0
+
+## Obiettivo finale
+
+Realizzare una Bussola Finanziaria affidabile che utilizzi dati ufficiali per confrontare investimenti e stimare il rendimento netto reale.
