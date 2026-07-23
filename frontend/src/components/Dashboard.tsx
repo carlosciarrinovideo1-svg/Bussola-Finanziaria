@@ -1,12 +1,28 @@
 import Card from "./Card";
-import { appConfig } from "../config/appConfig";
 
 function Dashboard() {
   return (
     <main>
-      {appConfig.sections.map((section) => (
-        <Card key={section} title={section} />
-      ))}
+      <Card title="📈 Mercato">
+        <p><strong>SELIC</strong></p>
+        <p>Connessione in preparazione...</p>
+      </Card>
+
+      <Card title="💰 Simulazioni">
+        <p>Nessuna simulazione disponibile.</p>
+      </Card>
+
+      <Card title="🏦 Investimenti">
+        <p>Nessun investimento configurato.</p>
+      </Card>
+
+      <Card title="📰 Avvisi Ufficiali">
+        <p>Nessun avviso.</p>
+      </Card>
+
+      <Card title="⚙️ Impostazioni">
+        <p>Configurazione iniziale.</p>
+      </Card>
     </main>
   );
 }
