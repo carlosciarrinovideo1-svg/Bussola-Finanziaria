@@ -73,3 +73,6 @@ export default defineConfig([
 ])
 
 ```
+# 🧭 Bussola Finanziaria
+
+Software per l'analisi di investimenti e strumenti finanziari basato esclusivamente su fonti ufficiali.
