@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Card from "./Card";
+import MarketIndicator from "./MarketIndicator";
 import { loadMarketData } from "../services/marketService";
 import type { MarketData } from "../types/market";
 
@@ -17,46 +18,15 @@ function Dashboard() {
 
   return (
     <main>
-
-      <Card title="📈 SELIC">
-
-        {selic?.status === "ok" ? (
-          <>
-            <h1
-              style={{
-                fontSize: "2.8rem",
-                margin: "10px 0",
-                color: "#0f766e",
-              }}
-            >
-              {selic.value?.toFixed(2)}%
-            </h1>
-
-            <p>
-              <strong>Status:</strong>{" "}
-              <span style={{ color: "green" }}>● Online</span>
-            </p>
-
-            <p>
-              <strong>Fonte:</strong><br />
-              {selic.source}
-            </p>
-
-            <p>
-              <strong>Aggiornato:</strong><br />
-              {selic.updatedAt}
-            </p>
-          </>
+      <Card title="📈 Mercato">
+        {selic ? (
+          <MarketIndicator
+            title="SELIC"
+            data={selic}
+          />
         ) : (
-          <>
-            <h2>⚠ Connessione non disponibile</h2>
-
-            <p>
-              Non è stato possibile leggere il Banco Central.
-            </p>
-          </>
+          <p>Caricamento...</p>
         )}
-
       </Card>
 
       <Card title="💰 Simulazioni">
@@ -74,7 +44,6 @@ function Dashboard() {
       <Card title="⚙️ Impostazioni">
         <p>Configurazione iniziale.</p>
       </Card>
-
     </main>
   );
 }
