@@ -17,37 +17,64 @@ function Dashboard() {
 
   return (
     <main>
-      <Card title="📈 Mercato">
-        <p><strong>SELIC</strong></p>
+
+      <Card title="📈 SELIC">
 
         {selic?.status === "ok" ? (
           <>
+            <h1
+              style={{
+                fontSize: "2.8rem",
+                margin: "10px 0",
+                color: "#0f766e",
+              }}
+            >
+              {selic.value?.toFixed(2)}%
+            </h1>
+
             <p>
-              <strong>{selic.value}%</strong>
+              <strong>Status:</strong>{" "}
+              <span style={{ color: "green" }}>● Online</span>
             </p>
-            <p>Fonte: {selic.source}</p>
-            <p>Aggiornato: {selic.updatedAt}</p>
+
+            <p>
+              <strong>Fonte:</strong><br />
+              {selic.source}
+            </p>
+
+            <p>
+              <strong>Aggiornato:</strong><br />
+              {selic.updatedAt}
+            </p>
           </>
         ) : (
-          <p>Connessione non disponibile.</p>
+          <>
+            <h2>⚠ Connessione non disponibile</h2>
+
+            <p>
+              Non è stato possibile leggere il Banco Central.
+            </p>
+          </>
         )}
+
       </Card>
 
       <Card title="💰 Simulazioni">
-        <p>Nessuna simulazione disponibile.</p>
+        <p>Disponibili nella versione 0.3.</p>
       </Card>
 
       <Card title="🏦 Investimenti">
-        <p>Nessun investimento configurato.</p>
+        <p>Disponibili nella versione 0.4.</p>
       </Card>
 
-      <Card title="📰 Avvisi Ufficiali">
-        <p>Nessun avviso.</p>
+      <Card title="📰 Avvisi ufficiali">
+        <p>Disponibili nella versione 0.5.</p>
       </Card>
 
       <Card title="⚙️ Impostazioni">
         <p>Configurazione iniziale.</p>
       </Card>
+
     </main>
   );
 }
