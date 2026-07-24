@@ -1,1 +1,1 @@
-export * from "./bcb";
+export { getSelicRate } from "./bcb";

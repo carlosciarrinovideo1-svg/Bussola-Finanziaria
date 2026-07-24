@@ -8,7 +8,7 @@ export async function getSelicRate(): Promise<MarketData> {
     const response = await fetch(SELIC_URL);
 
     if (!response.ok) {
-      throw new Error("Errore nel collegamento al Banco Central");
+      throw new Error("Errore nella connessione al Banco Central");
     }
 
     const data = await response.json();
