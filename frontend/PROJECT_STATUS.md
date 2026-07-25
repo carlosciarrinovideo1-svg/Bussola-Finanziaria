@@ -16,31 +16,31 @@ Bussola Finanziaria
 
 🟢 In sviluppo
 
-Repository con modifiche dello Sprint BF-0013 completate in preparazione al commit.
+Repository aggiornato dopo il completamento dello Sprint BF-0014.
 
 ---
 
 ## Ultimo Sprint completato
 
-BF-0013
+BF-0014
 
-Ottimizzazione struttura indicatori finanziari.
+Refactoring Dashboard indicatori.
 
 ---
 
 ## Sprint in corso
 
-BF-0013
+BF-0015
 
-Ottimizzazione struttura indicatori finanziari.
+Preparazione simulazioni finanziarie.
 
 ---
 
 ## Ultimo Commit
 
-BF-0012
+BF-0014
 
-Implementazione cambio EUR.
+Refactoring Dashboard indicatori.
 
 ---
 
@@ -110,26 +110,7 @@ EUR
 
 ✔ Data aggiornamento
 
-✔ Gestione unità indicatore
-
-✔ Visualizzazione dinamica percentuale/BRL
-
----
-
-## Struttura dati indicatori
-
-Implementato:
-
-✔ proprietà unit nel modello MarketData
-
-Unità supportate:
-
-- percent → SELIC, CDI, IPCA
-- brl → USD/BRL, EUR/BRL
-
-Obiettivo:
-
-Separare correttamente indicatori percentuali e cambi valutari mantenendo un componente MarketIndicator unico e riutilizzabile.
+✔ Struttura dinamica indicatori
 
 ---
 
@@ -143,7 +124,7 @@ Separare correttamente indicatori percentuali e cambi valutari mantenendo un com
 
 ✔ Cambio EUR
 
-✔ Struttura indicatori finanziari
+✔ Refactoring struttura indicatori
 
 □ Simulazioni
 
@@ -157,17 +138,19 @@ Separare correttamente indicatori percentuali e cambi valutari mantenendo un com
 
 ## Repository
 
-Lo Sprint BF-0013 è stato completato.
+Lo Sprint BF-0014 è stato completato.
 
-Prima del commit il repository contiene le modifiche relative a:
+Implementato:
 
-- aggiornamento modello MarketData;
-- gestione unità percentuale/valuta;
-- aggiornamento API indicatori;
-- miglioramento componente MarketIndicator;
-- aggiornamento documentazione.
+- refactoring della Dashboard;
+- gestione dinamica degli indicatori finanziari;
+- eliminazione della duplicazione nella gestione degli stati;
+- mantenimento del componente MarketIndicator riutilizzabile;
+- preparazione dell'architettura per nuove funzionalità.
 
-Dopo il commit e il push il repository dovrà risultare pulito con:
+Repository sincronizzato e pulito.
+
+Controllo finale:
 
 git status
 
@@ -179,9 +162,9 @@ non c'è nulla di cui eseguire il commit, l'albero di lavoro è pulito
 
 ## Prossimo Sprint
 
-BF-0014
+BF-0015
 
-Prima implementazione simulazioni finanziarie.
+Preparazione simulazioni finanziarie.
 
 ---
 
