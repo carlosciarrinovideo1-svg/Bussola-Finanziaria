@@ -7,6 +7,7 @@ import type { MarketData } from "../types/market";
 function Dashboard() {
   const [selic, setSelic] = useState<MarketData | null>(null);
   const [cdi, setCdi] = useState<MarketData | null>(null);
+  const [ipca, setIpca] = useState<MarketData | null>(null);
 
   useEffect(() => {
     async function load() {
@@ -14,6 +15,7 @@ function Dashboard() {
 
       setSelic(market.selic);
       setCdi(market.cdi);
+      setIpca(market.ipca);
     }
 
     load();
@@ -22,19 +24,22 @@ function Dashboard() {
   return (
     <main>
       <Card title="📈 Mercato">
-        {selic ? (
+        {selic && cdi && ipca ? (
           <>
             <MarketIndicator
               title="SELIC"
               data={selic}
             />
 
-            {cdi && (
-              <MarketIndicator
-                title="CDI"
-                data={cdi}
-              />
-            )}
+            <MarketIndicator
+              title="CDI"
+              data={cdi}
+            />
+
+            <MarketIndicator
+              title="IPCA"
+              data={ipca}
+            />
           </>
         ) : (
           <p>Caricamento...</p>
@@ -61,3 +66,4 @@ function Dashboard() {
 }
 
 export default Dashboard;
+

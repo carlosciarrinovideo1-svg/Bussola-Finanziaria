@@ -74,3 +74,34 @@ Motivo della scelta:
 La serie SGS 12 rappresenta il CDI giornaliero e restituisce un valore non direttamente confrontabile con la SELIC visualizzata nella Dashboard.
 
 La serie SGS 4389 permette una visualizzazione più chiara e uniforme degli indicatori finanziari.
+
+---
+
+## Decisione 006
+
+L'IPCA sarà implementato mantenendo la stessa architettura utilizzata per SELIC e CDI.
+
+Fonte:
+
+Banco Central do Brasil tramite API SGS.
+
+Serie utilizzata:
+
+SGS 433.
+
+Formato scelto:
+
+Variazione mensile dell'IPCA.
+
+Motivazione:
+
+- utilizzare una fonte ufficiale;
+- mantenere coerenza con gli altri indicatori finanziari;
+- riutilizzare l'architettura Dashboard → Services → API;
+- utilizzare il componente MarketIndicator esistente.
+
+Nota:
+
+A differenza di SELIC e CDI, l'IPCA rappresenta una variazione mensile e non un tasso annuale.
+
+La visualizzazione deve quindi mantenere il simbolo percentuale senza trasformazioni manuali del valore.
