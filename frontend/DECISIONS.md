@@ -2,56 +2,62 @@
 
 ## Decisione 001
 
-La Dashboard non deve collegarsi direttamente alle fonti dati.
+La struttura del progetto utilizzerà:
+
+- React;
+- TypeScript;
+- Vite.
 
 Motivazione:
 
-Separare interfaccia, servizi e API rende il progetto più robusto e facile da mantenere.
+- semplicità di sviluppo;
+- velocità;
+- manutenzione futura.
 
 ---
 
 ## Decisione 002
 
-Mai utilizzare dati simulati al posto di dati ufficiali.
+La Dashboard sarà separata dai servizi e dalle API.
+
+Architettura:
+
+Dashboard → Services → API → Fonti ufficiali
 
 Motivazione:
 
-La Bussola Finanziaria deve essere uno strumento affidabile per prendere decisioni.
+- separazione delle responsabilità;
+- facilità di estensione;
+- riduzione della duplicazione del codice.
 
 ---
 
 ## Decisione 003
 
-Ogni Sprint deve lasciare il progetto funzionante e con repository pulito.
+Gli indicatori finanziari utilizzeranno un componente comune:
+
+MarketIndicator.
 
 Motivazione:
 
-Ridurre il rischio di errori e facilitare lo sviluppo progressivo.
+- visualizzazione uniforme;
+- possibilità di aggiungere nuovi indicatori senza creare nuovi componenti.
 
 ---
 
 ## Decisione 004
 
-Il CDI sarà implementato mantenendo la stessa architettura utilizzata per la SELIC.
+La SELIC sarà implementata utilizzando la serie SGS 432 del Banco Central do Brasil.
 
-Fonte prevista:
+Formato scelto:
 
-Banco Central do Brasil tramite API SGS.
+Percentuale annuale.
 
 Motivazione:
 
-- mantenere una struttura uniforme delle fonti dati;
-- riutilizzare l'architettura già funzionante;
-- evitare duplicazione di infrastrutture;
-- mantenere separazione tra Dashboard, Services e API.
-
-Alternativa considerata:
-
-Utilizzo diretto di altre fonti finanziarie.
-
-Motivazione della scelta:
-
-Per la prima implementazione del CDI si preferisce mantenere coerenza con la fonte già integrata per la SELIC.
+- fonte ufficiale;
+- coerenza con gli indicatori finanziari;
+- integrazione diretta con API SGS.
 
 ---
 
@@ -67,18 +73,7 @@ Motivazione:
 
 - mantenere coerenza con la visualizzazione della SELIC;
 - mostrare agli utenti un valore espresso in percentuale annua;
-- utilizzare una fonte ufficiale;
-- evitare conversioni manuali del valore giornaliero.
-
-Serie alternativa valutata:
-
-SGS 12.
-
-Motivo della scelta:
-
-La serie SGS 12 rappresenta il CDI giornaliero e restituisce un valore non direttamente confrontabile con la SELIC visualizzata nella Dashboard.
-
-La serie SGS 4389 permette una visualizzazione più chiara e uniforme degli indicatori finanziari.
+- utilizzare una fonte ufficiale.
 
 ---
 
@@ -102,14 +97,11 @@ Motivazione:
 
 - utilizzare una fonte ufficiale;
 - mantenere coerenza con gli altri indicatori finanziari;
-- riutilizzare l'architettura Dashboard → Services → API;
-- utilizzare il componente MarketIndicator esistente.
+- riutilizzare l'architettura Dashboard → Services → API.
 
 Nota:
 
 A differenza di SELIC e CDI, l'IPCA rappresenta una variazione mensile e non un tasso annuale.
-
-La visualizzazione deve quindi mantenere il simbolo percentuale senza trasformazioni manuali del valore.
 
 ---
 
@@ -133,9 +125,37 @@ Motivazione:
 
 - utilizzare una fonte ufficiale;
 - mostrare il valore del dollaro in reais brasiliani;
-- mantenere uniformità con gli altri indicatori;
-- riutilizzare il componente MarketIndicator esistente.
+- mantenere uniformità con gli altri indicatori.
 
 Nota:
 
 Il valore rappresenta il cambio di 1 USD espresso in BRL.
+
+---
+
+## Decisione 008
+
+Il cambio EUR sarà implementato mantenendo la stessa architettura utilizzata per gli altri indicatori finanziari.
+
+Fonte:
+
+Banco Central do Brasil tramite API SGS.
+
+Serie utilizzata:
+
+SGS 21619.
+
+Formato scelto:
+
+Cambio giornaliero EUR/BRL.
+
+Motivazione:
+
+- utilizzare una fonte ufficiale;
+- mostrare il valore dell'euro in reais brasiliani;
+- mantenere uniformità con il cambio USD;
+- riutilizzare il componente MarketIndicator esistente.
+
+Nota:
+
+Il valore rappresenta il cambio di 1 EUR espresso in BRL.

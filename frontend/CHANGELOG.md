@@ -134,3 +134,24 @@ Banco Central do Brasil - Serie SGS 1.
 Formato:
 
 Cambio giornaliero USD/BRL.
+
+---
+
+## BF-0012
+
+Implementazione cambio EUR.
+
+Implementato:
+
+- nuova API EUR tramite Banco Central do Brasil;
+- collegamento nel Service;
+- visualizzazione tramite MarketIndicator;
+- mantenimento dell'architettura esistente.
+
+Fonte utilizzata:
+
+Banco Central do Brasil - Serie SGS 21619.
+
+Formato:
+
+Cambio giornaliero EUR/BRL.
