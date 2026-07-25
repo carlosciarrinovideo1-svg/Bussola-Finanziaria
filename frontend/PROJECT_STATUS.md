@@ -16,7 +16,7 @@ Bussola Finanziaria
 
 🟢 In sviluppo
 
-Repository pulito.
+Repository con modifiche dello Sprint BF-0009 in preparazione al commit.
 
 ---
 
@@ -25,6 +25,14 @@ Repository pulito.
 BF-0008B
 
 Indice della documentazione.
+
+---
+
+## Sprint in corso
+
+BF-0009
+
+Implementazione del CDI.
 
 ---
 
@@ -70,6 +78,8 @@ Indice della documentazione.
 
 SELIC
 
+CDI
+
 ---
 
 ## Funzionalità disponibili
@@ -78,7 +88,11 @@ SELIC
 
 ✔ SELIC reale
 
+✔ CDI reale
+
 ✔ Stato Online/Offline
+
+✔ Fonte ufficiale
 
 ✔ Data aggiornamento
 
@@ -86,7 +100,7 @@ SELIC
 
 ## Funzionalità pianificate
 
-□ CDI
+✔ CDI
 
 □ IPCA
 
@@ -118,9 +132,9 @@ non c'è nulla di cui eseguire il commit, l'albero di lavoro è pulito
 
 ## Prossimo Sprint
 
-BF-0009
+BF-0010
 
-Implementazione del CDI.
+Implementazione IPCA.
 
 ---
 

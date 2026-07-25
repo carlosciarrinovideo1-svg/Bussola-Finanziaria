@@ -6,11 +6,14 @@ import type { MarketData } from "../types/market";
 
 function Dashboard() {
   const [selic, setSelic] = useState<MarketData | null>(null);
+  const [cdi, setCdi] = useState<MarketData | null>(null);
 
   useEffect(() => {
     async function load() {
       const market = await loadMarketData();
+
       setSelic(market.selic);
+      setCdi(market.cdi);
     }
 
     load();
@@ -20,10 +23,19 @@ function Dashboard() {
     <main>
       <Card title="📈 Mercato">
         {selic ? (
-          <MarketIndicator
-            title="SELIC"
-            data={selic}
-          />
+          <>
+            <MarketIndicator
+              title="SELIC"
+              data={selic}
+            />
+
+            {cdi && (
+              <MarketIndicator
+                title="CDI"
+                data={cdi}
+              />
+            )}
+          </>
         ) : (
           <p>Caricamento...</p>
         )}
