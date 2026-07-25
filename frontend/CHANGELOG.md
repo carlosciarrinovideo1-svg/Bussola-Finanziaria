@@ -194,3 +194,41 @@ Struttura creata:
 Obiettivo:
 
 Preparare la base tecnica per future simulazioni finanziarie integrate nella Dashboard.
+
+---
+
+## BF-0016
+
+Integrazione simulazioni nella Dashboard.
+
+Implementato:
+
+- creato il componente InvestmentSimulation;
+- collegata la simulazione finanziaria alla Dashboard;
+- integrazione con simulationService;
+- utilizzo del motore Investment Calculator;
+- gestione degli input utente:
+  - capitale iniziale;
+  - versamento mensile;
+  - durata investimento;
+  - rendimento annuo;
+- visualizzazione dei risultati:
+  - totale investito;
+  - profitto;
+  - valore finale.
+
+Struttura creata:
+
+- src/components/InvestmentSimulation.tsx.
+
+Obiettivo:
+
+Aggiungere la prima funzione interattiva di simulazione finanziaria mantenendo separata la logica di calcolo dall'interfaccia utente.
+
+Preparazione per future estensioni:
+
+- portafoglio investimenti;
+- diversificazione;
+- confronto scenari;
+- analisi finanziarie avanzate.
+
