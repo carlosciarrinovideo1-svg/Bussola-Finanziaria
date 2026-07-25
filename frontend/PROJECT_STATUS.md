@@ -16,21 +16,13 @@ Bussola Finanziaria
 
 🟢 In sviluppo
 
-Repository aggiornato dopo il completamento dello Sprint BF-0015.
+Repository aggiornato dopo il completamento dello Sprint BF-0016.
 
-Preparazione della fase successiva: integrazione simulazioni finanziarie nella Dashboard.
+Completata l'integrazione del primo modulo di simulazioni finanziarie nella Dashboard.
 
 ---
 
 ## Ultimo Sprint completato
-
-BF-0015
-
-Preparazione simulazioni finanziarie.
-
----
-
-## Sprint in corso
 
 BF-0016
 
@@ -38,11 +30,19 @@ Integrazione simulazioni nella Dashboard.
 
 ---
 
+## Sprint in corso
+
+BF-0017
+
+Miglioramento simulazioni finanziarie e preparazione strumenti di analisi.
+
+---
+
 ## Ultimo Commit
 
-BF-0014
+BF-0016
 
-Refactoring Dashboard indicatori.
+Integrazione simulazioni nella Dashboard.
 
 ---
 
@@ -75,6 +75,8 @@ Refactoring Dashboard indicatori.
 ✔ Card
 
 ✔ MarketIndicator
+
+✔ InvestmentSimulation
 
 ---
 
@@ -128,6 +130,16 @@ EUR
 
 ✔ Base tecnica simulazioni finanziarie
 
+✔ Simulazione investimento integrata nella Dashboard
+
+✔ Calcolo capitale iniziale
+
+✔ Calcolo versamenti mensili
+
+✔ Calcolo rendimento annuo
+
+✔ Calcolo valore finale simulazione
+
 ---
 
 ## Funzionalità pianificate
@@ -144,9 +156,13 @@ EUR
 
 ✔ Base simulazioni finanziarie
 
-🔄 Integrazione simulazioni Dashboard
+✔ Integrazione simulazioni Dashboard
+
+🔄 Miglioramento strumenti di simulazione
 
 □ Portafoglio investimenti
+
+□ Diversificazione investimenti
 
 □ Avvisi ufficiali
 
@@ -156,18 +172,21 @@ EUR
 
 ## Repository
 
-Lo Sprint BF-0015 è stato completato.
+Lo Sprint BF-0016 è stato completato.
 
 Implementato:
 
-- struttura dedicata alle simulazioni finanziarie;
-- motore iniziale di calcolo investimenti;
-- definizione dei tipi di input e risultato;
-- servizio separato per la gestione delle simulazioni.
+- nuovo componente InvestmentSimulation;
+- collegamento della simulazione alla Dashboard;
+- integrazione con simulationService;
+- utilizzo del motore Investment Calculator già creato;
+- mantenuta separazione tra logica di calcolo e interfaccia utente.
 
 Obiettivo raggiunto:
 
-Creata una base modulare pronta per collegare future simulazioni alla Dashboard senza modificare l'architettura principale.
+La Dashboard ora dispone della prima funzione interattiva di simulazione finanziaria.
+
+La struttura rimane modulare e pronta per future estensioni come portafoglio investimenti, scenari multipli e analisi comparative.
 
 Repository sincronizzato e pulito dopo il commit.
 
@@ -183,9 +202,9 @@ non c'è nulla di cui eseguire il commit, l'albero di lavoro è pulito
 
 ## Prossimo Sprint
 
-BF-0016
+BF-0017
 
-Integrazione simulazioni nella Dashboard.
+Miglioramento simulazioni finanziarie e preparazione strumenti di analisi.
 
 ---
 
