@@ -18,7 +18,7 @@ Bussola Finanziaria
 
 Repository aggiornato dopo il completamento dello Sprint BF-0016.
 
-Completata l'integrazione del primo modulo di simulazioni finanziarie nella Dashboard.
+Preparazione dello Sprint BF-0017: miglioramento simulazioni finanziarie.
 
 ---
 
@@ -34,7 +34,7 @@ Integrazione simulazioni nella Dashboard.
 
 BF-0017
 
-Miglioramento simulazioni finanziarie e preparazione strumenti di analisi.
+Miglioramento simulazioni finanziarie.
 
 ---
 
@@ -42,7 +42,7 @@ Miglioramento simulazioni finanziarie e preparazione strumenti di analisi.
 
 BF-0016
 
-Integrazione simulazioni nella Dashboard.
+Aggiornamento changelog simulazioni Dashboard.
 
 ---
 
@@ -130,15 +130,7 @@ EUR
 
 ✔ Base tecnica simulazioni finanziarie
 
-✔ Simulazione investimento integrata nella Dashboard
-
-✔ Calcolo capitale iniziale
-
-✔ Calcolo versamenti mensili
-
-✔ Calcolo rendimento annuo
-
-✔ Calcolo valore finale simulazione
+✔ Simulazione investimento interattiva
 
 ---
 
@@ -158,11 +150,13 @@ EUR
 
 ✔ Integrazione simulazioni Dashboard
 
-🔄 Miglioramento strumenti di simulazione
+🔄 Miglioramento simulazioni finanziarie
+
+□ Scenari investimento
+
+□ Configurazione simulazioni
 
 □ Portafoglio investimenti
-
-□ Diversificazione investimenti
 
 □ Avvisi ufficiali
 
@@ -176,27 +170,14 @@ Lo Sprint BF-0016 è stato completato.
 
 Implementato:
 
-- nuovo componente InvestmentSimulation;
+- componente InvestmentSimulation;
 - collegamento della simulazione alla Dashboard;
 - integrazione con simulationService;
-- utilizzo del motore Investment Calculator già creato;
-- mantenuta separazione tra logica di calcolo e interfaccia utente.
+- visualizzazione dei risultati del calcolo investimento.
 
 Obiettivo raggiunto:
 
-La Dashboard ora dispone della prima funzione interattiva di simulazione finanziaria.
-
-La struttura rimane modulare e pronta per future estensioni come portafoglio investimenti, scenari multipli e analisi comparative.
-
-Repository sincronizzato e pulito dopo il commit.
-
-Controllo finale:
-
-git status
-
-↓
-
-non c'è nulla di cui eseguire il commit, l'albero di lavoro è pulito
+Creata la prima funzione interattiva di simulazione finanziaria mantenendo separata la logica di calcolo dall'interfaccia.
 
 ---
 
@@ -204,7 +185,13 @@ non c'è nulla di cui eseguire il commit, l'albero di lavoro è pulito
 
 BF-0017
 
-Miglioramento simulazioni finanziarie e preparazione strumenti di analisi.
+Miglioramento simulazioni finanziarie.
+
+Obiettivi:
+
+- introdurre una struttura per scenari di investimento;
+- migliorare la configurazione delle simulazioni;
+- preparare la base per future analisi comparative.
 
 ---
 
