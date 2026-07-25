@@ -4,22 +4,40 @@ import MarketIndicator from "./MarketIndicator";
 import { loadMarketData } from "../services/marketService";
 import type { MarketData } from "../types/market";
 
+interface Indicator {
+  title: string;
+  data: MarketData;
+}
+
 function Dashboard() {
-  const [selic, setSelic] = useState<MarketData | null>(null);
-  const [cdi, setCdi] = useState<MarketData | null>(null);
-  const [ipca, setIpca] = useState<MarketData | null>(null);
-  const [usd, setUsd] = useState<MarketData | null>(null);
-  const [eur, setEur] = useState<MarketData | null>(null);
+  const [indicators, setIndicators] = useState<Indicator[]>([]);
 
   useEffect(() => {
     async function load() {
       const market = await loadMarketData();
 
-      setSelic(market.selic);
-      setCdi(market.cdi);
-      setIpca(market.ipca);
-      setUsd(market.usd);
-      setEur(market.eur);
+      setIndicators([
+        {
+          title: "SELIC",
+          data: market.selic,
+        },
+        {
+          title: "CDI",
+          data: market.cdi,
+        },
+        {
+          title: "IPCA",
+          data: market.ipca,
+        },
+        {
+          title: "USD",
+          data: market.usd,
+        },
+        {
+          title: "EUR",
+          data: market.eur,
+        },
+      ]);
     }
 
     load();
@@ -28,32 +46,15 @@ function Dashboard() {
   return (
     <main>
       <Card title="📈 Mercato">
-        {selic && cdi && ipca && usd && eur ? (
+        {indicators.length > 0 ? (
           <>
-            <MarketIndicator
-              title="SELIC"
-              data={selic}
-            />
-
-            <MarketIndicator
-              title="CDI"
-              data={cdi}
-            />
-
-            <MarketIndicator
-              title="IPCA"
-              data={ipca}
-            />
-
-            <MarketIndicator
-              title="USD"
-              data={usd}
-            />
-
-            <MarketIndicator
-              title="EUR"
-              data={eur}
-            />
+            {indicators.map((indicator) => (
+              <MarketIndicator
+                key={indicator.title}
+                title={indicator.title}
+                data={indicator.data}
+              />
+            ))}
           </>
         ) : (
           <p>Caricamento...</p>
