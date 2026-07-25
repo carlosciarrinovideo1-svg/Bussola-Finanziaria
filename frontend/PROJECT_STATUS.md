@@ -16,19 +16,11 @@ Bussola Finanziaria
 
 🟢 In sviluppo
 
-Repository con modifiche dello Sprint BF-0010 completate in preparazione al commit.
+Repository con modifiche dello Sprint BF-0011 completate in preparazione al commit.
 
 ---
 
 ## Ultimo Sprint completato
-
-BF-0009
-
-Implementazione del CDI.
-
----
-
-## Sprint in corso
 
 BF-0010
 
@@ -36,11 +28,19 @@ Implementazione IPCA.
 
 ---
 
+## Sprint in corso
+
+BF-0011
+
+Implementazione cambio USD.
+
+---
+
 ## Ultimo Commit
 
-BF-0009
+BF-0010
 
-Implementazione CDI.
+Implementazione IPCA.
 
 ---
 
@@ -84,6 +84,8 @@ CDI
 
 IPCA
 
+USD
+
 ---
 
 ## Funzionalità disponibili
@@ -95,6 +97,8 @@ IPCA
 ✔ CDI reale
 
 ✔ IPCA reale
+
+✔ Cambio USD reale
 
 ✔ Stato Online/Offline
 
@@ -110,7 +114,7 @@ IPCA
 
 ✔ IPCA
 
-□ Cambio USD
+✔ Cambio USD
 
 □ Cambio EUR
 
@@ -126,11 +130,11 @@ IPCA
 
 ## Repository
 
-Lo Sprint BF-0010 è stato completato.
+Lo Sprint BF-0011 è stato completato.
 
 Prima del commit il repository contiene le modifiche relative a:
 
-- nuova API IPCA;
+- nuova API USD;
 - collegamento API nel sistema;
 - aggiornamento Service;
 - visualizzazione Dashboard;
@@ -148,9 +152,9 @@ non c'è nulla di cui eseguire il commit, l'albero di lavoro è pulito
 
 ## Prossimo Sprint
 
-BF-0011
+BF-0012
 
-Implementazione cambio USD.
+Implementazione cambio EUR.
 
 ---
 
@@ -159,4 +163,3 @@ Implementazione cambio USD.
 Questo documento deve essere aggiornato al termine di ogni Sprint.
 
 Deve rappresentare sempre una fotografia reale dello stato del progetto.
-

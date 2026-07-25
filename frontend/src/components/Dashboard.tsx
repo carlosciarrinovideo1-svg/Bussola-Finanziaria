@@ -8,6 +8,7 @@ function Dashboard() {
   const [selic, setSelic] = useState<MarketData | null>(null);
   const [cdi, setCdi] = useState<MarketData | null>(null);
   const [ipca, setIpca] = useState<MarketData | null>(null);
+  const [usd, setUsd] = useState<MarketData | null>(null);
 
   useEffect(() => {
     async function load() {
@@ -16,6 +17,7 @@ function Dashboard() {
       setSelic(market.selic);
       setCdi(market.cdi);
       setIpca(market.ipca);
+      setUsd(market.usd);
     }
 
     load();
@@ -24,7 +26,7 @@ function Dashboard() {
   return (
     <main>
       <Card title="📈 Mercato">
-        {selic && cdi && ipca ? (
+        {selic && cdi && ipca && usd ? (
           <>
             <MarketIndicator
               title="SELIC"
@@ -39,6 +41,11 @@ function Dashboard() {
             <MarketIndicator
               title="IPCA"
               data={ipca}
+            />
+
+            <MarketIndicator
+              title="USD"
+              data={usd}
             />
           </>
         ) : (
@@ -66,4 +73,3 @@ function Dashboard() {
 }
 
 export default Dashboard;
-

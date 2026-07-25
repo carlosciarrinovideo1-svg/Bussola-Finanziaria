@@ -5,6 +5,7 @@
 La Dashboard non deve collegarsi direttamente alle fonti dati.
 
 Motivazione:
+
 Separare interfaccia, servizi e API rende il progetto più robusto e facile da mantenere.
 
 ---
@@ -14,6 +15,7 @@ Separare interfaccia, servizi e API rende il progetto più robusto e facile da m
 Mai utilizzare dati simulati al posto di dati ufficiali.
 
 Motivazione:
+
 La Bussola Finanziaria deve essere uno strumento affidabile per prendere decisioni.
 
 ---
@@ -23,6 +25,7 @@ La Bussola Finanziaria deve essere uno strumento affidabile per prendere decisio
 Ogni Sprint deve lasciare il progetto funzionante e con repository pulito.
 
 Motivazione:
+
 Ridurre il rischio di errori e facilitare lo sviluppo progressivo.
 
 ---
@@ -32,6 +35,7 @@ Ridurre il rischio di errori e facilitare lo sviluppo progressivo.
 Il CDI sarà implementato mantenendo la stessa architettura utilizzata per la SELIC.
 
 Fonte prevista:
+
 Banco Central do Brasil tramite API SGS.
 
 Motivazione:
@@ -48,6 +52,7 @@ Utilizzo diretto di altre fonti finanziarie.
 Motivazione della scelta:
 
 Per la prima implementazione del CDI si preferisce mantenere coerenza con la fonte già integrata per la SELIC.
+
 ---
 
 ## Decisione 005
@@ -105,3 +110,32 @@ Nota:
 A differenza di SELIC e CDI, l'IPCA rappresenta una variazione mensile e non un tasso annuale.
 
 La visualizzazione deve quindi mantenere il simbolo percentuale senza trasformazioni manuali del valore.
+
+---
+
+## Decisione 007
+
+Il cambio USD sarà implementato mantenendo la stessa architettura utilizzata per SELIC, CDI e IPCA.
+
+Fonte:
+
+Banco Central do Brasil tramite API SGS.
+
+Serie utilizzata:
+
+SGS 1.
+
+Formato scelto:
+
+Cambio giornaliero USD/BRL.
+
+Motivazione:
+
+- utilizzare una fonte ufficiale;
+- mostrare il valore del dollaro in reais brasiliani;
+- mantenere uniformità con gli altri indicatori;
+- riutilizzare il componente MarketIndicator esistente.
+
+Nota:
+
+Il valore rappresenta il cambio di 1 USD espresso in BRL.

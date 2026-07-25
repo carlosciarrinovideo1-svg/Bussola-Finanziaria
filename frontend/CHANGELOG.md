@@ -1,31 +1,37 @@
 # CHANGELOG
 
 ## BF-0001
+
 Inizializzazione progetto React + TypeScript + Vite.
 
 ---
 
 ## BF-0002
+
 Prima Dashboard.
 
 ---
 
 ## BF-0003
+
 Componentizzazione della Dashboard.
 
 ---
 
 ## BF-0004
+
 Layout iniziale della Dashboard.
 
 ---
 
 ## BF-0005
+
 Preparazione dell'architettura per il collegamento alle fonti dati ufficiali.
 
 ---
 
 ## BF-0005A
+
 Creazione della documentazione tecnica del progetto.
 
 Aggiunti:
@@ -38,6 +44,7 @@ Aggiunti:
 ---
 
 ## BF-0006
+
 Collegamento reale al Banco Central do Brasil.
 
 Implementato:
@@ -49,6 +56,7 @@ Implementato:
 ---
 
 ## BF-0007
+
 Creazione della Dashboard professionale SELIC.
 
 Aggiunti:
@@ -61,6 +69,7 @@ Aggiunti:
 ---
 
 ## BF-0008
+
 Creazione del componente riutilizzabile MarketIndicator.
 
 Obiettivo:
@@ -70,6 +79,7 @@ Permettere la visualizzazione uniforme di diversi indicatori finanziari senza du
 ---
 
 ## BF-0009
+
 Implementazione del CDI.
 
 Implementato:
@@ -82,3 +92,45 @@ Implementato:
 Fonte utilizzata:
 
 Banco Central do Brasil - Serie SGS 4389.
+
+---
+
+## BF-0010
+
+Implementazione IPCA.
+
+Implementato:
+
+- nuova API IPCA tramite Banco Central do Brasil;
+- collegamento nel Service;
+- visualizzazione tramite MarketIndicator;
+- mantenimento dell'architettura esistente.
+
+Fonte utilizzata:
+
+Banco Central do Brasil - Serie SGS 433.
+
+Formato:
+
+Variazione mensile IPCA.
+
+---
+
+## BF-0011
+
+Implementazione cambio USD.
+
+Implementato:
+
+- nuova API USD tramite Banco Central do Brasil;
+- collegamento nel Service;
+- visualizzazione tramite MarketIndicator;
+- mantenimento dell'architettura esistente.
+
+Fonte utilizzata:
+
+Banco Central do Brasil - Serie SGS 1.
+
+Formato:
+
+Cambio giornaliero USD/BRL.
