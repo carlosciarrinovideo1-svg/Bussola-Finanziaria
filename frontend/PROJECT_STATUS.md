@@ -18,6 +18,8 @@ Bussola Finanziaria
 
 Repository aggiornato dopo il completamento dello Sprint BF-0014.
 
+Preparazione dello Sprint BF-0015 per l'introduzione delle simulazioni finanziarie.
+
 ---
 
 ## Ultimo Sprint completato
@@ -126,7 +128,7 @@ EUR
 
 ✔ Refactoring struttura indicatori
 
-□ Simulazioni
+🔄 Simulazioni finanziarie
 
 □ Portafoglio investimenti
 
@@ -140,13 +142,14 @@ EUR
 
 Lo Sprint BF-0014 è stato completato.
 
-Implementato:
+Preparazione dello Sprint BF-0015.
 
-- refactoring della Dashboard;
-- gestione dinamica degli indicatori finanziari;
-- eliminazione della duplicazione nella gestione degli stati;
-- mantenimento del componente MarketIndicator riutilizzabile;
-- preparazione dell'architettura per nuove funzionalità.
+Obiettivo:
+
+- definire la struttura iniziale delle simulazioni finanziarie;
+- creare una base modulare per nuovi strumenti di calcolo;
+- mantenere separata la logica di simulazione dalla visualizzazione;
+- preparare l'architettura per future funzioni di portafoglio.
 
 Repository sincronizzato e pulito.
 
