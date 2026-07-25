@@ -155,3 +155,19 @@ Banco Central do Brasil - Serie SGS 21619.
 Formato:
 
 Cambio giornaliero EUR/BRL.
+
+---
+
+## BF-0013
+
+Ottimizzazione struttura indicatori finanziari.
+
+Implementato:
+
+- gestione unità dinamica nel componente MarketIndicator;
+- distinzione tra indicatori percentuali e cambi valutari;
+- miglioramento architettura MarketData.
+
+Obiettivo:
+
+Preparazione della base tecnica per future simulazioni e portafoglio investimenti.

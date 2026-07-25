@@ -16,31 +16,31 @@ Bussola Finanziaria
 
 🟢 In sviluppo
 
-Repository con modifiche dello Sprint BF-0012 completate in preparazione al commit.
+Repository con modifiche dello Sprint BF-0013 completate in preparazione al commit.
 
 ---
 
 ## Ultimo Sprint completato
 
-BF-0011
+BF-0013
 
-Implementazione cambio USD.
+Ottimizzazione struttura indicatori finanziari.
 
 ---
 
 ## Sprint in corso
 
-BF-0012
+BF-0013
 
-Implementazione cambio EUR.
+Ottimizzazione struttura indicatori finanziari.
 
 ---
 
 ## Ultimo Commit
 
-BF-0011
+BF-0012
 
-Implementazione cambio USD.
+Implementazione cambio EUR.
 
 ---
 
@@ -110,6 +110,27 @@ EUR
 
 ✔ Data aggiornamento
 
+✔ Gestione unità indicatore
+
+✔ Visualizzazione dinamica percentuale/BRL
+
+---
+
+## Struttura dati indicatori
+
+Implementato:
+
+✔ proprietà unit nel modello MarketData
+
+Unità supportate:
+
+- percent → SELIC, CDI, IPCA
+- brl → USD/BRL, EUR/BRL
+
+Obiettivo:
+
+Separare correttamente indicatori percentuali e cambi valutari mantenendo un componente MarketIndicator unico e riutilizzabile.
+
 ---
 
 ## Funzionalità pianificate
@@ -121,6 +142,8 @@ EUR
 ✔ Cambio USD
 
 ✔ Cambio EUR
+
+✔ Struttura indicatori finanziari
 
 □ Simulazioni
 
@@ -134,14 +157,14 @@ EUR
 
 ## Repository
 
-Lo Sprint BF-0012 è stato completato.
+Lo Sprint BF-0013 è stato completato.
 
 Prima del commit il repository contiene le modifiche relative a:
 
-- nuova API EUR;
-- collegamento API nel sistema;
-- aggiornamento Service;
-- visualizzazione Dashboard;
+- aggiornamento modello MarketData;
+- gestione unità percentuale/valuta;
+- aggiornamento API indicatori;
+- miglioramento componente MarketIndicator;
 - aggiornamento documentazione.
 
 Dopo il commit e il push il repository dovrà risultare pulito con:
@@ -156,9 +179,9 @@ non c'è nulla di cui eseguire il commit, l'albero di lavoro è pulito
 
 ## Prossimo Sprint
 
-BF-0013
+BF-0014
 
-Valutazione struttura indicatori e preparazione simulazioni.
+Prima implementazione simulazioni finanziarie.
 
 ---
 

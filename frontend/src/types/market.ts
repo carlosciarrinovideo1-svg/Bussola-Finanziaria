@@ -3,4 +3,5 @@ export interface MarketData {
   source: string;
   updatedAt: string | null;
   status: "ok" | "offline";
+  unit: "percent" | "brl";
 }

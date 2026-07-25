@@ -20,6 +20,11 @@ function MarketIndicator({ title, data }: MarketIndicatorProps) {
     );
   }
 
+  const formattedValue =
+    data.unit === "percent"
+      ? `${data.value?.toFixed(2)}%`
+      : `${data.value?.toFixed(2)} BRL`;
+
   return (
     <>
       <h2
@@ -37,7 +42,7 @@ function MarketIndicator({ title, data }: MarketIndicatorProps) {
           margin: "0",
         }}
       >
-        {data.value?.toFixed(2)}%
+        {formattedValue}
       </h1>
 
       <p>

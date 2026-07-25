@@ -159,3 +159,26 @@ Motivazione:
 Nota:
 
 Il valore rappresenta il cambio di 1 EUR espresso in BRL.
+
+---
+
+## Decisione 009
+
+Gli indicatori finanziari utilizzeranno un sistema di unità differenziato.
+
+Implementato:
+
+- aggiunta proprietà unit nel modello MarketData;
+- distinzione tra valori percentuali e valori valutari;
+- visualizzazione dinamica tramite MarketIndicator.
+
+Unità supportate:
+
+- percent → SELIC, CDI, IPCA;
+- brl → USD/BRL, EUR/BRL.
+
+Motivazione:
+
+- evitare visualizzazioni errate dei cambi valutari con simbolo percentuale;
+- mantenere un componente unico e riutilizzabile;
+- preparare la struttura per future valute e indicatori.

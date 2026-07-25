@@ -18,6 +18,7 @@ export async function getCdiRate(): Promise<MarketData> {
       source: "Banco Central do Brasil",
       updatedAt: data[0].data,
       status: "ok",
+      unit: "percent",
     };
   } catch {
     return {
@@ -25,6 +26,7 @@ export async function getCdiRate(): Promise<MarketData> {
       source: "Banco Central do Brasil",
       updatedAt: null,
       status: "offline",
+      unit: "percent",
     };
   }
 }
