@@ -171,3 +171,26 @@ Implementato:
 Obiettivo:
 
 Preparazione della base tecnica per future simulazioni e portafoglio investimenti.
+
+---
+
+## BF-0015
+
+Preparazione simulazioni finanziarie.
+
+Implementato:
+
+- nuova struttura dedicata alle simulazioni;
+- definizione dei tipi SimulationInput e SimulationResult;
+- creato motore iniziale di calcolo investimenti;
+- creato servizio simulationService per separare logica e visualizzazione;
+- mantenuta architettura modulare del progetto.
+
+Struttura creata:
+
+- src/simulations;
+- src/services/simulationService.ts.
+
+Obiettivo:
+
+Preparare la base tecnica per future simulazioni finanziarie integrate nella Dashboard.

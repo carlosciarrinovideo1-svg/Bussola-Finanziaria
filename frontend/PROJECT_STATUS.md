@@ -16,25 +16,25 @@ Bussola Finanziaria
 
 🟢 In sviluppo
 
-Repository aggiornato dopo il completamento dello Sprint BF-0014.
+Repository aggiornato dopo il completamento dello Sprint BF-0015.
 
-Preparazione dello Sprint BF-0015 per l'introduzione delle simulazioni finanziarie.
+Preparazione della fase successiva: integrazione simulazioni finanziarie nella Dashboard.
 
 ---
 
 ## Ultimo Sprint completato
 
-BF-0014
+BF-0015
 
-Refactoring Dashboard indicatori.
+Preparazione simulazioni finanziarie.
 
 ---
 
 ## Sprint in corso
 
-BF-0015
+BF-0016
 
-Preparazione simulazioni finanziarie.
+Integrazione simulazioni nella Dashboard.
 
 ---
 
@@ -62,6 +62,8 @@ Refactoring Dashboard indicatori.
 
 ✔ Documentazione
 
+✔ Modulo simulazioni
+
 ---
 
 ## Componenti disponibili
@@ -73,6 +75,16 @@ Refactoring Dashboard indicatori.
 ✔ Card
 
 ✔ MarketIndicator
+
+---
+
+## Moduli disponibili
+
+✔ Market Service
+
+✔ Simulation Service
+
+✔ Investment Calculator
 
 ---
 
@@ -114,6 +126,8 @@ EUR
 
 ✔ Struttura dinamica indicatori
 
+✔ Base tecnica simulazioni finanziarie
+
 ---
 
 ## Funzionalità pianificate
@@ -128,7 +142,9 @@ EUR
 
 ✔ Refactoring struttura indicatori
 
-🔄 Simulazioni finanziarie
+✔ Base simulazioni finanziarie
+
+🔄 Integrazione simulazioni Dashboard
 
 □ Portafoglio investimenti
 
@@ -140,18 +156,20 @@ EUR
 
 ## Repository
 
-Lo Sprint BF-0014 è stato completato.
+Lo Sprint BF-0015 è stato completato.
 
-Preparazione dello Sprint BF-0015.
+Implementato:
 
-Obiettivo:
+- struttura dedicata alle simulazioni finanziarie;
+- motore iniziale di calcolo investimenti;
+- definizione dei tipi di input e risultato;
+- servizio separato per la gestione delle simulazioni.
 
-- definire la struttura iniziale delle simulazioni finanziarie;
-- creare una base modulare per nuovi strumenti di calcolo;
-- mantenere separata la logica di simulazione dalla visualizzazione;
-- preparare l'architettura per future funzioni di portafoglio.
+Obiettivo raggiunto:
 
-Repository sincronizzato e pulito.
+Creata una base modulare pronta per collegare future simulazioni alla Dashboard senza modificare l'architettura principale.
+
+Repository sincronizzato e pulito dopo il commit.
 
 Controllo finale:
 
@@ -165,9 +183,9 @@ non c'è nulla di cui eseguire il commit, l'albero di lavoro è pulito
 
 ## Prossimo Sprint
 
-BF-0015
+BF-0016
 
-Preparazione simulazioni finanziarie.
+Integrazione simulazioni nella Dashboard.
 
 ---
 
