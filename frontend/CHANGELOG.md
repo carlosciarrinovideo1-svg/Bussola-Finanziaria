@@ -269,3 +269,25 @@ Implementato:
 Obiettivo:
 
 Separare la configurazione degli scenari dall'interfaccia utente, mantenendo un'architettura modulare ed estendibile.
+
+---
+
+## BF-0019
+
+Confronto scenari investimento.
+
+Implementato:
+
+- nuovo modulo `scenarioComparison`;
+- confronto automatico tra scenari configurati;
+- integrazione con `InvestmentSimulation`;
+- mantenimento del motore di calcolo esistente;
+- visualizzazione comparativa dei risultati.
+
+Struttura creata:
+
+- `src/simulations/scenarioComparison.ts`.
+
+Obiettivo raggiunto:
+
+Permettere all'utente di confrontare diversi scenari di investimento partendo dagli stessi parametri iniziali, mantenendo separata la logica di calcolo dall'interfaccia.

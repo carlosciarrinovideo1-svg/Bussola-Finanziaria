@@ -8,7 +8,7 @@ Bussola Finanziaria
 
 ## Versione
 
-0.2.1
+0.2.0
 
 ---
 
@@ -16,31 +16,35 @@ Bussola Finanziaria
 
 🟢 In sviluppo
 
-Repository aggiornato dopo il completamento dello Sprint BF-0018.
+Repository aggiornato dopo il completamento dello Sprint BF-0019.
+
+Implementato il confronto scenari investimento.
 
 ---
 
 ## Ultimo Sprint completato
 
-BF-0018
+BF-0019
 
-Collegamento degli scenari al componente InvestmentSimulation.
+Confronto scenari investimento.
 
 ---
 
 ## Sprint in corso
 
-BF-0019
+Nessuno.
 
-Espansione delle simulazioni finanziarie.
+Prossima evoluzione:
+
+BF-0020 - Preparazione portafoglio investimenti.
 
 ---
 
 ## Ultimo Commit
 
-BF-0018
+BF-0019
 
-Collegamento degli scenari di simulazione a InvestmentSimulation.
+Aggiunto confronto scenari investimento.
 
 ---
 
@@ -61,8 +65,6 @@ Collegamento degli scenari di simulazione a InvestmentSimulation.
 ✔ Documentazione
 
 ✔ Modulo simulazioni
-
-✔ Configurazione scenari
 
 ---
 
@@ -88,7 +90,7 @@ Collegamento degli scenari di simulazione a InvestmentSimulation.
 
 ✔ Investment Calculator
 
-✔ Configurazione scenari
+✔ Scenario Comparison
 
 ---
 
@@ -96,11 +98,15 @@ Collegamento degli scenari di simulazione a InvestmentSimulation.
 
 ✔ Banco Central do Brasil
 
-- SELIC
-- CDI
-- IPCA
-- USD
-- EUR
+SELIC
+
+CDI
+
+IPCA
+
+USD
+
+EUR
 
 ---
 
@@ -126,33 +132,35 @@ Collegamento degli scenari di simulazione a InvestmentSimulation.
 
 ✔ Struttura dinamica indicatori
 
+✔ Base tecnica simulazioni finanziarie
+
 ✔ Simulazione investimento interattiva
 
-✔ Configurazione centralizzata degli scenari
+✔ Scenari investimento configurabili
 
-✔ Selezione dello scenario di investimento
-
-✔ Aggiornamento automatico del rendimento annuo
+✔ Confronto scenari investimento
 
 ---
 
 ## Funzionalità pianificate
 
+✔ CDI
+
+✔ IPCA
+
+✔ Cambio USD
+
+✔ Cambio EUR
+
+✔ Refactoring struttura indicatori
+
 ✔ Base simulazioni finanziarie
 
 ✔ Integrazione simulazioni Dashboard
 
-✔ Configurazione scenari
-
-✔ Collegamento scenari alla simulazione
-
-🔄 Confronto tra scenari
+✔ Miglioramento simulazioni finanziarie
 
 □ Portafoglio investimenti
-
-□ Simulazione multi-investimento
-
-□ Analisi comparative
 
 □ Avvisi ufficiali
 
@@ -162,33 +170,33 @@ Collegamento degli scenari di simulazione a InvestmentSimulation.
 
 ## Repository
 
-Lo Sprint BF-0018 è stato completato.
+Lo Sprint BF-0019 è stato completato.
 
 Implementato:
 
-- collegamento di `simulationScenarios` al componente `InvestmentSimulation`;
-- selezione dello scenario tramite menu a tendina;
-- aggiornamento automatico del rendimento annuo;
-- visualizzazione della descrizione dello scenario selezionato;
-- mantenuta l'architettura modulare del progetto.
+- modulo `scenarioComparison`;
+- confronto automatico tra scenari configurati;
+- integrazione con `InvestmentSimulation`;
+- mantenimento del motore di calcolo esistente;
+- visualizzazione comparativa dei risultati.
 
 Obiettivo raggiunto:
 
-Separare completamente la configurazione degli scenari dal componente di simulazione, preparando la base per confronti tra strategie di investimento e futuri scenari personalizzati.
+Permettere all'utente di confrontare diversi scenari di investimento partendo dagli stessi parametri iniziali, mantenendo separata la logica di calcolo dall'interfaccia.
 
 ---
 
 ## Prossimo Sprint
 
-BF-0019
+BF-0020
 
-Espansione delle simulazioni finanziarie.
+Preparazione portafoglio investimenti.
 
 Obiettivi:
 
-- confronto tra più scenari;
-- visualizzazione comparativa dei risultati;
-- preparazione della base per il portafoglio investimenti.
+- creare una struttura per più strumenti finanziari;
+- preparare la diversificazione del capitale;
+- introdurre una prima base di allocazione investimenti.
 
 ---
 
