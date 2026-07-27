@@ -1,13 +1,16 @@
 import {
   calculatePortfolio,
-  getDefaultPortfolio,
 } from "../portfolio";
 
-function PortfolioSummary() {
-  const portfolio = getDefaultPortfolio();
+import {
+  defaultPortfolio,
+} from "../portfolio/config";
 
+import PortfolioDetails from "./portfolio/PortfolioDetails";
+
+function PortfolioSummary() {
   const result = calculatePortfolio(
-    portfolio
+    defaultPortfolio
   );
 
   return (
@@ -17,7 +20,7 @@ function PortfolioSummary() {
       <p>
         Nome:
         {" "}
-        {portfolio.name}
+        {defaultPortfolio.name}
       </p>
 
       <p>
@@ -43,6 +46,8 @@ function PortfolioSummary() {
         {" "}
         R$ {result.finalValue.toFixed(2)}
       </p>
+
+      <PortfolioDetails />
     </section>
   );
 }
