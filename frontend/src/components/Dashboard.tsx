@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Card from "./Card";
 import MarketIndicator from "./MarketIndicator";
 import InvestmentSimulation from "./InvestmentSimulation";
+import PortfolioSummary from "./PortfolioSummary";
 import { loadMarketData } from "../services/marketService";
 import type { MarketData } from "../types/market";
 
@@ -67,7 +68,7 @@ function Dashboard() {
       </Card>
 
       <Card title="🏦 Investimenti">
-        <p>Disponibili nella versione 0.4.</p>
+        <PortfolioSummary />
       </Card>
 
       <Card title="📰 Avvisi ufficiali">
