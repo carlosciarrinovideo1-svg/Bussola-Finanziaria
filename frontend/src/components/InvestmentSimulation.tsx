@@ -4,6 +4,12 @@ import type { SimulationResult } from "../simulations/types";
 import {
   simulationScenarios,
 } from "../simulations/config";
+import {
+  compareInvestmentScenarios,
+} from "../simulations/scenarioComparison";
+import type {
+  ScenarioComparisonResult,
+} from "../simulations/scenarioComparison";
 
 function InvestmentSimulation() {
   const defaultScenario = simulationScenarios[1];
@@ -26,6 +32,9 @@ function InvestmentSimulation() {
   const [result, setResult] =
     useState<SimulationResult | null>(null);
 
+  const [comparisonResults, setComparisonResults] =
+    useState<ScenarioComparisonResult[]>([]);
+
   useEffect(() => {
     const scenario = simulationScenarios.find(
       (item) => item.id === selectedScenarioId
@@ -45,6 +54,16 @@ function InvestmentSimulation() {
     });
 
     setResult(simulation);
+  }
+
+  function compareScenarios() {
+    const comparison = compareInvestmentScenarios({
+      initialCapital,
+      monthlyContribution,
+      years,
+    });
+
+    setComparisonResults(comparison);
   }
 
   const selectedScenario =
@@ -142,6 +161,10 @@ function InvestmentSimulation() {
         Calcola
       </button>
 
+      <button onClick={compareScenarios}>
+        Confronta scenari
+      </button>
+
       {result && (
         <div>
           <h3>Risultato</h3>
@@ -160,6 +183,34 @@ function InvestmentSimulation() {
             Valore finale: €
             {result.finalValue.toFixed(2)}
           </p>
+        </div>
+      )}
+
+      {comparisonResults.length > 0 && (
+        <div>
+          <h3>📊 Confronto scenari</h3>
+
+          {comparisonResults.map((item) => (
+            <div key={item.scenarioId}>
+              <h4>
+                {item.scenarioName}
+              </h4>
+
+              <p>
+                Rendimento annuo: {item.annualRate}%
+              </p>
+
+              <p>
+                Valore finale: €
+                {item.result.finalValue.toFixed(2)}
+              </p>
+
+              <p>
+                Profitto: €
+                {item.result.profit.toFixed(2)}
+              </p>
+            </div>
+          ))}
         </div>
       )}
     </section>
