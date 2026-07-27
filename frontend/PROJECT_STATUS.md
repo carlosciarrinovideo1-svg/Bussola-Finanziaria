@@ -8,7 +8,7 @@ Bussola Finanziaria
 
 ## Versione
 
-0.2.0
+0.2.1
 
 ---
 
@@ -16,33 +16,31 @@ Bussola Finanziaria
 
 🟢 In sviluppo
 
-Repository aggiornato dopo il completamento dello Sprint BF-0016.
-
-Preparazione dello Sprint BF-0017: miglioramento simulazioni finanziarie.
+Repository aggiornato dopo il completamento dello Sprint BF-0018.
 
 ---
 
 ## Ultimo Sprint completato
 
-BF-0016
+BF-0018
 
-Integrazione simulazioni nella Dashboard.
+Collegamento degli scenari al componente InvestmentSimulation.
 
 ---
 
 ## Sprint in corso
 
-BF-0017
+BF-0019
 
-Miglioramento simulazioni finanziarie.
+Espansione delle simulazioni finanziarie.
 
 ---
 
 ## Ultimo Commit
 
-BF-0016
+BF-0018
 
-Aggiornamento changelog simulazioni Dashboard.
+Collegamento degli scenari di simulazione a InvestmentSimulation.
 
 ---
 
@@ -63,6 +61,8 @@ Aggiornamento changelog simulazioni Dashboard.
 ✔ Documentazione
 
 ✔ Modulo simulazioni
+
+✔ Configurazione scenari
 
 ---
 
@@ -88,21 +88,19 @@ Aggiornamento changelog simulazioni Dashboard.
 
 ✔ Investment Calculator
 
+✔ Configurazione scenari
+
 ---
 
 ## Fonti dati collegate
 
 ✔ Banco Central do Brasil
 
-SELIC
-
-CDI
-
-IPCA
-
-USD
-
-EUR
+- SELIC
+- CDI
+- IPCA
+- USD
+- EUR
 
 ---
 
@@ -128,35 +126,33 @@ EUR
 
 ✔ Struttura dinamica indicatori
 
-✔ Base tecnica simulazioni finanziarie
-
 ✔ Simulazione investimento interattiva
+
+✔ Configurazione centralizzata degli scenari
+
+✔ Selezione dello scenario di investimento
+
+✔ Aggiornamento automatico del rendimento annuo
 
 ---
 
 ## Funzionalità pianificate
 
-✔ CDI
-
-✔ IPCA
-
-✔ Cambio USD
-
-✔ Cambio EUR
-
-✔ Refactoring struttura indicatori
-
 ✔ Base simulazioni finanziarie
 
 ✔ Integrazione simulazioni Dashboard
 
-🔄 Miglioramento simulazioni finanziarie
+✔ Configurazione scenari
 
-□ Scenari investimento
+✔ Collegamento scenari alla simulazione
 
-□ Configurazione simulazioni
+🔄 Confronto tra scenari
 
 □ Portafoglio investimenti
+
+□ Simulazione multi-investimento
+
+□ Analisi comparative
 
 □ Avvisi ufficiali
 
@@ -166,32 +162,33 @@ EUR
 
 ## Repository
 
-Lo Sprint BF-0016 è stato completato.
+Lo Sprint BF-0018 è stato completato.
 
 Implementato:
 
-- componente InvestmentSimulation;
-- collegamento della simulazione alla Dashboard;
-- integrazione con simulationService;
-- visualizzazione dei risultati del calcolo investimento.
+- collegamento di `simulationScenarios` al componente `InvestmentSimulation`;
+- selezione dello scenario tramite menu a tendina;
+- aggiornamento automatico del rendimento annuo;
+- visualizzazione della descrizione dello scenario selezionato;
+- mantenuta l'architettura modulare del progetto.
 
 Obiettivo raggiunto:
 
-Creata la prima funzione interattiva di simulazione finanziaria mantenendo separata la logica di calcolo dall'interfaccia.
+Separare completamente la configurazione degli scenari dal componente di simulazione, preparando la base per confronti tra strategie di investimento e futuri scenari personalizzati.
 
 ---
 
 ## Prossimo Sprint
 
-BF-0017
+BF-0019
 
-Miglioramento simulazioni finanziarie.
+Espansione delle simulazioni finanziarie.
 
 Obiettivi:
 
-- introdurre una struttura per scenari di investimento;
-- migliorare la configurazione delle simulazioni;
-- preparare la base per future analisi comparative.
+- confronto tra più scenari;
+- visualizzazione comparativa dei risultati;
+- preparazione della base per il portafoglio investimenti.
 
 ---
 

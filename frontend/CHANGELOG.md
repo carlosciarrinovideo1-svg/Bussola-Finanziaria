@@ -232,3 +232,40 @@ Preparazione per future estensioni:
 - confronto scenari;
 - analisi finanziarie avanzate.
 
+---
+
+## BF-0017
+
+Creazione degli scenari di simulazione finanziaria.
+
+Implementato:
+
+- creato `src/simulations/config.ts`;
+- definita l'interfaccia `SimulationScenario`;
+- introdotti gli scenari:
+  - Conservativo;
+  - Moderato;
+  - Dinamico;
+- configurazione centralizzata dei rendimenti annui.
+
+Obiettivo:
+
+Centralizzare la configurazione degli scenari per consentire future estensioni senza modificare il motore di simulazione.
+
+---
+
+## BF-0018
+
+Collegamento degli scenari al componente InvestmentSimulation.
+
+Implementato:
+
+- integrazione di `simulationScenarios` nel componente;
+- selezione dello scenario tramite menu a tendina;
+- aggiornamento automatico del rendimento annuo;
+- visualizzazione della descrizione dello scenario selezionato;
+- mantenuta invariata la logica del motore di simulazione.
+
+Obiettivo:
+
+Separare la configurazione degli scenari dall'interfaccia utente, mantenendo un'architettura modulare ed estendibile.
