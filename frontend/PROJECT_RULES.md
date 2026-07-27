@@ -25,3 +25,19 @@ Prima di iniziare un nuovo Sprint il repository deve essere pulito.
 ## Regola 7
 
 Il repository deve contenere tutte le informazioni necessarie per comprendere il progetto senza dipendere dalla memoria degli sviluppatori o dalle conversazioni.
+## Regola 8
+
+La creazione e modifica dei file deve seguire una procedura controllata.
+
+Preferire:
+
+- contenuto completo del file;
+- comandi ripetibili;
+- verifica immediata del contenuto;
+- controllo tecnico tramite strumenti automatici.
+
+Evitare modifiche manuali parziali tramite editor interattivi quando non necessarie.
+
+Obiettivo:
+
+Ridurre errori di copia/incolla, dimenticanze nei passaggi e perdita di continuità tra sessioni diverse.
