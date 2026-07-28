@@ -19,7 +19,7 @@ import type {
 } from "./viewModel";
 
 
-export function loadDashboard(
+function buildDashboard(
   scenario: FinancialScenario,
   taxRule: TaxRule,
 ): DashboardViewModel {
@@ -32,5 +32,32 @@ export function loadDashboard(
 
   return createDashboardViewModel(
     dashboardResult,
+  );
+}
+
+
+export function loadDashboard(
+  scenario: FinancialScenario,
+  taxRule: TaxRule,
+): DashboardViewModel {
+
+  return buildDashboard(
+    scenario,
+    taxRule,
+  );
+}
+
+
+export function loadDashboards(
+  scenarios: FinancialScenario[],
+  taxRule: TaxRule,
+): DashboardViewModel[] {
+
+  return scenarios.map(
+    scenario =>
+      buildDashboard(
+        scenario,
+        taxRule,
+      ),
   );
 }
