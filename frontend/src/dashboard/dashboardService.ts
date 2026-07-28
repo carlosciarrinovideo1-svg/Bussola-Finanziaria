@@ -1,5 +1,5 @@
-import {
-  defaultScenarios,
+import type {
+  FinancialScenario,
 } from "../scenarios";
 
 import type {
@@ -20,21 +20,17 @@ import type {
 
 
 export function loadDashboard(
-  taxRule: TaxRule
+  scenario: FinancialScenario,
+  taxRule: TaxRule,
 ): DashboardViewModel {
-
-  const scenario =
-    defaultScenarios[0];
-
 
   const dashboardResult =
     createDashboardResult(
       scenario,
-      taxRule
+      taxRule,
     );
 
-
   return createDashboardViewModel(
-    dashboardResult
+    dashboardResult,
   );
 }
