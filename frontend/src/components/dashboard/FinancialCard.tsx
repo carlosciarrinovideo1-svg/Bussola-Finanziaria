@@ -9,12 +9,12 @@ export default function FinancialCard({
 }: FinancialCardProps) {
 
   return (
-    <div>
-      <strong>
+    <div className="financial-card">
+      <strong className="financial-card-label">
         {label}
       </strong>
 
-      <p>
+      <p className="financial-card-value">
         {value}
       </p>
     </div>
