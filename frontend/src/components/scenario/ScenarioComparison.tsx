@@ -4,11 +4,11 @@ import type {
 
 import DashboardSection from "../dashboard/DashboardSection";
 
-import FinancialCard from "../dashboard/FinancialCard";
-
 import {
   createScenarioComparisonItems,
 } from "./scenarioComparisonModel";
+
+import ScenarioComparisonItem from "./ScenarioComparisonItem";
 
 
 interface ScenarioComparisonProps {
@@ -35,23 +35,10 @@ export default function ScenarioComparison({
       {items.map(
         item => (
 
-          <div key={item.scenarioName}>
-
-            <h3>
-              {item.scenarioName}
-            </h3>
-
-            <FinancialCard
-              label="Valore finale"
-              value={item.finalValue}
-            />
-
-            <FinancialCard
-              label="Profitto netto"
-              value={item.netProfit}
-            />
-
-          </div>
+          <ScenarioComparisonItem
+            key={item.scenarioName}
+            item={item}
+          />
 
         )
       )}
