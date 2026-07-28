@@ -1,85 +1,94 @@
-import { useEffect, useState } from "react";
-import Card from "./Card";
-import MarketIndicator from "./MarketIndicator";
-import InvestmentSimulation from "./InvestmentSimulation";
-import PortfolioSummary from "./PortfolioSummary";
-import { loadMarketData } from "../services/marketService";
-import type { MarketData } from "../types/market";
+import {
+  loadDashboard,
+} from "../dashboard/dashboardService";
 
-interface Indicator {
-  title: string;
-  data: MarketData;
-}
+import type {
+  TaxRule,
+} from "../taxation";
 
-function Dashboard() {
-  const [indicators, setIndicators] = useState<Indicator[]>([]);
 
-  useEffect(() => {
-    async function load() {
-      const market = await loadMarketData();
+const exampleTaxRule: TaxRule = {
+  id: "dashboard-tax-example",
+  name: "Regola fiscale esempio",
+  country: "BR",
+  minimumDurationMonths: 0,
+  taxRate: 15,
+};
 
-      setIndicators([
-        {
-          title: "SELIC",
-          data: market.selic,
-        },
-        {
-          title: "CDI",
-          data: market.cdi,
-        },
-        {
-          title: "IPCA",
-          data: market.ipca,
-        },
-        {
-          title: "USD",
-          data: market.usd,
-        },
-        {
-          title: "EUR",
-          data: market.eur,
-        },
-      ]);
-    }
 
-    load();
-  }, []);
+export default function Dashboard() {
+
+  const data =
+    loadDashboard(
+      exampleTaxRule
+    );
+
 
   return (
-    <main>
-      <Card title="📈 Mercato">
-        {indicators.length > 0 ? (
-          <>
-            {indicators.map((indicator) => (
-              <MarketIndicator
-                key={indicator.title}
-                title={indicator.title}
-                data={indicator.data}
-              />
-            ))}
-          </>
-        ) : (
-          <p>Caricamento...</p>
-        )}
-      </Card>
+    <div>
 
-      <Card title="💰 Simulazioni">
-        <InvestmentSimulation />
-      </Card>
+      <h1>
+        {data.title}
+      </h1>
 
-      <Card title="🏦 Investimenti">
-        <PortfolioSummary />
-      </Card>
 
-      <Card title="📰 Avvisi ufficiali">
-        <p>Disponibili nella versione 0.5.</p>
-      </Card>
+      <h2>
+        {data.scenarioName}
+      </h2>
 
-      <Card title="⚙️ Impostazioni">
-        <p>Configurazione iniziale.</p>
-      </Card>
-    </main>
+
+      <p>
+        Capitale iniziale:
+        {" "}
+        {data.initialCapital}
+      </p>
+
+
+      <p>
+        Valore finale:
+        {" "}
+        {data.finalValue}
+      </p>
+
+
+      <p>
+        Profitto lordo:
+        {" "}
+        {data.grossProfit}
+      </p>
+
+
+      <p>
+        Tasse:
+        {" "}
+        {data.taxAmount}
+      </p>
+
+
+      <p>
+        Profitto netto:
+        {" "}
+        {data.netProfit}
+      </p>
+
+
+      <h3>
+        Suggerimenti
+      </h3>
+
+
+      <ul>
+        {
+          data.suggestions.map(
+            suggestion => (
+              <li key={suggestion}>
+                {suggestion}
+              </li>
+            )
+          )
+        }
+      </ul>
+
+    </div>
   );
 }
-
-export default Dashboard;
