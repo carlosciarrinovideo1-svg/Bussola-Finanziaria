@@ -1,5 +1,6 @@
 import FinancialCard from "./FinancialCard";
 import SuggestionList from "./SuggestionList";
+import DashboardSection from "./DashboardSection";
 
 interface DashboardSummaryProps {
   title: string;
@@ -34,38 +35,43 @@ export default function DashboardSummary({
         {scenarioName}
       </h2>
 
-      <FinancialCard
-        label="Capitale iniziale"
-        value={initialCapital}
-      />
+      <DashboardSection title="Risultato finanziario">
 
-      <FinancialCard
-        label="Valore finale"
-        value={finalValue}
-      />
+        <FinancialCard
+          label="Capitale iniziale"
+          value={initialCapital}
+        />
 
-      <FinancialCard
-        label="Profitto lordo"
-        value={grossProfit}
-      />
+        <FinancialCard
+          label="Valore finale"
+          value={finalValue}
+        />
 
-      <FinancialCard
-        label="Tasse"
-        value={taxAmount}
-      />
+        <FinancialCard
+          label="Profitto lordo"
+          value={grossProfit}
+        />
 
-      <FinancialCard
-        label="Profitto netto"
-        value={netProfit}
-      />
+        <FinancialCard
+          label="Tasse"
+          value={taxAmount}
+        />
 
-      <h3>
-        Suggerimenti
-      </h3>
+        <FinancialCard
+          label="Profitto netto"
+          value={netProfit}
+        />
 
-      <SuggestionList
-        suggestions={suggestions}
-      />
+      </DashboardSection>
+
+
+      <DashboardSection title="Suggerimenti">
+
+        <SuggestionList
+          suggestions={suggestions}
+        />
+
+      </DashboardSection>
 
     </div>
   );
