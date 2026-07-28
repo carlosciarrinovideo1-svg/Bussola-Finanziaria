@@ -6,6 +6,10 @@ import {
   exampleTaxRule,
 } from "../dashboard/demoDashboard";
 
+import type {
+  FinancialScenario,
+} from "../scenarios";
+
 import {
   defaultScenarios,
 } from "../scenarios";
@@ -13,11 +17,20 @@ import {
 import DashboardSummary from "./dashboard/DashboardSummary";
 
 
-export default function Dashboard() {
+interface DashboardProps {
+
+  scenario?: FinancialScenario;
+
+}
+
+
+export default function Dashboard({
+  scenario = defaultScenarios[0],
+}: DashboardProps) {
 
   const data =
     loadDashboard(
-      defaultScenarios[0],
+      scenario,
       exampleTaxRule,
     );
 
