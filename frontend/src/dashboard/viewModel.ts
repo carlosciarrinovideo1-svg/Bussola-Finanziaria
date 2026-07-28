@@ -9,17 +9,18 @@ export interface DashboardViewModel {
 
   scenarioName: string;
 
-  initialCapital: string;
+  initialCapital: number;
 
-  finalValue: string;
+  finalValue: number;
 
-  grossProfit: string;
+  grossProfit: number;
 
-  taxAmount: string;
+  taxAmount: number;
 
-  netProfit: string;
+  netProfit: number;
 
   suggestions: string[];
+
 }
 
 
@@ -36,48 +37,25 @@ export function createDashboardViewModel(
       result.scenario.name,
 
     initialCapital:
-      formatCurrency(
-        result.financial.initialCapital
-      ),
+      result.financial.initialCapital,
 
     finalValue:
-      formatCurrency(
-        result.financial.finalValue
-      ),
+      result.financial.finalValue,
 
     grossProfit:
-      formatCurrency(
-        result.financial.grossProfit
-      ),
+      result.financial.grossProfit,
 
     taxAmount:
-      formatCurrency(
-        result.financial.taxAmount
-      ),
+      result.financial.taxAmount,
 
     netProfit:
-      formatCurrency(
-        result.financial.netProfit
-      ),
+      result.financial.netProfit,
 
     suggestions:
       result.suggestions.map(
         suggestion =>
           suggestion.description
       ),
+
   };
-}
-
-
-function formatCurrency(
-  value: number
-): string {
-
-  return new Intl.NumberFormat(
-    "it-IT",
-    {
-      style: "currency",
-      currency: "EUR",
-    }
-  ).format(value);
 }

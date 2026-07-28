@@ -25,25 +25,15 @@ export default function Dashboard() {
 
       scenarioName={data.scenarioName}
 
-      initialCapital={Number(
-        data.initialCapital
-      )}
+      initialCapital={data.initialCapital}
 
-      finalValue={Number(
-        data.finalValue
-      )}
+      finalValue={data.finalValue}
 
-      grossProfit={Number(
-        data.grossProfit
-      )}
+      grossProfit={data.grossProfit}
 
-      taxAmount={Number(
-        data.taxAmount
-      )}
+      taxAmount={data.taxAmount}
 
-      netProfit={Number(
-        data.netProfit
-      )}
+      netProfit={data.netProfit}
 
       suggestions={
         data.suggestions
