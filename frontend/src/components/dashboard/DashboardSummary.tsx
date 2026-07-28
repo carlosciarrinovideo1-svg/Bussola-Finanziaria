@@ -5,11 +5,11 @@ import DashboardSection from "./DashboardSection";
 interface DashboardSummaryProps {
   title: string;
   scenarioName: string;
-  initialCapital: string;
-  finalValue: string;
-  grossProfit: string;
-  taxAmount: string;
-  netProfit: string;
+  initialCapital: number;
+  finalValue: number;
+  grossProfit: number;
+  taxAmount: number;
+  netProfit: number;
   suggestions: string[];
 }
 
@@ -27,11 +27,11 @@ export default function DashboardSummary({
   return (
     <div>
 
-      <DashboardSection title={title}>
+      <h1>
+        {title}
+      </h1>
 
-        <h3>
-          {scenarioName}
-        </h3>
+      <DashboardSection title={scenarioName}>
 
         <FinancialCard
           label="Capitale iniziale"

@@ -1,7 +1,13 @@
+import {
+  formatCurrency,
+} from "../../utils/formatters";
+
+
 interface FinancialCardProps {
   label: string;
-  value: string;
+  value: number;
 }
+
 
 export default function FinancialCard({
   label,
@@ -10,13 +16,15 @@ export default function FinancialCard({
 
   return (
     <div className="financial-card">
+
       <strong className="financial-card-label">
         {label}
       </strong>
 
       <p className="financial-card-value">
-        {value}
+        {formatCurrency(value)}
       </p>
+
     </div>
   );
 }

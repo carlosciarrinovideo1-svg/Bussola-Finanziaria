@@ -18,15 +18,38 @@ export default function Dashboard() {
 
 
   return (
+
     <DashboardSummary
+
       title={data.title}
+
       scenarioName={data.scenarioName}
-      initialCapital={data.initialCapital}
-      finalValue={data.finalValue}
-      grossProfit={data.grossProfit}
-      taxAmount={data.taxAmount}
-      netProfit={data.netProfit}
-      suggestions={data.suggestions}
+
+      initialCapital={Number(
+        data.initialCapital
+      )}
+
+      finalValue={Number(
+        data.finalValue
+      )}
+
+      grossProfit={Number(
+        data.grossProfit
+      )}
+
+      taxAmount={Number(
+        data.taxAmount
+      )}
+
+      netProfit={Number(
+        data.netProfit
+      )}
+
+      suggestions={
+        data.suggestions
+      }
+
     />
+
   );
 }
