@@ -6,6 +6,10 @@ import DashboardSection from "../dashboard/DashboardSection";
 
 import FinancialCard from "../dashboard/FinancialCard";
 
+import {
+  createScenarioComparisonItems,
+} from "./scenarioComparisonModel";
+
 
 interface ScenarioComparisonProps {
 
@@ -18,27 +22,33 @@ export default function ScenarioComparison({
   dashboards,
 }: ScenarioComparisonProps) {
 
+  const items =
+    createScenarioComparisonItems(
+      dashboards,
+    );
+
+
   return (
 
     <DashboardSection title="Confronto scenari">
 
-      {dashboards.map(
-        dashboard => (
+      {items.map(
+        item => (
 
-          <div key={dashboard.scenarioName}>
+          <div key={item.scenarioName}>
 
             <h3>
-              {dashboard.scenarioName}
+              {item.scenarioName}
             </h3>
 
             <FinancialCard
               label="Valore finale"
-              value={dashboard.finalValue}
+              value={item.finalValue}
             />
 
             <FinancialCard
               label="Profitto netto"
-              value={dashboard.netProfit}
+              value={item.netProfit}
             />
 
           </div>
