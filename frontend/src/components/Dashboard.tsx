@@ -6,6 +6,8 @@ import type {
   TaxRule,
 } from "../taxation";
 
+import DashboardSummary from "./dashboard/DashboardSummary";
+
 
 const exampleTaxRule: TaxRule = {
   id: "dashboard-tax-example",
@@ -25,70 +27,24 @@ export default function Dashboard() {
 
 
   return (
-    <div>
+    <DashboardSummary
 
-      <h1>
-        {data.title}
-      </h1>
+      title={data.title}
 
+      scenarioName={data.scenarioName}
 
-      <h2>
-        {data.scenarioName}
-      </h2>
+      initialCapital={data.initialCapital}
 
+      finalValue={data.finalValue}
 
-      <p>
-        Capitale iniziale:
-        {" "}
-        {data.initialCapital}
-      </p>
+      grossProfit={data.grossProfit}
 
+      taxAmount={data.taxAmount}
 
-      <p>
-        Valore finale:
-        {" "}
-        {data.finalValue}
-      </p>
+      netProfit={data.netProfit}
 
+      suggestions={data.suggestions}
 
-      <p>
-        Profitto lordo:
-        {" "}
-        {data.grossProfit}
-      </p>
-
-
-      <p>
-        Tasse:
-        {" "}
-        {data.taxAmount}
-      </p>
-
-
-      <p>
-        Profitto netto:
-        {" "}
-        {data.netProfit}
-      </p>
-
-
-      <h3>
-        Suggerimenti
-      </h3>
-
-
-      <ul>
-        {
-          data.suggestions.map(
-            suggestion => (
-              <li key={suggestion}>
-                {suggestion}
-              </li>
-            )
-          )
-        }
-      </ul>
-
-    </div>
+    />
   );
 }

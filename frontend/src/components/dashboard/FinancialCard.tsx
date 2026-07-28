@@ -1,6 +1,6 @@
 interface FinancialCardProps {
   label: string;
-  value: number;
+  value: string;
 }
 
 export default function FinancialCard({
@@ -15,10 +15,7 @@ export default function FinancialCard({
       </strong>
 
       <p>
-        {value.toLocaleString("it-IT", {
-          minimumFractionDigits: 2,
-          maximumFractionDigits: 2,
-        })}
+        {value}
       </p>
     </div>
   );

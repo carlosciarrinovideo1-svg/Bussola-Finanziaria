@@ -4,11 +4,11 @@ import SuggestionList from "./SuggestionList";
 interface DashboardSummaryProps {
   title: string;
   scenarioName: string;
-  initialCapital: number;
-  finalValue: number;
-  grossProfit: number;
-  taxAmount: number;
-  netProfit: number;
+  initialCapital: string;
+  finalValue: string;
+  grossProfit: string;
+  taxAmount: string;
+  netProfit: string;
   suggestions: string[];
 }
 
