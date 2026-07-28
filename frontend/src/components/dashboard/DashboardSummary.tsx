@@ -27,15 +27,11 @@ export default function DashboardSummary({
   return (
     <div>
 
-      <h1>
-        {title}
-      </h1>
+      <DashboardSection title={title}>
 
-      <h2>
-        {scenarioName}
-      </h2>
-
-      <DashboardSection title="Risultato finanziario">
+        <h3>
+          {scenarioName}
+        </h3>
 
         <FinancialCard
           label="Capitale iniziale"
