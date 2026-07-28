@@ -15,8 +15,8 @@ import {
 } from "./scenarios";
 
 import {
-  loadDashboards,
-} from "./dashboard";
+  loadScenarioComparison,
+} from "./dashboard/comparison/comparisonService";
 
 import {
   exampleTaxRule,
@@ -32,7 +32,7 @@ function App() {
 
 
   const comparisonData =
-    loadDashboards(
+    loadScenarioComparison(
       defaultScenarios,
       exampleTaxRule,
     );
