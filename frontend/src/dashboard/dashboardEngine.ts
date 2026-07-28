@@ -4,7 +4,7 @@ import type {
 
 import {
   calculateScenario,
-} from "../scenarios/scenarioEngine";
+} from "../scenarios";
 
 import type {
   TaxRule,
@@ -12,7 +12,7 @@ import type {
 
 import {
   generateAdvisorSuggestions,
-} from "../advisor/advisorEngine";
+} from "../advisor";
 
 import type {
   DashboardResult,
@@ -24,38 +24,24 @@ export function createDashboardResult(
   taxRule: TaxRule
 ): DashboardResult {
 
-  const scenarioResult =
+  const financial =
     calculateScenario(
       scenario,
       taxRule
-    );
+    ).financialResult;
+
 
   const suggestions =
     generateAdvisorSuggestions(
-      scenarioResult.financialResult
+      financial
     );
 
 
   return {
-    scenarioName:
-      scenario.name,
+    scenario,
 
-    initialCapital:
-      scenarioResult.financialResult.initialCapital,
+    financial,
 
-    finalValue:
-      scenarioResult.financialResult.finalValue,
-
-    grossProfit:
-      scenarioResult.financialResult.grossProfit,
-
-    taxAmount:
-      scenarioResult.financialResult.taxAmount,
-
-    netProfit:
-      scenarioResult.financialResult.netProfit,
-
-    suggestionsCount:
-      suggestions.length,
+    suggestions,
   };
 }

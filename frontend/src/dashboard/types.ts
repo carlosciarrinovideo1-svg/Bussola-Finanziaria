@@ -1,15 +1,20 @@
+import type {
+  FinancialScenario,
+} from "../scenarios";
+
+import type {
+  FinancialEngineResult,
+} from "../services/financialEngineService";
+
+import type {
+  AdvisorSuggestion,
+} from "../advisor";
+
+
 export interface DashboardResult {
-  scenarioName: string;
+  scenario: FinancialScenario;
 
-  initialCapital: number;
+  financial: FinancialEngineResult;
 
-  finalValue: number;
-
-  grossProfit: number;
-
-  taxAmount: number;
-
-  netProfit: number;
-
-  suggestionsCount: number;
+  suggestions: AdvisorSuggestion[];
 }
