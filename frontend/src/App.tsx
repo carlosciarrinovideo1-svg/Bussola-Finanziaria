@@ -53,7 +53,7 @@ function App() {
       />
 
       <ScenarioComparison
-        dashboards={comparisonData}
+        scenarios={comparisonData}
       />
     </>
   );

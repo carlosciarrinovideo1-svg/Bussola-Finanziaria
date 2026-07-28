@@ -1,19 +1,19 @@
 import type {
-  ScenarioComparisonItem as ScenarioComparisonItemModel,
-} from "./scenarioComparisonModel";
+  ScenarioComparisonViewModel,
+} from "../../dashboard/comparison/scenarioComparisonViewModel";
 
 import FinancialCard from "../dashboard/FinancialCard";
 
 
 interface ScenarioComparisonItemProps {
 
-  item: ScenarioComparisonItemModel;
+  scenario: ScenarioComparisonViewModel;
 
 }
 
 
 export default function ScenarioComparisonItem({
-  item,
+  scenario,
 }: ScenarioComparisonItemProps) {
 
   return (
@@ -21,17 +21,17 @@ export default function ScenarioComparisonItem({
     <div>
 
       <h3>
-        {item.scenarioName}
+        {scenario.scenarioName}
       </h3>
 
       <FinancialCard
         label="Valore finale"
-        value={item.finalValue}
+        value={scenario.finalValue}
       />
 
       <FinancialCard
         label="Profitto netto"
-        value={item.netProfit}
+        value={scenario.netProfit}
       />
 
     </div>

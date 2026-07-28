@@ -1,43 +1,33 @@
 import type {
-  DashboardViewModel,
-} from "../../dashboard";
+  ScenarioComparisonViewModel,
+} from "../../dashboard/comparison/scenarioComparisonViewModel";
 
 import DashboardSection from "../dashboard/DashboardSection";
-
-import {
-  createScenarioComparisonItems,
-} from "./scenarioComparisonModel";
 
 import ScenarioComparisonItem from "./ScenarioComparisonItem";
 
 
 interface ScenarioComparisonProps {
 
-  dashboards: DashboardViewModel[];
+  scenarios: ScenarioComparisonViewModel[];
 
 }
 
 
 export default function ScenarioComparison({
-  dashboards,
+  scenarios,
 }: ScenarioComparisonProps) {
-
-  const items =
-    createScenarioComparisonItems(
-      dashboards,
-    );
-
 
   return (
 
     <DashboardSection title="Confronto scenari">
 
-      {items.map(
-        item => (
+      {scenarios.map(
+        scenario => (
 
           <ScenarioComparisonItem
-            key={item.scenarioName}
-            item={item}
+            key={scenario.scenarioName}
+            scenario={scenario}
           />
 
         )
