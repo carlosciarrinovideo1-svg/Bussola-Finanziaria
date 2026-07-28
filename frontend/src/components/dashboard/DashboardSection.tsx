@@ -1,3 +1,5 @@
+import "./DashboardSection.css";
+
 interface DashboardSectionProps {
   title: string;
   children: React.ReactNode;
@@ -9,9 +11,9 @@ export default function DashboardSection({
 }: DashboardSectionProps) {
 
   return (
-    <section>
+    <section className="dashboard-section">
 
-      <h2>
+      <h2 className="dashboard-section-title">
         {title}
       </h2>
 
