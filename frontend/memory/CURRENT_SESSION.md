@@ -7,54 +7,81 @@
 
 # Stato progetto
 
-## Ultimo sprint completato
+## Ultimi sprint completati
 
-BF-0069
-
+### BF-0072
 Titolo:
-Integrazione Investment Simulation nella Dashboard
-
-Commit:
-fcac21e
+Continuity Automation
 
 Descrizione:
 
-Il modulo Investment Simulation è stato integrato nella Dashboard principale mantenendo l'architettura esistente.
+Miglioramento degli strumenti di continuità del progetto.
+
+Implementato:
+
+- session start automatizzato;
+- handover migliorato;
+- lettura automatica dello stato operativo;
+- integrazione documentazione continuità.
+
+Commit:
+8b8ab8d
 
 ---
 
-# Verifiche completate
+### BF-0071
+Titolo:
+Continuity Kit
 
-✅ Repository pulito
+Descrizione:
 
-✅ Build funzionante
+Creazione del sistema base per garantire continuità tra sessioni diverse.
 
-✅ Commit eseguito
+Implementato:
 
-✅ Push completato
+- Bussola Development System;
+- documentazione continuità;
+- protocollo handover;
+- workflow sprint.
 
-✅ Architettura invariata
+Commit:
+37acdbc
+
+---
+
+### BF-0070
+Titolo:
+Integrazione Market Service nella Dashboard
+
+Implementato:
+
+- collegamento Market Service alla Dashboard;
+- visualizzazione indicatori finanziari;
+- mantenimento separazione Components / Services / API.
+
+Commit:
+6cb2d42
 
 ---
 
 # Stato funzionale attuale
 
-La Dashboard principale contiene:
+La Dashboard contiene:
 
-- DashboardSummary
-- FinancialCard
-- SuggestionList
-- PortfolioSummary
-- InvestmentSimulation
-
-Moduli disponibili nel progetto:
-
-- Scenario Selector
-- Scenario Comparison
+- Dashboard Summary
 - Portfolio Summary
 - Investment Simulation
+- Market Summary
+
+Moduli disponibili:
+
 - Market Service
+- Investment Simulation
+- Scenario Comparison
+- Portfolio Summary
 - Advisor Engine
+- Dashboard Engine
+- Financial Engine
 
 ---
 
@@ -64,9 +91,9 @@ Moduli disponibili nel progetto:
 
 Non creare nuove architetture.
 
-Integrare progressivamente i moduli già esistenti.
+Integrare progressivamente i moduli esistenti.
 
-Struttura mantenuta:
+Struttura:
 
 Dashboard
 
@@ -89,52 +116,41 @@ Fonti ufficiali
 
 ## Metodo sviluppo
 
-Ogni modifica deve seguire:
+Ogni sprint:
 
-1. Analisi
+1. Analisi minima necessaria
 2. Modifica singolo obiettivo
-3. Test
-4. Commit
-5. Push
-6. Aggiornamento memoria
-
-
----
-
-# Miglioramenti futuri registrati
-
-## TD-0001
-
-Problema:
-
-Gli script di modifica creano file .backup nella cartella progetto.
-
-Possibili soluzioni future:
-
-- cartella dedicata backup;
-- esclusione tramite .gitignore.
-
-Non urgente.
+3. Build
+4. Verifica
+5. Commit
+6. Push
+7. Aggiornamento documentazione
 
 
 ---
 
 # Prossimo sprint
 
-## BF-0070
+## BF-0073
 
 Titolo:
 
-Integrazione Market Service nella Dashboard
+Portafoglio investimenti
 
 Obiettivo:
 
-Collegare il modulo Market Service alla Dashboard principale per visualizzare gli indicatori finanziari già disponibili.
+Creare la prima struttura per gestire più strumenti finanziari e preparare la diversificazione del capitale.
 
 Vincoli:
 
-- nessuna nuova struttura;
-- nessuna duplicazione logica;
-- mantenere separazione componenti/services/api;
-- utilizzare i servizi esistenti;
-- test obbligatorio dopo modifica.
+- nessuna nuova architettura;
+- riutilizzare moduli esistenti;
+- mantenere separazione logica;
+- nessuna previsione finanziaria automatica;
+- utilizzare dati ufficiali quando disponibili.
+
+Risultato atteso:
+
+- base dati portafoglio;
+- struttura strumenti finanziari;
+- integrazione progressiva con Dashboard.

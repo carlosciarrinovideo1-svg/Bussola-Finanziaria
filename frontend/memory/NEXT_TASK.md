@@ -2,22 +2,26 @@
 
 ## Sprint corrente
 
-BF-0072 - Continuity Automation
+BF-0073 - Portafoglio investimenti
 
 ## Obiettivo
 
-Migliorare gli strumenti di continuità del progetto.
+Creare la prima struttura per gestire più strumenti finanziari e preparare la diversificazione del capitale.
 
 ## Risultato atteso
 
-- session start automatizzato;
-- handover migliorato;
-- informazioni operative disponibili senza ricostruzione manuale.
+- modello portafoglio;
+- struttura strumenti finanziari;
+- base per futura allocazione investimenti;
+- integrazione con Dashboard.
 
-## Stato
+## Vincoli
 
-Implementazione completata.
+- mantenere architettura esistente;
+- nessun refactoring esteso;
+- nessuna duplicazione;
+- utilizzare componenti e servizi già presenti quando possibile.
 
 ## Prossimo passo
 
-Verifica finale, build, commit e push dello sprint.
+Analisi minima della struttura attuale e individuazione dei punti di integrazione.
