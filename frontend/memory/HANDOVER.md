@@ -1,33 +1,46 @@
 # Bussola Finanziaria - Handover
 
-## Stato Git
-feature/BF-0071-continuity-kit
-6cb2d42 BF-0070: integra market service nella dashboard
+## Stato Repository
 
-## Prossimo Task
+Branch:
+feature/BF-0071-continuity-kit
+
+Ultimo commit:
+37acdbc BF-0071: implementa Continuity Kit base
+
+## Stato Git
+ M memory/HANDOVER.md
+ M memory/NEXT_TASK.md
+ M scripts/bf-handover.sh
+ M scripts/bf-session-start.sh
+
+## Sprint Corrente
 # NEXT TASK
 
 ## Sprint corrente
 
-BF-0071 - Continuity Kit
+BF-0072 - Continuity Automation
 
 ## Obiettivo
 
-Creare il sistema base di continuità del progetto.
+Migliorare gli strumenti di continuità del progetto.
 
 ## Risultato atteso
 
-- documentazione BDS creata;
-- protocollo handover definito;
-- workflow sprint documentato.
+- session start automatizzato;
+- handover migliorato;
+- informazioni operative disponibili senza ricostruzione manuale.
+
+## Stato
+
+Implementazione completata.
 
 ## Prossimo passo
 
-Integrare gli script esistenti con il sistema di continuità.
+Verifica finale, build, commit e push dello sprint.
 
-## Stato Repository
-?? docs/development/
-?? memory/HANDOVER.md
-?? memory/NEXT_TASK.md
-?? scripts/bf-handover.sh
-?? scripts/bf-session-start.sh
+## Documentazione Disponibile
+- docs/development/BDS.md
+- docs/development/CONTINUITY_SPEC.md
+- PROJECT_STATUS.md
+- DECISIONS.md

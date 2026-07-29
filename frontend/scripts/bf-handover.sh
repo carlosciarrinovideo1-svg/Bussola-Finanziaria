@@ -1,23 +1,49 @@
 #!/bin/bash
 
+set -e
+
 OUTPUT="memory/HANDOVER.md"
 
-echo "# Bussola Finanziaria - Handover" > "$OUTPUT"
-echo "" >> "$OUTPUT"
+{
+echo "# Bussola Finanziaria - Handover"
+echo
 
-echo "## Stato Git" >> "$OUTPUT"
-git branch --show-current >> "$OUTPUT"
-git log -1 --oneline >> "$OUTPUT"
+echo "## Stato Repository"
+echo
+echo "Branch:"
+git branch --show-current
 
-echo "" >> "$OUTPUT"
-echo "## Prossimo Task" >> "$OUTPUT"
+echo
+echo "Ultimo commit:"
+git log -1 --oneline
+
+echo
+echo "## Stato Git"
+git status --short || true
+
+echo
+echo "## Sprint Corrente"
 
 if [ -f memory/NEXT_TASK.md ]; then
-    cat memory/NEXT_TASK.md >> "$OUTPUT"
+    cat memory/NEXT_TASK.md
+else
+    echo "NEXT_TASK.md non presente"
 fi
 
-echo "" >> "$OUTPUT"
-echo "## Stato Repository" >> "$OUTPUT"
-git status --short >> "$OUTPUT"
+echo
+echo "## Documentazione Disponibile"
+
+for file in \
+    docs/development/BDS.md \
+    docs/development/CONTINUITY_SPEC.md \
+    PROJECT_STATUS.md \
+    DECISIONS.md
+do
+    if [ -f "$file" ]; then
+        echo "- $file"
+    fi
+done
+
+} > "$OUTPUT"
 
 echo "Creato: $OUTPUT"

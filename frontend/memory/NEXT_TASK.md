@@ -2,18 +2,22 @@
 
 ## Sprint corrente
 
-BF-0071 - Continuity Kit
+BF-0072 - Continuity Automation
 
 ## Obiettivo
 
-Creare il sistema base di continuità del progetto.
+Migliorare gli strumenti di continuità del progetto.
 
 ## Risultato atteso
 
-- documentazione BDS creata;
-- protocollo handover definito;
-- workflow sprint documentato.
+- session start automatizzato;
+- handover migliorato;
+- informazioni operative disponibili senza ricostruzione manuale.
+
+## Stato
+
+Implementazione completata.
 
 ## Prossimo passo
 
-Integrare gli script esistenti con il sistema di continuità.
+Verifica finale, build, commit e push dello sprint.
