@@ -49,7 +49,7 @@ function PortfolioSummary() {
         R$ {result.finalValue.toFixed(2)}
       </p>
 
-      <PortfolioDetails />
+      <PortfolioDetails portfolio={portfolio} />
     </section>
   );
 }

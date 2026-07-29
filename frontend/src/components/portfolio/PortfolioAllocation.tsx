@@ -1,15 +1,19 @@
-import {
-  defaultPortfolio,
-} from "../../portfolio/config";
+import type {
+  Portfolio,
+} from "../../portfolio";
 
-function PortfolioAllocation() {
+function PortfolioAllocation({
+  portfolio,
+}: {
+  portfolio: Portfolio;
+}) {
   return (
     <section>
       <h3>📊 Allocazione portafoglio</h3>
 
-      {defaultPortfolio.assets.map((asset) => {
+      {portfolio.assets.map((asset) => {
         const allocatedCapital =
-          defaultPortfolio.totalCapital *
+          portfolio.totalCapital *
           (asset.allocation / 100);
 
         return (
