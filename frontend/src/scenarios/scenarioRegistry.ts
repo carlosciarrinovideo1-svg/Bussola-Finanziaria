@@ -9,10 +9,10 @@ export const defaultScenarios:
     {
       id: "scenario-001",
 
-      name: "Scenario Prudente",
+      name: "Scenario Conservativo",
 
       description:
-        "Scenario con rendimento ipotetico contenuto e maggiore stabilità.",
+        "Scenario orientato alla protezione del capitale con ipotesi di rendimento contenute.",
 
       initialCapital: 100000,
 
@@ -25,10 +25,10 @@ export const defaultScenarios:
     {
       id: "scenario-002",
 
-      name: "Scenario Equilibrato",
+      name: "Scenario Bilanciato",
 
       description:
-        "Scenario intermedio con rapporto bilanciato tra rendimento e rischio.",
+        "Scenario intermedio tra stabilità e crescita del capitale.",
 
       initialCapital: 100000,
 
@@ -41,10 +41,10 @@ export const defaultScenarios:
     {
       id: "scenario-003",
 
-      name: "Scenario Dinamico",
+      name: "Scenario Crescita",
 
       description:
-        "Scenario con rendimento ipotetico superiore e maggiore esposizione al rischio.",
+        "Scenario orientato alla crescita del capitale con maggiore variabilità dei risultati.",
 
       initialCapital: 100000,
 
