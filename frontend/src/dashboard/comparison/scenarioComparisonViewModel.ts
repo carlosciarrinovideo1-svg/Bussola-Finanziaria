@@ -15,6 +15,10 @@ export interface ScenarioComparisonViewModel {
 
   netProfit: number;
 
+  ranking: number;
+
+  differenceFromBest: number;
+
 }
 
 
@@ -22,25 +26,54 @@ export function createScenarioComparisonViewModel(
   dashboards: DashboardViewModel[],
 ): ScenarioComparisonViewModel[] {
 
-  return dashboards.map(
-    dashboard => ({
+  const bestValue =
+    Math.max(
+      ...dashboards.map(
+        dashboard =>
+          dashboard.finalValue
+      )
+    );
 
-      scenarioName:
-        dashboard.scenarioName,
 
-      description:
-        dashboard.description,
+  return dashboards
+    .map(
+      dashboard => ({
 
-      expectedAnnualRate:
-        dashboard.expectedAnnualRate,
+        scenarioName:
+          dashboard.scenarioName,
 
-      finalValue:
-        dashboard.finalValue,
+        description:
+          dashboard.description,
 
-      netProfit:
-        dashboard.netProfit,
+        expectedAnnualRate:
+          dashboard.expectedAnnualRate,
 
-    })
-  );
+        finalValue:
+          dashboard.finalValue,
+
+        netProfit:
+          dashboard.netProfit,
+
+        differenceFromBest:
+          bestValue - dashboard.finalValue,
+
+        ranking: 0,
+
+      })
+    )
+    .sort(
+      (a, b) =>
+        b.finalValue - a.finalValue
+    )
+    .map(
+      (scenario, index) => ({
+
+        ...scenario,
+
+        ranking:
+          index + 1,
+
+      })
+    );
 
 }
