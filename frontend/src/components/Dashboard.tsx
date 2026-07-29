@@ -20,6 +20,8 @@ import PortfolioSummary from "./PortfolioSummary";
 
 import InvestmentSimulation from "./InvestmentSimulation";
 
+import MarketSummary from "./MarketSummary";
+
 
 interface DashboardProps {
 
@@ -56,6 +58,8 @@ export default function Dashboard({
       <PortfolioSummary />
 
       <InvestmentSimulation />
+
+      <MarketSummary />
 
     </>
 
