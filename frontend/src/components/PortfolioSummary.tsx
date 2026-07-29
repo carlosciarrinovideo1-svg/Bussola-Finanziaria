@@ -3,14 +3,16 @@ import {
 } from "../portfolio";
 
 import {
-  defaultPortfolio,
-} from "../portfolio/config";
+  getDefaultPortfolio,
+} from "../portfolio";
 
 import PortfolioDetails from "./portfolio/PortfolioDetails";
 
 function PortfolioSummary() {
+  const portfolio = getDefaultPortfolio();
+
   const result = calculatePortfolio(
-    defaultPortfolio
+    portfolio
   );
 
   return (
@@ -20,7 +22,7 @@ function PortfolioSummary() {
       <p>
         Nome:
         {" "}
-        {defaultPortfolio.name}
+        {portfolio.name}
       </p>
 
       <p>
