@@ -24,6 +24,16 @@ export default function ScenarioComparisonItem({
         {scenario.scenarioName}
       </h3>
 
+      <p>
+        {scenario.description}
+      </p>
+
+      <p>
+        Rendimento ipotetico annuo:
+        {" "}
+        {scenario.expectedAnnualRate}%
+      </p>
+
       <FinancialCard
         label="Valore finale"
         value={scenario.finalValue}

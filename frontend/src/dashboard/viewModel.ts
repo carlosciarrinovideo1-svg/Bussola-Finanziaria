@@ -9,6 +9,10 @@ export interface DashboardViewModel {
 
   scenarioName: string;
 
+  description: string;
+
+  expectedAnnualRate: number;
+
   initialCapital: number;
 
   finalValue: number;
@@ -35,6 +39,12 @@ export function createDashboardViewModel(
 
     scenarioName:
       result.scenario.name,
+
+    description:
+      result.scenario.description,
+
+    expectedAnnualRate:
+      result.scenario.expectedAnnualRate,
 
     initialCapital:
       result.financial.initialCapital,
