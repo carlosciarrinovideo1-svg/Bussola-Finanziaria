@@ -3,26 +3,51 @@
 ## Data
 2026-07-29
 
-## Stato raggiunto
+---
 
-Il Development Kit del progetto è stato creato e committato.
+# Stato progetto
+
+## Ultimo sprint completato
+
+BF-0068
+
+Titolo:
+Integrazione Portfolio nella Dashboard
 
 Commit:
-BFDK-0001: crea fondamenta development kit
+62d8310
 
-## Verifiche completate
+Descrizione:
 
-- repository pulito
-- build funzionante
-- struttura documentazione creata
-- script di supporto creati
-- sistema memory introdotto
+Il modulo Portfolio è stato integrato nella Dashboard principale mantenendo l'architettura esistente.
 
-## Stato funzionale
+---
 
-Il progetto contiene già:
+# Verifiche completate
 
-- Dashboard base
+✅ Repository pulito
+
+✅ Build funzionante
+
+✅ Commit eseguito
+
+✅ Push completato
+
+✅ Architettura invariata
+
+---
+
+# Stato funzionale attuale
+
+La Dashboard principale contiene:
+
+- DashboardSummary
+- FinancialCard
+- SuggestionList
+- PortfolioSummary
+
+Moduli disponibili nel progetto:
+
 - Scenario Selector
 - Scenario Comparison
 - Portfolio Summary
@@ -30,19 +55,84 @@ Il progetto contiene già:
 - Market Service
 - Advisor Engine
 
-## Analisi attuale
+---
 
-La prossima fase non deve creare nuove architetture.
+# Decisioni progettuali confermate
 
-Obiettivo:
-integrare progressivamente i moduli esistenti nella Dashboard principale.
+## Architettura
 
-## Prossimo sprint
+Non creare nuove architetture.
 
-BF-0068
+Integrare progressivamente i moduli già esistenti.
+
+Struttura mantenuta:
+
+Dashboard
+
+↓
+
+Components
+
+↓
+
+Services
+
+↓
+
+API
+
+↓
+
+Fonti ufficiali
+
+
+## Metodo sviluppo
+
+Ogni modifica deve seguire:
+
+1. Analisi
+2. Modifica singolo obiettivo
+3. Test
+4. Commit
+5. Push
+6. Aggiornamento memoria
+
+
+---
+
+# Miglioramenti futuri registrati
+
+## TD-0001
+
+Problema:
+
+Gli script di modifica creano file .backup nella cartella progetto.
+
+Possibili soluzioni future:
+
+- cartella dedicata backup;
+- esclusione tramite .gitignore.
+
+Non urgente.
+
+
+---
+
+# Prossimo sprint
+
+## BF-0069
 
 Titolo:
-Integrazione Dashboard completa
+
+Integrazione Investment Simulation nella Dashboard
 
 Obiettivo:
-collegare i componenti già esistenti mantenendo l'architettura attuale.
+
+Collegare il componente InvestmentSimulation alla Dashboard principale senza modificare l'architettura esistente.
+
+Vincoli:
+
+- nessuna nuova struttura;
+- nessuna duplicazione logica;
+- mantenere separazione componenti/services/api;
+- test obbligatorio dopo modifica.
