@@ -6,42 +6,41 @@ Branch:
 feature/BF-0071-continuity-kit
 
 Ultimo commit:
-8b8ab8d BF-0072: migliora automazione Continuity Kit
+1d45ee2 BF-0074: prepara portfolio configurabile
 
 ## Stato Git
- M PROJECT_STATUS.md
- M memory/CURRENT_SESSION.md
  M memory/HANDOVER.md
- M memory/NEXT_TASK.md
+?? .agent/
+?? bin/
 
 ## Sprint Corrente
 # NEXT TASK
 
 ## Sprint corrente
 
-BF-0073 - Portafoglio investimenti
+BF-0074 - Portfolio Configurabile
 
 ## Obiettivo
 
-Creare la prima struttura per gestire più strumenti finanziari e preparare la diversificazione del capitale.
+Trasformare il portafoglio investimenti da struttura statica a modello configurabile mantenendo l'architettura esistente.
 
 ## Risultato atteso
 
-- modello portafoglio;
-- struttura strumenti finanziari;
-- base per futura allocazione investimenti;
-- integrazione con Dashboard.
+- configurazione centralizzata dei portafogli;
+- supporto a profili diversi;
+- mantenimento separazione service/componenti/calcolo.
 
-## Vincoli
+## Stato precedente completato
 
-- mantenere architettura esistente;
-- nessun refactoring esteso;
-- nessuna duplicazione;
-- utilizzare componenti e servizi già presenti quando possibile.
+BF-0073:
+
+- collegato PortfolioSummary al portfolio service;
+- separati PortfolioDetails e PortfolioAllocation dalla configurazione diretta;
+- mantenuta architettura modulare.
 
 ## Prossimo passo
 
-Analisi minima della struttura attuale e individuazione dei punti di integrazione.
+Creare una struttura per profili portafoglio configurabili.
 
 ## Documentazione Disponibile
 - docs/development/BDS.md
