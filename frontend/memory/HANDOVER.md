@@ -6,11 +6,11 @@ Branch:
 feature/BF-0071-continuity-kit
 
 Ultimo commit:
-1d45ee2 BF-0074: prepara portfolio configurabile
+ac5a06c BF-0077: aggiunge Agent Workflow
 
 ## Stato Git
  M memory/HANDOVER.md
-?? .agent/
+?? .agent/BOOTSTRAP.md
 ?? bin/
 
 ## Sprint Corrente
