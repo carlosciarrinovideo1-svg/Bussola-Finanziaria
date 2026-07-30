@@ -1,0 +1,60 @@
+#!/bin/bash
+
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+
+case "$1" in
+
+start)
+    "$ROOT/scripts/bf-session-start.sh"
+    ;;
+
+handover)
+    "$ROOT/scripts/bf-handover.sh"
+    ;;
+
+build)
+    npm run build
+    ;;
+
+check)
+    echo "===== BUILD ====="
+    npm run build
+
+    echo
+    echo "===== GIT STATUS ====="
+    git status
+
+    echo
+    echo "===== LAST COMMIT ====="
+    git log -1 --oneline
+    ;;
+
+doctor)
+    echo "===== DOCUMENTAZIONE ====="
+
+    for f in \
+        docs/development/BDS.md \
+        docs/development/CONTINUITY_SPEC.md \
+        PROJECT_STATUS.md \
+        DECISIONS.md \
+        memory/NEXT_TASK.md
+    do
+        [ -f "$f" ] && echo "OK  $f" || echo "MISSING  $f"
+    done
+
+    echo
+    git status
+    ;;
+
+*)
+    echo "Bussola CLI"
+    echo
+    echo "Comandi disponibili:"
+    echo "  bf start"
+    echo "  bf handover"
+    echo "  bf build"
+    echo "  bf check"
+    echo "  bf doctor"
+    exit 1
+    ;;
+esac
