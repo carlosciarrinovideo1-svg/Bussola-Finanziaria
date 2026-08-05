@@ -2,7 +2,18 @@
 
 ## Sprint corrente
 
-BF-0075 - Prossimo sprint da definire
+BF-0075 - Simulazione Portafoglio Multi-Orizzonte
+
+## Obiettivo
+
+Estendere il modulo portfolio per simulare risultati su diversi orizzonti temporali mantenendo i profili configurabili introdotti in BF-0074.
+
+## Risultato atteso
+
+- calcolo proiezioni a 6, 12 e 24 mesi;
+- confronto tra profili investimento;
+- integrazione visualizzazione dashboard;
+- mantenimento separazione service/componenti/calcolo.
 
 ## Stato precedente completato
 
@@ -14,10 +25,9 @@ Completato:
 - supporto profili investimento;
 - integrazione portfolio service;
 - collegamento Dashboard -> PortfolioSummary;
-- mantenimento separazione service/componenti/calcolo;
 - build verificata;
 - commit e push completati.
 
 ## Prossimo passo
 
-Definire il nuovo obiettivo sprint e procedere con la successiva implementazione.
+Analizzare il modulo simulazioni esistente e integrare la simulazione multi-orizzonte nel portfolio.
