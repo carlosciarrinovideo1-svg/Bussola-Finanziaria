@@ -1,4 +1,5 @@
 import InvestmentPerformanceChart from "./InvestmentPerformanceChart";
+import InvestmentMetricsPanel from "./InvestmentMetricsPanel";
 
 import {
   compareInvestments,
@@ -17,6 +18,12 @@ export default function InvestmentComparisonDashboard() {
           name: item.name,
           value: item.expectedReturn,
         }))}
+      />
+
+      <InvestmentMetricsPanel
+        returnValue={investments[0]?.expectedReturn ?? 0}
+        risk={investments[0]?.riskLevel ?? "N/D"}
+        liquidity={investments[0]?.liquidity ?? "N/D"}
       />
 
     <section>
