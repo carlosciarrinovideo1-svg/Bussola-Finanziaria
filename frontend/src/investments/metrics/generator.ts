@@ -24,10 +24,18 @@ export function generateInvestmentMetrics(
     grossProfit: result.grossProfit,
     returnPercentage:
       (result.grossProfit / result.initialCapital) * 100,
-    risk: "medio",
+    risk:
+      investment.durationMonths <= 12
+        ? "basso"
+        : investment.durationMonths <= 24
+          ? "medio"
+          : "alto",
+
     liquidity:
       investment.durationMonths <= 12
         ? "alta"
-        : "media",
+        : investment.durationMonths <= 24
+          ? "media"
+          : "bassa",
   };
 }
