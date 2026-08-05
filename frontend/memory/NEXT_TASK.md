@@ -2,26 +2,22 @@
 
 ## Sprint corrente
 
-BF-0074 - Portfolio Configurabile
-
-## Obiettivo
-
-Trasformare il portafoglio investimenti da struttura statica a modello configurabile mantenendo l'architettura esistente.
-
-## Risultato atteso
-
-- configurazione centralizzata dei portafogli;
-- supporto a profili diversi;
-- mantenimento separazione service/componenti/calcolo.
+BF-0075 - Prossimo sprint da definire
 
 ## Stato precedente completato
 
-BF-0073:
+BF-0074 - Portfolio Configurabile
 
-- collegato PortfolioSummary al portfolio service;
-- separati PortfolioDetails e PortfolioAllocation dalla configurazione diretta;
-- mantenuta architettura modulare.
+Completato:
+
+- configurazione centralizzata dei portafogli;
+- supporto profili investimento;
+- integrazione portfolio service;
+- collegamento Dashboard -> PortfolioSummary;
+- mantenimento separazione service/componenti/calcolo;
+- build verificata;
+- commit e push completati.
 
 ## Prossimo passo
 
-Creare una struttura per profili portafoglio configurabili.
+Definire il nuovo obiettivo sprint e procedere con la successiva implementazione.
