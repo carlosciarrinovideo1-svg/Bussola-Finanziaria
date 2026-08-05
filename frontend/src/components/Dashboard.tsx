@@ -1,3 +1,5 @@
+import InvestmentComparisonDashboard from "./InvestmentComparisonDashboard";
+
 import { useState } from "react";
 import {
   loadDashboard,
@@ -77,6 +79,8 @@ export default function Dashboard({
       <RealEstateRentalAnalysis />
 
       <RealEstateFlipAnalysis />
+
+      <InvestmentComparisonDashboard />
 
       <InvestmentSimulation />
 
