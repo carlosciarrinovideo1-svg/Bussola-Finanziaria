@@ -2,20 +2,24 @@
 
 ## Sprint corrente
 
-BF-0083 - Simulatore Affitto Immobiliare
+BF-0084 - Simulatore Acquisto, Ristrutturazione e Rivendita
 
 ## Obiettivo
 
-Realizzare il primo simulatore di investimento immobiliare dedicato alla rendita da locazione.
+Aggiungere la simulazione del flip immobiliare con analisi economica e fiscale preliminare.
 
 ## Risultato atteso
 
-- calcolo rendimento lordo;
-- calcolo rendimento netto;
-- calcolo tempo di recupero investimento;
-- stima imposta sul reddito da locazione;
+- supporto strategia "flip";
+- costo acquisto;
+- costo ristrutturazione;
+- valore vendita;
+- utile lordo;
+- utile netto stimato;
+- ROI;
+- tempo operazione;
 - analisi automatica convenienza;
-- componente React RealEstateRentalAnalysis;
-- integrazione nella Dashboard tramite PortfolioWorkspace/Workspace investimenti;
+- componente React RealEstateFlipAnalysis;
+- integrazione Dashboard;
 - build verificata;
 - commit e push completati.
