@@ -1,4 +1,6 @@
 import InvestmentComparisonDashboard from "./InvestmentComparisonDashboard";
+import InvestmentEvolutionChart from "./InvestmentEvolutionChart";
+
 
 import { useState } from "react";
 import {
@@ -81,6 +83,8 @@ export default function Dashboard({
       <RealEstateFlipAnalysis />
 
       <InvestmentComparisonDashboard />
+
+      <InvestmentEvolutionChart />
 
       <InvestmentSimulation />
 
