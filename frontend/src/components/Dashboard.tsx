@@ -1,5 +1,6 @@
 import InvestmentComparisonDashboard from "./InvestmentComparisonDashboard";
 import InvestmentEvolutionChart from "./InvestmentEvolutionChart";
+import InvestmentPeriodSelector from "./InvestmentPeriodSelector";
 
 
 import { useState } from "react";
@@ -53,6 +54,9 @@ export default function Dashboard({
   const [selectedProfile, setSelectedProfile] =
     useState(portfolioProfile);
 
+  const [selectedInvestmentPeriod, setSelectedInvestmentPeriod] =
+    useState<6 | 12 | 24>(12);
+
   const data =
     loadDashboard(
       scenario,
@@ -83,6 +87,11 @@ export default function Dashboard({
       <RealEstateFlipAnalysis />
 
       <InvestmentComparisonDashboard />
+
+      <InvestmentPeriodSelector
+        value={selectedInvestmentPeriod}
+        onChange={setSelectedInvestmentPeriod}
+      />
 
       <InvestmentEvolutionChart />
 
