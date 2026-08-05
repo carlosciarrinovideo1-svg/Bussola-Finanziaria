@@ -2,28 +2,23 @@
 
 ## Sprint corrente
 
-BF-0087 - Dashboard Investimenti Immobiliare + Portfolio Unificato
+BF-0088 - Refinement Dashboard Investimenti Unificata
 
 ## Obiettivo
 
-Integrare gli investimenti immobiliari nel sistema decisionale principale della Bussola Finanziaria creando una vista unificata tra investimenti finanziari e immobiliari.
+Migliorare la presentazione della sezione investimenti creando una vista decisionale più chiara per confrontare strumenti finanziari e immobiliari.
 
 ## Risultato atteso
 
-- creazione InvestmentComparisonWorkspace;
-- integrazione PortfolioWorkspace e InvestmentWorkspace;
-- confronto:
-  - portfolio finanziario;
-  - affitto immobiliare;
-  - flip immobiliare;
-- visualizzazione rendimento netto;
-- visualizzazione rischio;
-- visualizzazione tempo recupero investimento;
-- preparazione futura pagina confronto investimenti;
-- nessuna modifica ai servizi di calcolo esistenti;
+- creazione dashboard investimento unificata;
+- riepilogo rendimento netto;
+- confronto rischio;
+- confronto liquidità;
+- confronto tempo recupero capitale;
+- indicatori sintetici investimento;
+- preparazione struttura grafici futuri;
+- mantenimento architettura modulare;
+- nessuna modifica ai servizi di calcolo;
 - build verificata;
 - commit e push completati.
 
-## Stato precedente completato
-
-BF-0086 completato.
