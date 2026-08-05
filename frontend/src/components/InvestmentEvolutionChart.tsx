@@ -3,8 +3,12 @@ import {
 } from "../investments/history/periods";
 
 import {
-  generateInvestmentHistory,
+  createInvestmentHistory,
 } from "../investments/history";
+
+import {
+  exampleInvestments,
+} from "../investments/demo/exampleInvestments";
 
 interface InvestmentEvolutionChartProps {
   period?: 6 | 12 | 24;
@@ -14,7 +18,12 @@ export default function InvestmentEvolutionChart({
   period = 12,
 }: InvestmentEvolutionChartProps) {
 
-  const series = generateInvestmentHistory();
+  const series = [
+    createInvestmentHistory(
+      exampleInvestments[0],
+      exampleInvestments[0].name,
+    ),
+  ];
 
   const filteredSeries = series.map((item) => ({
     ...item,
