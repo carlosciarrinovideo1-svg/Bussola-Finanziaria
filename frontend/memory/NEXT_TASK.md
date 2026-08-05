@@ -1,30 +1,20 @@
 # NEXT TASK
 
-## Ultimo sprint completato
+## Sprint corrente
 
-BF-0091 - Evoluzione investimenti e supporto decisionale
+BF-0092 - Dashboard Decisionale Investimenti
 
-## Risultato
+## Obiettivo
 
-Completato:
+Trasformare i dati prodotti da BF-0091 in una dashboard decisionale più chiara, leggibile e orientata alla scelta dell'investimento.
 
-- collegamento storico investimenti con motore di calcolo reale;
-- selezione periodo investimento 6/12/24 mesi;
-- generazione storico evolutivo;
-- pannello confronto decisionale;
-- metriche rendimento, rischio e liquidità;
-- ranking investimenti;
-- miglioramento esportazione moduli investimento;
-- build verificata;
-- commit e push completati.
+## Risultato atteso
 
-## Prossimo incremento
-
-Da definire.
-
-Possibili aree:
-
-- evoluzione grafica dashboard;
-- integrazione dati reali di mercato;
-- simulazioni avanzate;
-- miglioramento esperienza decisionale utente.
+- miglioramento visualizzazione metriche investimento;
+- introduzione componenti riutilizzabili per indicatori e card;
+- separazione presentazione dati e logica;
+- confronto visivo tra investimenti;
+- preparazione struttura per grafici interattivi futuri;
+- mantenimento del motore finanziario esistente;
+- nessuna modifica non necessaria ai servizi di calcolo;
+- build verificata.
