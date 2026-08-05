@@ -26,6 +26,7 @@ import PortfolioSimulation from "./PortfolioSimulation";
 import PortfolioRiskIndicator from "./PortfolioRiskIndicator";
 import PortfolioProfileSelector from "./PortfolioProfileSelector";
 import PortfolioIntelligence from "./PortfolioIntelligence";
+import PortfolioProfileComparison from "./PortfolioProfileComparison";
 
 import {
   defaultProfileId,
@@ -91,6 +92,10 @@ export default function Dashboard({
 
       <PortfolioRiskIndicator
         profileId={selectedProfile}
+      />
+
+      <PortfolioProfileComparison
+        selectedProfile={selectedProfile}
       />
 
       <InvestmentSimulation />
