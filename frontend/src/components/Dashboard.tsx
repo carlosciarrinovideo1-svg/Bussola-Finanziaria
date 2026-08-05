@@ -21,7 +21,7 @@ import DashboardSummary from "./dashboard/DashboardSummary";
 import InvestmentSimulation from "./InvestmentSimulation";
 
 import MarketSummary from "./MarketSummary";
-import PortfolioWorkspace from "./PortfolioWorkspace";
+import InvestmentWorkspace from "./InvestmentWorkspace";
 import RealEstateRentalAnalysis from "./RealEstateRentalAnalysis";
 import RealEstateFlipAnalysis from "./RealEstateFlipAnalysis";
 
@@ -69,7 +69,7 @@ export default function Dashboard({
         netProfit={data.netProfit}
         suggestions={data.suggestions}
       />
-      <PortfolioWorkspace
+      <InvestmentWorkspace
         profileId={selectedProfile}
         onProfileChange={setSelectedProfile}
       />

@@ -2,24 +2,20 @@
 
 ## Sprint corrente
 
-BF-0084 - Simulatore Acquisto, Ristrutturazione e Rivendita
+BF-0085 - Workspace Investimenti
 
 ## Obiettivo
 
-Aggiungere la simulazione del flip immobiliare con analisi economica e fiscale preliminare.
+Creare un unico spazio dedicato a tutti gli investimenti disponibili nella Bussola Finanziaria.
 
 ## Risultato atteso
 
-- supporto strategia "flip";
-- costo acquisto;
-- costo ristrutturazione;
-- valore vendita;
-- utile lordo;
-- utile netto stimato;
-- ROI;
-- tempo operazione;
-- analisi automatica convenienza;
-- componente React RealEstateFlipAnalysis;
-- integrazione Dashboard;
+- componente InvestmentWorkspace;
+- integrazione PortfolioWorkspace;
+- integrazione simulatore Affitto;
+- integrazione simulatore Flip Immobiliare;
+- architettura modulare pronta per nuovi investimenti;
+- Dashboard ulteriormente semplificata;
+- nessuna modifica ai servizi di calcolo;
 - build verificata;
 - commit e push completati.
