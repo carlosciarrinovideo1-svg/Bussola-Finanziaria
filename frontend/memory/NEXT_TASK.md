@@ -4,32 +4,23 @@
 
 BF-0080 - Storico Evoluzione Portfolio
 
-## Obiettivo
+## Stato
 
-Aggiungere una vista storica dell'evoluzione del portafoglio per migliorare la comprensione delle variazioni nel tempo mantenendo l'architettura esistente.
+Implementazione completata.
 
-## Risultato atteso
+## Risultati completati
 
-- storico valori simulati del portfolio;
-- confronto evoluzione 6, 12, 24 mesi;
-- visualizzazione andamento crescita;
+- servizio PortfolioHistory creato;
+- esportazione dal modulo portfolio;
+- componente PortfolioHistory;
+- visualizzazione evoluzione 6, 12 e 24 mesi;
+- calcolo crescita percentuale;
 - integrazione Dashboard;
 - riutilizzo servizi portfolio esistenti;
-- mantenimento separazione calcolo/componenti.
-
-## Stato precedente completato
-
-BF-0079 - Confronto Avanzato Profili Portfolio
-
-Completato:
-- confronto profili investimento;
-- rendimento atteso;
-- rischio/rendimento;
-- proiezioni temporali;
-- componente confronto Dashboard;
+- architettura mantenuta;
 - build verificata;
-- repository pulito.
+- commit e push completati.
 
 ## Prossimo passo
 
-Implementazione servizio storico evoluzione portfolio.
+Definizione dello sprint BF-0081.
