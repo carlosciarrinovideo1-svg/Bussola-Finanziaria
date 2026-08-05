@@ -2,32 +2,21 @@
 
 ## Sprint corrente
 
-BF-0075 - Simulazione Portafoglio Multi-Orizzonte
-
-## Obiettivo
-
-Estendere il modulo portfolio per simulare risultati su diversi orizzonti temporali mantenendo i profili configurabili introdotti in BF-0074.
-
-## Risultato atteso
-
-- calcolo proiezioni a 6, 12 e 24 mesi;
-- confronto tra profili investimento;
-- integrazione visualizzazione dashboard;
-- mantenimento separazione service/componenti/calcolo.
+BF-0076 - Da definire
 
 ## Stato precedente completato
 
-BF-0074 - Portfolio Configurabile
+BF-0075 - Simulazione Portafoglio Multi-Orizzonte
 
 Completato:
 
-- configurazione centralizzata dei portafogli;
-- supporto profili investimento;
-- integrazione portfolio service;
-- collegamento Dashboard -> PortfolioSummary;
+- servizio simulazione portfolio;
+- proiezioni 6, 12 e 24 mesi;
+- integrazione con profili portfolio;
+- componente dashboard PortfolioSimulation;
 - build verificata;
 - commit e push completati.
 
 ## Prossimo passo
 
-Analizzare il modulo simulazioni esistente e integrare la simulazione multi-orizzonte nel portfolio.
+Definire il prossimo incremento funzionale.
