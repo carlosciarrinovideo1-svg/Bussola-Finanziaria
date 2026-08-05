@@ -34,3 +34,7 @@ export type { PortfolioRiskResult } from "./riskCalculator";
 export { comparePortfolioProfiles } from "./profileComparison";
 
 export type { PortfolioComparisonResult } from "./profileComparison";
+
+export { generatePortfolioHistory } from "./portfolioHistory";
+
+export type { PortfolioHistoryPoint } from "./portfolioHistory";
