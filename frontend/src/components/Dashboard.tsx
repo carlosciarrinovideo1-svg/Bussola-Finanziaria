@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   loadDashboard,
 } from "../dashboard/dashboardService";
@@ -22,6 +23,7 @@ import InvestmentSimulation from "./InvestmentSimulation";
 
 import MarketSummary from "./MarketSummary";
 import PortfolioSimulation from "./PortfolioSimulation";
+import PortfolioProfileSelector from "./PortfolioProfileSelector";
 
 import {
   defaultProfileId,
@@ -44,6 +46,9 @@ export default function Dashboard({
   portfolioProfile = defaultProfileId,
 }: DashboardProps) {
 
+  const [selectedProfile, setSelectedProfile] =
+    useState(portfolioProfile);
+
   const data =
     loadDashboard(
       scenario,
@@ -65,12 +70,17 @@ export default function Dashboard({
         suggestions={data.suggestions}
       />
 
+      <PortfolioProfileSelector
+        value={selectedProfile}
+        onChange={setSelectedProfile}
+      />
+
       <PortfolioSummary
-        profileId={portfolioProfile}
+        profileId={selectedProfile}
       />
 
       <PortfolioSimulation
-        profileId={portfolioProfile}
+        profileId={selectedProfile}
       />
 
       <InvestmentSimulation />
