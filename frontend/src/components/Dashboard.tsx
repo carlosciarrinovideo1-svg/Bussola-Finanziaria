@@ -93,7 +93,7 @@ export default function Dashboard({
         onChange={setSelectedInvestmentPeriod}
       />
 
-      <InvestmentEvolutionChart />
+      <InvestmentEvolutionChart period={selectedInvestmentPeriod} />
 
       <InvestmentSimulation />
 
