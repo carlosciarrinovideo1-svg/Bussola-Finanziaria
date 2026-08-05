@@ -22,3 +22,7 @@ export {
   portfolioProfileIds,
   defaultProfileId,
 } from "./profiles";
+
+export { simulatePortfolio } from "./portfolioSimulation";
+
+export type { PortfolioSimulationResult } from "./portfolioSimulation";
