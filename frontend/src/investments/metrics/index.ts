@@ -4,4 +4,6 @@ export {
 
 export type {
   InvestmentDecisionMetrics,
+  RiskLevel,
+  LiquidityLevel,
 } from "./types";

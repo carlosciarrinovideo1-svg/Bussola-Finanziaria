@@ -1,6 +1,6 @@
 import {
   generateInvestmentMetrics,
-} from "../investments/metrics";
+} from "../investments";
 
 import {
   exampleInvestments,

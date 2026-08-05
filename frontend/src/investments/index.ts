@@ -18,3 +18,13 @@ export {
 export type {
   InvestmentComparisonItem,
 } from "./investmentComparison";
+
+export {
+  generateInvestmentMetrics,
+} from "./metrics";
+
+export type {
+  InvestmentDecisionMetrics,
+  RiskLevel,
+  LiquidityLevel,
+} from "./metrics";
