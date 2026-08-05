@@ -1,6 +1,7 @@
 import InvestmentComparisonDashboard from "./InvestmentComparisonDashboard";
 import InvestmentEvolutionChart from "./InvestmentEvolutionChart";
 import InvestmentPeriodSelector from "./InvestmentPeriodSelector";
+import InvestmentDecisionPanel from "./InvestmentDecisionPanel";
 
 
 import { useState } from "react";
@@ -94,6 +95,8 @@ export default function Dashboard({
       />
 
       <InvestmentEvolutionChart period={selectedInvestmentPeriod} />
+
+      <InvestmentDecisionPanel />
 
       <InvestmentSimulation />
 
