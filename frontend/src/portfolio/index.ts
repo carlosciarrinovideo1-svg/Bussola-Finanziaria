@@ -30,3 +30,7 @@ export type { PortfolioSimulationResult } from "./portfolioSimulation";
 export { calculatePortfolioRisk } from "./riskCalculator";
 
 export type { PortfolioRiskResult } from "./riskCalculator";
+
+export { comparePortfolioProfiles } from "./profileComparison";
+
+export type { PortfolioComparisonResult } from "./profileComparison";
