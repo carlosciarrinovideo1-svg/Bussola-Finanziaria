@@ -2,25 +2,21 @@
 
 ## Sprint corrente
 
-BF-0080 - Storico Evoluzione Portfolio
+BF-0081 - Portfolio Workspace Refactoring
 
-## Stato
+## Obiettivo
 
-Implementazione completata.
+Riorganizzare il modulo Portfolio creando un contenitore unico che coordini tutti i componenti portfolio mantenendo invariato il comportamento dell'applicazione.
 
-## Risultati completati
+## Risultato atteso
 
-- servizio PortfolioHistory creato;
-- esportazione dal modulo portfolio;
-- componente PortfolioHistory;
-- visualizzazione evoluzione 6, 12 e 24 mesi;
-- calcolo crescita percentuale;
-- integrazione Dashboard;
-- riutilizzo servizi portfolio esistenti;
-- architettura mantenuta;
-- build verificata;
-- commit e push completati.
+- creazione PortfolioWorkspace;
+- raggruppamento dei componenti portfolio;
+- semplificazione Dashboard;
+- nessuna modifica alla logica di business;
+- nessuna regressione funzionale;
+- mantenimento architettura service/componenti/calcolo.
 
-## Prossimo passo
+## Stato precedente completato
 
-Definizione dello sprint BF-0081.
+BF-0080 completato con successo.
