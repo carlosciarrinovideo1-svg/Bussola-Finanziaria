@@ -2,23 +2,17 @@
 
 ## Sprint corrente
 
-BF-0088 - Refinement Dashboard Investimenti Unificata
+BF-0089 - Visualizzazione Grafica Investimenti
 
 ## Obiettivo
 
-Migliorare la presentazione della sezione investimenti creando una vista decisionale più chiara per confrontare strumenti finanziari e immobiliari.
+Aggiungere rappresentazioni grafiche alla dashboard investimenti per rendere più immediata la lettura dei dati.
 
 ## Risultato atteso
 
-- creazione dashboard investimento unificata;
-- riepilogo rendimento netto;
-- confronto rischio;
-- confronto liquidità;
-- confronto tempo recupero capitale;
-- indicatori sintetici investimento;
-- preparazione struttura grafici futuri;
-- mantenimento architettura modulare;
+- preparazione componente grafico investimenti;
+- visualizzazione confronto rendimento/rischio;
+- struttura pronta per grafici temporali;
+- integrazione dashboard;
 - nessuna modifica ai servizi di calcolo;
-- build verificata;
-- commit e push completati.
-
+- build verificata.
