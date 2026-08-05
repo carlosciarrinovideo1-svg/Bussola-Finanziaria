@@ -3,13 +3,22 @@ import {
 } from "../portfolio";
 
 import {
-  getDefaultPortfolio,
+  getPortfolio,
+  defaultProfileId,
 } from "../portfolio";
 
 import PortfolioDetails from "./portfolio/PortfolioDetails";
 
-function PortfolioSummary() {
-  const portfolio = getDefaultPortfolio();
+interface PortfolioSummaryProps {
+  /**
+   * Identificatore del profilo portafoglio da visualizzare.
+   * Se non specificato, usa il profilo predefinito (equilibrato).
+   */
+  profileId?: string;
+}
+
+function PortfolioSummary({ profileId = defaultProfileId }: PortfolioSummaryProps) {
+  const portfolio = getPortfolio(profileId);
 
   const result = calculatePortfolio(
     portfolio

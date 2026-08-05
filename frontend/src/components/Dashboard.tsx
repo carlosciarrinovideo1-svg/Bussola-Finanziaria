@@ -22,16 +22,25 @@ import InvestmentSimulation from "./InvestmentSimulation";
 
 import MarketSummary from "./MarketSummary";
 
+import {
+  defaultProfileId,
+} from "../portfolio";
+
 
 interface DashboardProps {
-
   scenario?: FinancialScenario;
 
+  /**
+   * Profilo investimento da visualizzare.
+   * Default: portafoglio equilibrato.
+   */
+  portfolioProfile?: string;
 }
 
 
 export default function Dashboard({
   scenario = defaultScenarios[0],
+  portfolioProfile = defaultProfileId,
 }: DashboardProps) {
 
   const data =
@@ -55,7 +64,9 @@ export default function Dashboard({
         suggestions={data.suggestions}
       />
 
-      <PortfolioSummary />
+      <PortfolioSummary
+        profileId={portfolioProfile}
+      />
 
       <InvestmentSimulation />
 

@@ -3,6 +3,7 @@ export {
 } from "./calculator";
 
 export {
+  getPortfolio,
   getDefaultPortfolio,
 } from "./portfolioService";
 
@@ -14,3 +15,10 @@ export type {
 export type {
   PortfolioResult,
 } from "./calculator";
+
+// Export profili per utilizzo avanzato
+export {
+  portfolioProfiles,
+  portfolioProfileIds,
+  defaultProfileId,
+} from "./profiles";
