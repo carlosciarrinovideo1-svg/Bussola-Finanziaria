@@ -26,3 +26,7 @@ export {
 export { simulatePortfolio } from "./portfolioSimulation";
 
 export type { PortfolioSimulationResult } from "./portfolioSimulation";
+
+export { calculatePortfolioRisk } from "./riskCalculator";
+
+export type { PortfolioRiskResult } from "./riskCalculator";
