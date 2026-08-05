@@ -2,17 +2,17 @@
 
 ## Sprint corrente
 
-BF-0089 - Visualizzazione Grafica Investimenti
+BF-0090 - Grafici Evoluzione Investimenti
 
 ## Obiettivo
 
-Aggiungere rappresentazioni grafiche alla dashboard investimenti per rendere più immediata la lettura dei dati.
+Aggiungere grafici temporali per visualizzare l'evoluzione degli investimenti nel tempo.
 
 ## Risultato atteso
 
-- preparazione componente grafico investimenti;
-- visualizzazione confronto rendimento/rischio;
-- struttura pronta per grafici temporali;
-- integrazione dashboard;
+- grafico crescita 6/12/24 mesi;
+- confronto andamento strumenti;
+- struttura dati storica riutilizzabile;
+- integrazione dashboard investimenti;
 - nessuna modifica ai servizi di calcolo;
 - build verificata.
