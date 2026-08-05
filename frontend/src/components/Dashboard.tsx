@@ -17,17 +17,11 @@ import {
 
 import DashboardSummary from "./dashboard/DashboardSummary";
 
-import PortfolioSummary from "./PortfolioSummary";
 
 import InvestmentSimulation from "./InvestmentSimulation";
 
 import MarketSummary from "./MarketSummary";
-import PortfolioSimulation from "./PortfolioSimulation";
-import PortfolioRiskIndicator from "./PortfolioRiskIndicator";
-import PortfolioProfileSelector from "./PortfolioProfileSelector";
-import PortfolioIntelligence from "./PortfolioIntelligence";
-import PortfolioProfileComparison from "./PortfolioProfileComparison";
-import PortfolioHistory from "./PortfolioHistory";
+import PortfolioWorkspace from "./PortfolioWorkspace";
 
 import {
   defaultProfileId,
@@ -73,34 +67,9 @@ export default function Dashboard({
         netProfit={data.netProfit}
         suggestions={data.suggestions}
       />
-
-      <PortfolioProfileSelector
-        value={selectedProfile}
-        onChange={setSelectedProfile}
-      />
-
-      <PortfolioSummary
+      <PortfolioWorkspace
         profileId={selectedProfile}
-      />
-
-      <PortfolioSimulation
-        profileId={selectedProfile}
-      />
-
-      <PortfolioIntelligence
-        selectedProfile={selectedProfile}
-      />
-
-      <PortfolioRiskIndicator
-        profileId={selectedProfile}
-      />
-
-      <PortfolioProfileComparison
-        selectedProfile={selectedProfile}
-      />
-
-      <PortfolioHistory
-        profileId={selectedProfile}
+        onProfileChange={setSelectedProfile}
       />
 
       <InvestmentSimulation />
