@@ -21,6 +21,7 @@ import PortfolioSummary from "./PortfolioSummary";
 import InvestmentSimulation from "./InvestmentSimulation";
 
 import MarketSummary from "./MarketSummary";
+import PortfolioSimulation from "./PortfolioSimulation";
 
 import {
   defaultProfileId,
@@ -65,6 +66,10 @@ export default function Dashboard({
       />
 
       <PortfolioSummary
+        profileId={portfolioProfile}
+      />
+
+      <PortfolioSimulation
         profileId={portfolioProfile}
       />
 
