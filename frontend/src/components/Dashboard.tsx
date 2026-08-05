@@ -22,6 +22,7 @@ import InvestmentSimulation from "./InvestmentSimulation";
 
 import MarketSummary from "./MarketSummary";
 import PortfolioWorkspace from "./PortfolioWorkspace";
+import RealEstateRentalAnalysis from "./RealEstateRentalAnalysis";
 
 import {
   defaultProfileId,
@@ -71,6 +72,8 @@ export default function Dashboard({
         profileId={selectedProfile}
         onProfileChange={setSelectedProfile}
       />
+
+      <RealEstateRentalAnalysis />
 
       <InvestmentSimulation />
 
