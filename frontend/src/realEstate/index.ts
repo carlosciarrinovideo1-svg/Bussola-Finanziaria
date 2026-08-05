@@ -6,3 +6,5 @@ export * from "./analysis";
 export * from "./service";
 
 export * from "./flipCalculator";
+export * from "./taxCalculator";
+export * from "./riskAnalysis";

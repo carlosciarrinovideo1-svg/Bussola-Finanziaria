@@ -2,20 +2,21 @@
 
 ## Sprint corrente
 
-BF-0085 - Workspace Investimenti
+BF-0086 - Raffinamento Modello Immobiliare e Regole Fiscali
 
 ## Obiettivo
 
-Creare un unico spazio dedicato a tutti gli investimenti disponibili nella Bussola Finanziaria.
+Migliorare il modello immobiliare separando rendimento, costi, tasse e rischio investimento.
 
 ## Risultato atteso
 
-- componente InvestmentWorkspace;
-- integrazione PortfolioWorkspace;
-- integrazione simulatore Affitto;
-- integrazione simulatore Flip Immobiliare;
-- architettura modulare pronta per nuovi investimenti;
-- Dashboard ulteriormente semplificata;
-- nessuna modifica ai servizi di calcolo;
+- estensione tipi RealEstateInvestment;
+- calcolo rendimento netto più realistico;
+- separazione costi annuali;
+- stima tassazione locazione configurabile;
+- indicatore rischio immobiliare;
+- servizio analisi immobiliare aggiornato;
+- componente aggiornata;
+- nessuna modifica ai moduli portfolio;
 - build verificata;
 - commit e push completati.
