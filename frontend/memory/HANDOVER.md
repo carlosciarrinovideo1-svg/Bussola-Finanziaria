@@ -6,44 +6,51 @@ Branch:
 feature/BF-0071-continuity-kit
 
 Ultimo commit:
-ac5a06c BF-0077: aggiunge Agent Workflow
+e1c0377 BF-0074: update next task state
 
 ## Stato Git
- M memory/HANDOVER.md
-?? .agent/BOOTSTRAP.md
-?? bin/
 
-## Sprint Corrente
-# NEXT TASK
+Repository sincronizzato con origin.
+Working tree pulito.
 
-## Sprint corrente
+## Stato Progetto
+
+Ultimo sprint completato:
 
 BF-0074 - Portfolio Configurabile
 
-## Obiettivo
-
-Trasformare il portafoglio investimenti da struttura statica a modello configurabile mantenendo l'architettura esistente.
-
-## Risultato atteso
+Completato:
 
 - configurazione centralizzata dei portafogli;
-- supporto a profili diversi;
-- mantenimento separazione service/componenti/calcolo.
+- supporto profili investimento;
+- integrazione portfolio service;
+- collegamento Dashboard -> PortfolioSummary;
+- mantenimento separazione service/componenti/calcolo;
+- build produzione verificata;
+- commit e push completati.
 
-## Stato precedente completato
+## Sprint Corrente
 
-BF-0073:
+BF-0075 - Da definire
 
-- collegato PortfolioSummary al portfolio service;
-- separati PortfolioDetails e PortfolioAllocation dalla configurazione diretta;
-- mantenuta architettura modulare.
-
-## Prossimo passo
-
-Creare una struttura per profili portafoglio configurabili.
+Obiettivo:
+Definire il prossimo incremento funzionale mantenendo l'architettura esistente.
 
 ## Documentazione Disponibile
+
 - docs/development/BDS.md
 - docs/development/CONTINUITY_SPEC.md
-- PROJECT_STATUS.md
-- DECISIONS.md
+- docs/ARCHITECTURE.md
+- docs/PROJECT_MANUAL.md
+- docs/SPRINT_STATUS.md
+- docs/ROADMAP.md
+- memory/NEXT_TASK.md
+
+## Regole Operative
+
+Prima di ogni sprint:
+
+1. verificare stato repository;
+2. leggere NEXT_TASK.md;
+3. evitare modifiche architetturali non necessarie;
+4. completare con build, documentazione, commit e push.
