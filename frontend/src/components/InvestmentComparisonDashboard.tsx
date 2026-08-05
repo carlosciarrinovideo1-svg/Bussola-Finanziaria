@@ -12,7 +12,12 @@ export default function InvestmentComparisonDashboard() {
 
   return (
     <>
-    <InvestmentPerformanceChart />
+    <InvestmentPerformanceChart
+        data={investments.map((item) => ({
+          name: item.name,
+          value: item.expectedReturn,
+        }))}
+      />
 
     <section>
       <h2>📊 Confronto investimenti</h2>

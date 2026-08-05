@@ -1,25 +1,17 @@
+interface InvestmentPerformanceChartItem {
+  name: string;
+  value: number;
+}
+
 interface InvestmentPerformanceChartProps {
   title?: string;
+  data?: InvestmentPerformanceChartItem[];
 }
 
 export default function InvestmentPerformanceChart({
   title = "Rendimento investimenti",
+  data = [],
 }: InvestmentPerformanceChartProps) {
-
-  const data = [
-    {
-      name: "Portfolio finanziario",
-      value: 0,
-    },
-    {
-      name: "Affitto immobiliare",
-      value: 0,
-    },
-    {
-      name: "Flip immobiliare",
-      value: 0,
-    },
-  ];
 
   return (
     <section>
