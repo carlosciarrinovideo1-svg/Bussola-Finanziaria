@@ -20,20 +20,19 @@ export default function InvestmentDecisionPanel() {
       <h2>Confronto decisionale investimenti</h2>
 
       {metrics.map((item) => (
-        <div key={item.name}>
-
+        <article key={item.name}>
           <h3>{item.name}</h3>
 
           <p>
-            Capitale iniziale: {item.initialCapital}
+            Capitale iniziale:
+            {" "}
+            {item.initialCapital}
           </p>
 
           <p>
-            Valore finale: {item.finalValue.toFixed(2)}
-          </p>
-
-          <p>
-            Profitto lordo: {item.grossProfit.toFixed(2)}
+            Valore finale:
+            {" "}
+            {item.finalValue.toFixed(2)}
           </p>
 
           <p>
@@ -43,14 +42,17 @@ export default function InvestmentDecisionPanel() {
           </p>
 
           <p>
-            Rischio: {item.risk}
+            Rischio:
+            {" "}
+            {item.risk}
           </p>
 
           <p>
-            Liquidità: {item.liquidity}
+            Liquidità:
+            {" "}
+            {item.liquidity}
           </p>
-
-        </div>
+        </article>
       ))}
     </section>
   );
