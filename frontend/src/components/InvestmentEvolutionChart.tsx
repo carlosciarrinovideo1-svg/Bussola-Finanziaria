@@ -18,12 +18,13 @@ export default function InvestmentEvolutionChart({
   period = 12,
 }: InvestmentEvolutionChartProps) {
 
-  const series = [
-    createInvestmentHistory(
-      exampleInvestments[0],
-      exampleInvestments[0].name,
-    ),
-  ];
+  const series = exampleInvestments.map(
+    (investment) =>
+      createInvestmentHistory(
+        investment,
+        investment.name,
+      ),
+  );
 
   const filteredSeries = series.map((item) => ({
     ...item,
