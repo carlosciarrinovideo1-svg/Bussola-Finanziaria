@@ -1,3 +1,5 @@
+import InvestmentPerformanceChart from "./InvestmentPerformanceChart";
+
 import {
   compareInvestments,
 } from "../investments";
@@ -9,6 +11,9 @@ export default function InvestmentComparisonDashboard() {
     compareInvestments();
 
   return (
+    <>
+    <InvestmentPerformanceChart />
+
     <section>
       <h2>📊 Confronto investimenti</h2>
 
@@ -48,5 +53,6 @@ export default function InvestmentComparisonDashboard() {
         </div>
       ))}
     </section>
+    </>
   );
 }
