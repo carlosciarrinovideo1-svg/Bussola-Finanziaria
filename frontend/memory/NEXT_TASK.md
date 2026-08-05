@@ -1,20 +1,30 @@
 # NEXT TASK
 
-## Sprint corrente
+## Ultimo sprint completato
 
-BF-0091 - Raffinamento Dashboard Grafica Investimenti
+BF-0091 - Evoluzione investimenti e supporto decisionale
 
-## Obiettivo
+## Risultato
 
-Migliorare la presentazione grafica degli investimenti con dati dinamici e indicatori decisionali.
+Completato:
 
-## Risultato atteso
+- collegamento storico investimenti con motore di calcolo reale;
+- selezione periodo investimento 6/12/24 mesi;
+- generazione storico evolutivo;
+- pannello confronto decisionale;
+- metriche rendimento, rischio e liquidità;
+- ranking investimenti;
+- miglioramento esportazione moduli investimento;
+- build verificata;
+- commit e push completati.
 
-- collegamento grafici ai dati reali dei simulatori;
-- selezione periodo 6/12/24 mesi;
-- confronto rendimento storico;
-- confronto rischio/liquidità;
-- miglioramento layout dashboard;
-- preparazione grafici interattivi futuri;
-- nessuna modifica ai servizi di calcolo;
-- build verificata.
+## Prossimo incremento
+
+Da definire.
+
+Possibili aree:
+
+- evoluzione grafica dashboard;
+- integrazione dati reali di mercato;
+- simulazioni avanzate;
+- miglioramento esperienza decisionale utente.
