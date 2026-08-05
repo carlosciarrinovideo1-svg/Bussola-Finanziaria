@@ -2,21 +2,28 @@
 
 ## Sprint corrente
 
-BF-0086 - Raffinamento Modello Immobiliare e Regole Fiscali
+BF-0087 - Dashboard Investimenti Immobiliare + Portfolio Unificato
 
 ## Obiettivo
 
-Migliorare il modello immobiliare separando rendimento, costi, tasse e rischio investimento.
+Integrare gli investimenti immobiliari nel sistema decisionale principale della Bussola Finanziaria creando una vista unificata tra investimenti finanziari e immobiliari.
 
 ## Risultato atteso
 
-- estensione tipi RealEstateInvestment;
-- calcolo rendimento netto più realistico;
-- separazione costi annuali;
-- stima tassazione locazione configurabile;
-- indicatore rischio immobiliare;
-- servizio analisi immobiliare aggiornato;
-- componente aggiornata;
-- nessuna modifica ai moduli portfolio;
+- creazione InvestmentComparisonWorkspace;
+- integrazione PortfolioWorkspace e InvestmentWorkspace;
+- confronto:
+  - portfolio finanziario;
+  - affitto immobiliare;
+  - flip immobiliare;
+- visualizzazione rendimento netto;
+- visualizzazione rischio;
+- visualizzazione tempo recupero investimento;
+- preparazione futura pagina confronto investimenti;
+- nessuna modifica ai servizi di calcolo esistenti;
 - build verificata;
 - commit e push completati.
+
+## Stato precedente completato
+
+BF-0086 completato.
