@@ -1,31 +1,19 @@
 # NEXT TASK
 
-# NEXT TASK
+## Sprint corrente
 
-## Ultimo sprint completato
+BF-0093 - Grafici Interattivi Investimenti
 
-BF-0092 - Dashboard Decisionale Investimenti
+## Obiettivo
 
-## Risultato
+Valorizzare i dati investimento prodotti da BF-0091 e BF-0092 introducendo una rappresentazione grafica chiara dell'evoluzione dell'investimento.
 
-Completato:
+## Risultato atteso
 
-- componentizzazione dashboard decisionale;
-- card investimento riutilizzabili;
-- confronto visivo investimenti;
-- sintesi decisionale automatica;
-- evidenziazione miglior scelta;
-- separazione presentazione e logica;
-- build verificata;
-- commit e push completati.
-
-## Prossimo incremento
-
-Da definire.
-
-Possibili aree:
-
-- grafici interattivi investimento;
-- integrazione dati mercato reali;
-- simulazioni avanzate;
-- miglioramento esperienza utente.
+- creazione componente grafico investimento separato;
+- visualizzazione andamento storico investimento;
+- utilizzo dati prodotti dal motore esistente;
+- mantenimento separazione tra dati, logica e presentazione;
+- preparazione struttura per futuri dati mercato reali;
+- nessuna modifica non necessaria ai servizi di calcolo;
+- build verificata.
