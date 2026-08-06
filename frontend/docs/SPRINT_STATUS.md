@@ -44,19 +44,16 @@ Risultati:
 
 ### BF-0092 - Dashboard Decisionale Investimenti
 
-Stato: IN CORSO
+Stato: COMPLETATO
 
-Obiettivo:
+Risultati:
 
-Trasformare i dati prodotti da BF-0091 in una dashboard decisionale più chiara, leggibile e orientata alla scelta dell'investimento.
-
-Risultato atteso:
-
-- miglioramento visualizzazione metriche investimento;
-- introduzione componenti riutilizzabili per indicatori e card;
+- creazione componenti riutilizzabili per metriche investimento;
+- introduzione card decisionali investimento;
+- confronto visivo tramite griglia componentizzata;
+- evidenziazione investimento con miglior rendimento;
+- introduzione sintesi decisionale investimento;
 - separazione presentazione dati e logica;
-- confronto visivo tra investimenti;
-- preparazione struttura per grafici interattivi futuri;
-- mantenimento del motore finanziario esistente;
-- nessuna modifica non necessaria ai servizi di calcolo;
-- build verificata.
+- mantenimento motore finanziario esistente;
+- build verificata;
+- commit e push completati.
