@@ -7,6 +7,7 @@ import {
 } from "../investments/demo/exampleInvestments";
 
 import DecisionCard from "./investment/DecisionCard";
+import InvestmentComparisonGrid from "./investment/InvestmentComparisonGrid";
 
 export default function InvestmentDecisionPanel() {
   const metrics =
@@ -28,15 +29,17 @@ export default function InvestmentDecisionPanel() {
         Confronto decisionale investimenti
       </h2>
 
-      {ranking.map(
-        (item, index) => (
-          <DecisionCard
-            key={item.name}
-            metrics={item}
-            position={index + 1}
-          />
-        ),
-      )}
+      <InvestmentComparisonGrid>
+        {ranking.map(
+          (item, index) => (
+            <DecisionCard
+              key={item.name}
+              metrics={item}
+              position={index + 1}
+            />
+          ),
+        )}
+      </InvestmentComparisonGrid>
     </section>
   );
 }
