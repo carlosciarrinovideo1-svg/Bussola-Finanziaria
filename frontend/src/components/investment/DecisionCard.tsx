@@ -3,6 +3,7 @@ import type {
 } from "../../investments";
 
 import MetricBadge from "./MetricBadge";
+import MetricHighlight from "./MetricHighlight";
 import RankingBadge from "./RankingBadge";
 
 interface DecisionCardProps {
@@ -18,7 +19,19 @@ export default function DecisionCard({
     <article>
       <h3>{metrics.name}</h3>
 
-      <RankingBadge position={position} />
+      <RankingBadge
+        position={position}
+      />
+
+      <MetricHighlight
+        label="Valore finale"
+        value={metrics.finalValue.toFixed(2)}
+      />
+
+      <MetricHighlight
+        label="Rendimento"
+        value={`${metrics.returnPercentage.toFixed(2)}%`}
+      />
 
       <MetricBadge
         label="Capitale iniziale"
@@ -26,13 +39,8 @@ export default function DecisionCard({
       />
 
       <MetricBadge
-        label="Valore finale"
-        value={metrics.finalValue.toFixed(2)}
-      />
-
-      <MetricBadge
-        label="Rendimento"
-        value={`${metrics.returnPercentage.toFixed(2)}%`}
+        label="Profitto lordo"
+        value={metrics.grossProfit.toFixed(2)}
       />
 
       <MetricBadge
