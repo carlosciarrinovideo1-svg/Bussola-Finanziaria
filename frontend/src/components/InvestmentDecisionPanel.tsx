@@ -7,6 +7,7 @@ import {
 } from "../investments/demo/exampleInvestments";
 
 import DecisionCard from "./investment/DecisionCard";
+import DecisionSummary from "./investment/DecisionSummary";
 import InvestmentComparisonGrid from "./investment/InvestmentComparisonGrid";
 
 export default function InvestmentDecisionPanel() {
@@ -28,6 +29,10 @@ export default function InvestmentDecisionPanel() {
       <h2>
         Confronto decisionale investimenti
       </h2>
+
+      <DecisionSummary
+        metrics={ranking}
+      />
 
       <InvestmentComparisonGrid>
         {ranking.map(
