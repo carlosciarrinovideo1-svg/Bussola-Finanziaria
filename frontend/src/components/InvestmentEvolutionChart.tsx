@@ -10,6 +10,8 @@ import {
   exampleInvestments,
 } from "../investments/demo/exampleInvestments";
 
+import InvestmentHistoryGraph from "./investment/InvestmentHistoryGraph";
+
 interface InvestmentEvolutionChartProps {
   period?: 6 | 12 | 24;
 }
@@ -17,7 +19,6 @@ interface InvestmentEvolutionChartProps {
 export default function InvestmentEvolutionChart({
   period = 12,
 }: InvestmentEvolutionChartProps) {
-
   const series = exampleInvestments.map(
     (investment) =>
       createInvestmentHistory(
@@ -36,19 +37,13 @@ export default function InvestmentEvolutionChart({
 
   return (
     <section>
-      <h2>Evoluzione investimenti ({period} mesi)</h2>
+      <h2>
+        Evoluzione investimenti ({period} mesi)
+      </h2>
 
-      {filteredSeries.map((item) => (
-        <div key={item.name}>
-          <strong>{item.name}</strong>
-
-          {item.points.map((point) => (
-            <p key={point.month}>
-              {point.month} mesi: {point.value}
-            </p>
-          ))}
-        </div>
-      ))}
+      <InvestmentHistoryGraph
+        series={filteredSeries}
+      />
     </section>
   );
 }
