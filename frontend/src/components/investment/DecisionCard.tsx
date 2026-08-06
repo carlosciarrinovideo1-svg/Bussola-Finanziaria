@@ -15,9 +15,14 @@ export default function DecisionCard({
   metrics,
   position,
 }: DecisionCardProps) {
+  const isBestChoice = position === 1;
+
   return (
     <article>
-      <h3>{metrics.name}</h3>
+      <h3>
+        {metrics.name}
+        {isBestChoice && " ⭐"}
+      </h3>
 
       <RankingBadge
         position={position}
