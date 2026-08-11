@@ -40,22 +40,33 @@ Risultati:
 
 ---
 
-## Sprint corrente
-
 ### BF-0093 - Grafici Interattivi Investimenti
 
-Stato: IN CORSO
+Stato: COMPLETATO
+
+Risultati:
+
+- creazione componente grafico investimento separato;
+- visualizzazione andamento storico investimento tramite SVG;
+- utilizzo dei dati prodotti dal motore storico esistente;
+- integrazione Dashboard -> InvestmentEvolutionChart -> InvestmentHistoryGraph;
+- supporto ai periodi 6/12/24 mesi già esistenti;
+- visualizzazione punti, assi e valori min/max;
+- interazione dei punti tramite mouse e tastiera;
+- tooltip nativo con mese e valore;
+- mantenimento della separazione tra dati, logica e presentazione;
+- nessuna modifica non necessaria ai servizi di calcolo;
+- build verificata;
+- commit e push completati.
+
+---
+
+## Sprint corrente
+
+### BF-0094 - Prossimo sprint da definire
+
+Stato: DA DEFINIRE
 
 Obiettivo:
 
-Valorizzare i dati investimento prodotti da BF-0091 e BF-0092 introducendo una rappresentazione grafica chiara dell'evoluzione dell'investimento.
-
-Risultato atteso:
-
-- creazione componente grafico investimento separato;
-- visualizzazione andamento storico investimento;
-- utilizzo dati prodotti dal motore esistente;
-- mantenimento separazione tra dati, logica e presentazione;
-- preparazione struttura per futuri dati mercato reali;
-- nessuna modifica non necessaria ai servizi di calcolo;
-- build verificata.
+Definire il prossimo incremento funzionale sulla base dello stato attuale del progetto.
