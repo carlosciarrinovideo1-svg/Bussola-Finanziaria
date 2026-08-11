@@ -4,7 +4,12 @@ import {
 
 import {
   getInvestmentHistory,
+  getInvestmentHistoryWithMarket,
 } from "../investments/history";
+
+import type {
+  MarketSnapshot,
+} from "../services/marketService";
 
 import {
   exampleInvestments,
@@ -14,15 +19,22 @@ import InvestmentHistoryGraph from "./investment/InvestmentHistoryGraph";
 
 interface InvestmentEvolutionChartProps {
   period?: 6 | 12 | 24;
+  market?: MarketSnapshot | null;
 }
 
 export default function InvestmentEvolutionChart({
   period = 12,
+  market = null,
 }: InvestmentEvolutionChartProps) {
   const series =
-    getInvestmentHistory(
-      exampleInvestments,
-    );
+    market
+      ? getInvestmentHistoryWithMarket(
+          exampleInvestments,
+          market,
+        )
+      : getInvestmentHistory(
+          exampleInvestments,
+        );
 
   const filteredSeries = series.map((item) => ({
     ...item,

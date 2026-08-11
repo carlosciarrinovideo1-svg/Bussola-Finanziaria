@@ -4,7 +4,7 @@ import InvestmentPeriodSelector from "./InvestmentPeriodSelector";
 import InvestmentDecisionPanel from "./InvestmentDecisionPanel";
 
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   loadDashboard,
 } from "../dashboard/dashboardService";
@@ -35,6 +35,14 @@ import {
   defaultProfileId,
 } from "../portfolio";
 
+import {
+  loadMarketData,
+} from "../services/marketService";
+
+import type {
+  MarketSnapshot,
+} from "../services/marketService";
+
 
 interface DashboardProps {
   scenario?: FinancialScenario;
@@ -57,6 +65,14 @@ export default function Dashboard({
 
   const [selectedInvestmentPeriod, setSelectedInvestmentPeriod] =
     useState<6 | 12 | 24>(12);
+
+  const [market, setMarket] =
+    useState<MarketSnapshot | null>(null);
+
+  useEffect(() => {
+    loadMarketData()
+      .then(setMarket);
+  }, []);
 
   const data =
     loadDashboard(
@@ -94,7 +110,10 @@ export default function Dashboard({
         onChange={setSelectedInvestmentPeriod}
       />
 
-      <InvestmentEvolutionChart period={selectedInvestmentPeriod} />
+      <InvestmentEvolutionChart
+        period={selectedInvestmentPeriod}
+        market={market}
+      />
 
       <InvestmentDecisionPanel />
 

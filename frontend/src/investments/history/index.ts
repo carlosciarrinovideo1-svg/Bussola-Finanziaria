@@ -13,6 +13,7 @@ export {
 
 export {
   getInvestmentHistory,
+  getInvestmentHistoryWithMarket,
 } from "./service";
 
 export type {
