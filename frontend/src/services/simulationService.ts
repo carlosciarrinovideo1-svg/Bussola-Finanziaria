@@ -1,11 +1,22 @@
-import { calculateInvestment } from "../simulations/investmentCalculator";
+import type {
+  MarketSnapshot,
+} from "./marketService";
+
+import {
+  simulateInvestment,
+} from "../investments/simulationProvider";
+
 import type {
   SimulationInput,
   SimulationResult,
 } from "../simulations/types";
 
 export function runInvestmentSimulation(
-  input: SimulationInput
+  input: SimulationInput,
+  market?: MarketSnapshot | null,
 ): SimulationResult {
-  return calculateInvestment(input);
+  return simulateInvestment(
+    input,
+    market,
+  );
 }

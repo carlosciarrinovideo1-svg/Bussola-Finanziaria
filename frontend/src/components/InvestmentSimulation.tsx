@@ -1,5 +1,11 @@
 import { useEffect, useState } from "react";
 import { runInvestmentSimulation } from "../services/simulationService";
+import {
+  loadMarketData,
+} from "../services/marketService";
+import type {
+  MarketSnapshot,
+} from "../services/marketService";
 import type { SimulationResult } from "../simulations/types";
 import {
   simulationScenarios,
@@ -32,8 +38,16 @@ function InvestmentSimulation() {
   const [result, setResult] =
     useState<SimulationResult | null>(null);
 
+  const [market, setMarket] =
+    useState<MarketSnapshot | null>(null);
+
   const [comparisonResults, setComparisonResults] =
     useState<ScenarioComparisonResult[]>([]);
+
+  useEffect(() => {
+    loadMarketData()
+      .then(setMarket);
+  }, []);
 
   useEffect(() => {
     const scenario = simulationScenarios.find(
@@ -46,12 +60,15 @@ function InvestmentSimulation() {
   }, [selectedScenarioId]);
 
   function calculate() {
-    const simulation = runInvestmentSimulation({
-      initialCapital,
-      monthlyContribution,
-      years,
-      annualRate,
-    });
+    const simulation = runInvestmentSimulation(
+      {
+        initialCapital,
+        monthlyContribution,
+        years,
+        annualRate,
+      },
+      market,
+    );
 
     setResult(simulation);
   }
