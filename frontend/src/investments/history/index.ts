@@ -10,3 +10,11 @@ export type {
 export {
   createInvestmentHistory,
 } from "./adapter";
+
+export {
+  getInvestmentHistory,
+} from "./service";
+
+export type {
+  InvestmentHistoryProvider,
+} from "./service";

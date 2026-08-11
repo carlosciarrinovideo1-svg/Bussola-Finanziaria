@@ -3,7 +3,7 @@ import {
 } from "../investments/history/periods";
 
 import {
-  createInvestmentHistory,
+  getInvestmentHistory,
 } from "../investments/history";
 
 import {
@@ -19,13 +19,10 @@ interface InvestmentEvolutionChartProps {
 export default function InvestmentEvolutionChart({
   period = 12,
 }: InvestmentEvolutionChartProps) {
-  const series = exampleInvestments.map(
-    (investment) =>
-      createInvestmentHistory(
-        investment,
-        investment.name,
-      ),
-  );
+  const series =
+    getInvestmentHistory(
+      exampleInvestments,
+    );
 
   const filteredSeries = series.map((item) => ({
     ...item,

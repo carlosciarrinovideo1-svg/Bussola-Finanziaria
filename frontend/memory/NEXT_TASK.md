@@ -2,22 +2,23 @@
 
 ## Sprint corrente
 
-BF-0094 - Prossimo sprint da definire
+BF-0095 - Prossimo sprint da definire
 
 ## Stato precedente
 
-BF-0093 - Grafici Interattivi Investimenti
+BF-0094 - Preparazione dati mercato per evoluzione investimenti
 
 Stato: COMPLETATO
 
-## Risultati BF-0093
+## Risultati BF-0094
 
-- componente InvestmentHistoryGraph separato;
-- grafico storico SVG;
-- dati collegati al motore storico esistente;
-- supporto periodi 6/12/24 mesi;
-- punti interattivi con mouse e tastiera;
-- tooltip nativo;
+- introdotto InvestmentHistoryProvider;
+- introdotto getInvestmentHistory();
+- separata la sorgente dello storico dalla presentazione;
+- mantenuto il provider demo come sorgente attuale;
+- predisposizione per future sorgenti di dati mercato reali;
+- InvestmentEvolutionChart collegato al nuovo servizio;
+- motore di calcolo invariato;
 - build verificata;
 - commit e push completati.
 

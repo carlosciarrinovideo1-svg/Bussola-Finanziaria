@@ -61,9 +61,31 @@ Risultati:
 
 ---
 
+## Sprint completato
+
+### BF-0094 - Preparazione dati mercato per evoluzione investimenti
+
+Stato: COMPLETATO
+
+Risultati:
+
+- introdotto `InvestmentHistoryProvider` come astrazione per la sorgente dello storico;
+- introdotto `getInvestmentHistory()` come servizio di accesso allo storico;
+- mantenuto il provider demo come sorgente attuale;
+- separata la sorgente dei dati dalla presentazione del grafico;
+- `InvestmentEvolutionChart` ora utilizza il servizio storico;
+- mantenuto invariato `InvestmentHistoryGraph`;
+- mantenuto invariato il motore di calcolo degli investimenti;
+- struttura predisposta per future sorgenti di dati mercato reali;
+- build verificata;
+- controllo `git diff --check` verificato;
+- commit e push completati.
+
+---
+
 ## Sprint corrente
 
-### BF-0094 - Prossimo sprint da definire
+### BF-0095 - Prossimo sprint da definire
 
 Stato: DA DEFINIRE
 
