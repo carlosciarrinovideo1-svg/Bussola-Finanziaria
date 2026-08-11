@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import type {
   InvestmentHistorySeries,
 } from "../../investments/history/types";
@@ -14,6 +16,11 @@ const PADDING_Y = 24;
 export default function InvestmentHistoryGraph({
   series,
 }: InvestmentHistoryGraphProps) {
+  const [activePoint, setActivePoint] = useState<{
+    seriesName: string;
+    month: number;
+    value: number;
+  } | null>(null);
   return (
     <div
       style={{
@@ -112,10 +119,27 @@ export default function InvestmentHistoryGraph({
                   <circle
                     cx={point.x}
                     cy={point.y}
-                    r="5"
+                    r={activePoint?.seriesName === item.name &&
+                       activePoint?.month === point.month ? 7 : 5}
                     fill="currentColor"
                     tabIndex={0}
                     aria-label={`${point.month} mesi: ${point.value.toFixed(2)}`}
+                    onMouseEnter={() =>
+                      setActivePoint({
+                        seriesName: item.name,
+                        month: point.month,
+                        value: point.value,
+                      })
+                    }
+                    onMouseLeave={() => setActivePoint(null)}
+                    onFocus={() =>
+                      setActivePoint({
+                        seriesName: item.name,
+                        month: point.month,
+                        value: point.value,
+                      })
+                    }
+                    onBlur={() => setActivePoint(null)}
                   />
                   <title>
                     {point.month} mesi:{" "}
