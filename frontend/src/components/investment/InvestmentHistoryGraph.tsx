@@ -39,8 +39,8 @@ export default function InvestmentHistoryGraph({
         const chartHeight =
           HEIGHT - PADDING_Y * 2;
 
-        const points = item.points
-          .map((point, index) => {
+        const points = item.points.map(
+          (point, index) => {
             const x =
               PADDING_X +
               (index * chartWidth) /
@@ -61,10 +61,14 @@ export default function InvestmentHistoryGraph({
               month: point.month,
               value: point.value,
             };
-          });
+          },
+        );
 
         const polylinePoints = points
-          .map((point) => `${point.x},${point.y}`)
+          .map(
+            (point) =>
+              `${point.x},${point.y}`,
+          )
           .join(" ");
 
         return (
@@ -104,13 +108,20 @@ export default function InvestmentHistoryGraph({
               />
 
               {points.map((point) => (
-                <circle
-                  key={point.month}
-                  cx={point.x}
-                  cy={point.y}
-                  r="4"
-                  fill="currentColor"
-                />
+                <g key={point.month}>
+                  <circle
+                    cx={point.x}
+                    cy={point.y}
+                    r="5"
+                    fill="currentColor"
+                    tabIndex={0}
+                    aria-label={`${point.month} mesi: ${point.value.toFixed(2)}`}
+                  />
+                  <title>
+                    {point.month} mesi:{" "}
+                    {point.value.toFixed(2)}
+                  </title>
+                </g>
               ))}
 
               {points.map((point) => (
