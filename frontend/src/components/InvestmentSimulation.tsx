@@ -59,6 +59,16 @@ function InvestmentSimulation() {
     }
   }, [selectedScenarioId]);
 
+  const effectiveAnnualRate =
+    market?.cdi.status === "ok" && market.cdi.value !== null
+      ? market.cdi.value
+      : annualRate;
+
+  const rateSource =
+    market?.cdi.status === "ok" && market.cdi.value !== null
+      ? "CDI corrente — Banco Central do Brasil"
+      : "Scenario selezionato";
+
   function calculate() {
     const simulation = runInvestmentSimulation(
       {
@@ -163,14 +173,33 @@ function InvestmentSimulation() {
       <br />
 
       <label>
-        Rendimento annuo (%)
+        Rendimento annuo effettivo (%)
 
         <input
           type="number"
-          value={annualRate}
+          value={effectiveAnnualRate}
           readOnly
         />
       </label>
+
+      <p>
+        <strong>Fonte del rendimento:</strong>{" "}
+        {rateSource}
+      </p>
+
+      {market?.cdi.status === "ok" && (
+        <p>
+          Il calcolo utilizza il CDI corrente disponibile
+          dal mercato.
+        </p>
+      )}
+
+      {market?.cdi.status !== "ok" && (
+        <p>
+          Il CDI non è disponibile: viene utilizzato il
+          rendimento dello scenario selezionato.
+        </p>
+      )}
 
       <br />
 
