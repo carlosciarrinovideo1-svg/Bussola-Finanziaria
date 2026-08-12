@@ -14,29 +14,10 @@ export interface InvestmentSimulationProvider {
   ): SimulationResult;
 }
 
-function getMarketRate(
-  market?: MarketSnapshot | null,
-): number | null {
-  if (!market || market.cdi.status !== "ok") {
-    return null;
-  }
-
-  return market.cdi.value;
-}
-
 export const marketInvestmentSimulationProvider:
   InvestmentSimulationProvider = {
-    simulate(input, market) {
-      const marketRate = getMarketRate(market);
-
-      if (marketRate === null) {
-        return calculateInvestment(input);
-      }
-
-      return calculateInvestment({
-        ...input,
-        annualRate: marketRate,
-      });
+    simulate(input) {
+      return calculateInvestment(input);
     },
   };
 

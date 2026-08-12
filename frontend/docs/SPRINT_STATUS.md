@@ -92,3 +92,26 @@ Stato: DA DEFINIRE
 Obiettivo:
 
 Definire il prossimo incremento funzionale sulla base dello stato attuale del progetto.
+
+
+---
+
+## Sprint completato
+
+### BF-0101 - Rendere completo e coerente il confronto scenari vs CDI
+
+Stato: COMPLETATO
+
+Risultati:
+
+- il rendimento della simulazione utilizza nuovamente il rendimento configurato dello scenario;
+- il CDI è mantenuto come benchmark separato;
+- visualizzazione del valore finale del benchmark CDI;
+- visualizzazione della differenza assoluta rispetto al CDI;
+- visualizzazione della differenza percentuale rispetto al CDI;
+- visualizzazione della posizione sopra/sotto/uguale al benchmark;
+- mantenuta la compatibilità con il funzionamento offline;
+- mantenuta la separazione tra provider, service, calcolo e presentazione;
+- build verificata;
+- controllo `git diff --check` verificato;
+- commit e push completati.

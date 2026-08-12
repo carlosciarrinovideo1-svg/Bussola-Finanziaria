@@ -59,15 +59,9 @@ function InvestmentSimulation() {
     }
   }, [selectedScenarioId]);
 
-  const effectiveAnnualRate =
-    market?.cdi.status === "ok" && market.cdi.value !== null
-      ? market.cdi.value
-      : annualRate;
+  const effectiveAnnualRate = annualRate;
 
-  const rateSource =
-    market?.cdi.status === "ok" && market.cdi.value !== null
-      ? "CDI corrente — Banco Central do Brasil"
-      : "Scenario selezionato";
+  const rateSource = "Scenario selezionato";
 
   function calculate() {
     const simulation = runInvestmentSimulation(
@@ -192,19 +186,11 @@ function InvestmentSimulation() {
         {rateSource}
       </p>
 
-      {market?.cdi.status === "ok" && (
-        <p>
-          Il calcolo utilizza il CDI corrente disponibile
-          dal mercato.
-        </p>
-      )}
-
-      {market?.cdi.status !== "ok" && (
-        <p>
-          Il CDI non è disponibile: viene utilizzato il
-          rendimento dello scenario selezionato.
-        </p>
-      )}
+      <p>
+        Il calcolo utilizza il rendimento dello scenario
+        selezionato. Il CDI corrente viene utilizzato
+        separatamente come benchmark di mercato.
+      </p>
 
       <br />
 
@@ -271,11 +257,37 @@ function InvestmentSimulation() {
                 {item.result.profit.toFixed(2)}
               </p>
 
+              {item.benchmarkFinalValue !== null && (
+                <p>
+                  Valore finale CDI: €
+                  {item.benchmarkFinalValue.toFixed(2)}
+                </p>
+              )}
+
               {item.benchmarkDifference !== null && (
                 <p>
                   Differenza vs CDI:{" "}
                   {item.benchmarkDifference >= 0 ? "+" : ""}
                   €{item.benchmarkDifference.toFixed(2)}
+                </p>
+              )}
+
+              {item.benchmarkDifferencePercent !== null && (
+                <p>
+                  Differenza percentuale vs CDI:{" "}
+                  {item.benchmarkDifferencePercent >= 0 ? "+" : ""}
+                  {item.benchmarkDifferencePercent.toFixed(2)}%
+                </p>
+              )}
+
+              {item.benchmarkPosition !== null && (
+                <p>
+                  Posizione vs CDI:{" "}
+                  {item.benchmarkPosition === "above"
+                    ? "Sopra il benchmark"
+                    : item.benchmarkPosition === "below"
+                      ? "Sotto il benchmark"
+                      : "Uguale al benchmark"}
                 </p>
               )}
             </div>
