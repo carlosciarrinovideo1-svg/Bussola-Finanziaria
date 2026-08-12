@@ -84,11 +84,16 @@ function InvestmentSimulation() {
   }
 
   function compareScenarios() {
-    const comparison = compareInvestmentScenarios({
-      initialCapital,
-      monthlyContribution,
-      years,
-    });
+    const comparison = compareInvestmentScenarios(
+      {
+        initialCapital,
+        monthlyContribution,
+        years,
+      },
+      market?.cdi.status === "ok"
+        ? market.cdi.value
+        : null,
+    );
 
     setComparisonResults(comparison);
   }
@@ -265,6 +270,14 @@ function InvestmentSimulation() {
                 Profitto: €
                 {item.result.profit.toFixed(2)}
               </p>
+
+              {item.benchmarkDifference !== null && (
+                <p>
+                  Differenza vs CDI:{" "}
+                  {item.benchmarkDifference >= 0 ? "+" : ""}
+                  €{item.benchmarkDifference.toFixed(2)}
+                </p>
+              )}
             </div>
           ))}
         </div>
