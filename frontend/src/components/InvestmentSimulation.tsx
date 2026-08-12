@@ -236,6 +236,16 @@ function InvestmentSimulation() {
         <div>
           <h3>📊 Confronto scenari</h3>
 
+          {market?.cdi.status === "ok" &&
+            market.cdi.value !== null && (
+              <p>
+                <strong>CDI corrente:</strong>{" "}
+                {market.cdi.value.toFixed(2)}%
+                {" — "}
+                riferimento di mercato
+              </p>
+            )}
+
           {comparisonResults.map((item) => (
             <div key={item.scenarioId}>
               <h4>
