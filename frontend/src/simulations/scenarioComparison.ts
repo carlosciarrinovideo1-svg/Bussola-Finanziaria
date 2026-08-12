@@ -17,7 +17,10 @@ export interface ScenarioComparisonResult {
   description: string;
   annualRate: number;
   result: SimulationResult;
+  benchmarkFinalValue: number | null;
   benchmarkDifference: number | null;
+  benchmarkDifferencePercent: number | null;
+  benchmarkPosition: "above" | "equal" | "below" | null;
 }
 
 export function compareInvestmentScenarios(
@@ -47,10 +50,32 @@ export function compareInvestmentScenarios(
       description: scenario.description,
       annualRate: scenario.annualRate,
       result,
+      benchmarkFinalValue:
+        benchmarkResult !== null
+          ? benchmarkResult.finalValue
+          : null,
+
       benchmarkDifference:
         benchmarkResult !== null
           ? result.finalValue - benchmarkResult.finalValue
           : null,
+
+      benchmarkDifferencePercent:
+        benchmarkResult !== null &&
+        benchmarkResult.finalValue !== 0
+          ? ((result.finalValue - benchmarkResult.finalValue) /
+              benchmarkResult.finalValue) *
+            100
+          : null,
+
+      benchmarkPosition:
+        benchmarkResult === null
+          ? null
+          : result.finalValue > benchmarkResult.finalValue
+            ? "above"
+            : result.finalValue < benchmarkResult.finalValue
+              ? "below"
+              : "equal",
     };
   });
 }
