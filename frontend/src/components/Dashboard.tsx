@@ -107,7 +107,10 @@ export default function Dashboard({
       <InvestmentSimulation />
 
       {/* 4. Confronto scenari e benchmark CDI */}
-      <InvestmentComparisonDashboard />
+      <InvestmentComparisonDashboard
+        profileId={selectedProfile}
+        market={market}
+      />
 
       {/* 5. Selettore periodo e visualizzazione evoluzione */}
       <InvestmentPeriodSelector

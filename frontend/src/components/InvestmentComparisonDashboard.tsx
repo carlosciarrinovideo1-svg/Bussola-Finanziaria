@@ -1,70 +1,108 @@
-import InvestmentPerformanceChart from "./InvestmentPerformanceChart";
-import InvestmentMetricsPanel from "./InvestmentMetricsPanel";
-
 import {
-  compareInvestments,
-} from "../investments";
+  comparePortfolioProfiles,
+  defaultProfileId,
+} from "../portfolio";
 
+import type {
+  MarketSnapshot,
+} from "../services/marketService";
 
-export default function InvestmentComparisonDashboard() {
+interface InvestmentComparisonDashboardProps {
+  profileId?: string;
+  market?: MarketSnapshot | null;
+}
 
-  const investments =
-    compareInvestments();
+export default function InvestmentComparisonDashboard({
+  profileId = defaultProfileId,
+  market = null,
+}: InvestmentComparisonDashboardProps) {
+  const comparisons = comparePortfolioProfiles();
+
+  const selectedProfile =
+    comparisons.find(
+      (item) => item.profileId === profileId,
+    ) ?? comparisons[0];
+
+  const cdi =
+    market?.cdi.status === "ok"
+      ? market.cdi.value
+      : null;
 
   return (
-    <>
-    <InvestmentPerformanceChart
-        data={investments.map((item) => ({
-          name: item.name,
-          value: item.expectedReturn,
-        }))}
-      />
-
-      <InvestmentMetricsPanel
-        returnValue={investments[0]?.expectedReturn ?? 0}
-        risk={investments[0]?.riskLevel ?? "N/D"}
-        liquidity={investments[0]?.liquidity ?? "N/D"}
-      />
-
     <section>
-      <h2>📊 Confronto investimenti</h2>
+      <h2>📊 Confronto investimento</h2>
 
-      {investments.map((item) => (
-        <div key={item.name}>
-          <h3>{item.name}</h3>
+      {selectedProfile && (
+        <>
+          <h3>
+            Profilo selezionato: {selectedProfile.name}
+          </h3>
 
           <p>
-            Tipo: {item.type}
+            Rendimento annuo atteso:{" "}
+            {selectedProfile.expectedReturn.toFixed(2)}%
           </p>
 
           <p>
-            Rendimento atteso:
-            {" "}
-            {item.expectedReturn}%
+            Rischio: {selectedProfile.riskLevel}
           </p>
 
           <p>
-            Rischio:
-            {" "}
-            {item.riskLevel}
+            Rapporto rischio/rendimento:{" "}
+            {selectedProfile.riskReturnRatio.toFixed(2)}
           </p>
 
-          <p>
-            Liquidità:
-            {" "}
-            {item.liquidity}
-          </p>
+          {cdi !== null && (
+            <>
+              <p>
+                <strong>CDI corrente:</strong>{" "}
+                {cdi.toFixed(2)}%
+              </p>
 
-          <p>
-            Recupero capitale:
-            {" "}
-            {item.recoveryTime} mesi
-          </p>
+              <p>
+                Differenza rispetto al CDI:{" "}
+                {(
+                  selectedProfile.expectedReturn - cdi
+                ).toFixed(2)}
+                punti percentuali
+              </p>
+            </>
+          )}
+        </>
+      )}
 
-          <hr />
-        </div>
-      ))}
+      <section>
+        <h3>Confronto profili</h3>
+
+        {comparisons.map((item) => (
+          <div key={item.profileId}>
+            <h4>{item.name}</h4>
+
+            <p>
+              Rendimento atteso:{" "}
+              {item.expectedReturn.toFixed(2)}%
+            </p>
+
+            <p>
+              Rischio: {item.riskLevel}
+            </p>
+
+            <p>
+              Rapporto rischio/rendimento:{" "}
+              {item.riskReturnRatio.toFixed(2)}
+            </p>
+
+            {item.projections.map((projection) => (
+              <p key={projection.months}>
+                {projection.months} mesi: R${" "}
+                {projection.finalValue.toFixed(2)}
+              </p>
+            ))}
+
+            <hr />
+          </div>
+        ))}
+      </section>
     </section>
-    </>
   );
 }
