@@ -28,12 +28,12 @@ import InvestmentSimulation from "./InvestmentSimulation";
 
 import MarketSummary from "./MarketSummary";
 import InvestmentWorkspace from "./InvestmentWorkspace";
-import RealEstateRentalAnalysis from "./RealEstateRentalAnalysis";
-import RealEstateFlipAnalysis from "./RealEstateFlipAnalysis";
 
 import {
   defaultProfileId,
 } from "../portfolio";
+import PortfolioSummary from "./PortfolioSummary";
+import PortfolioRiskIndicator from "./PortfolioRiskIndicator";
 
 import {
   loadMarketData,
@@ -83,7 +83,7 @@ export default function Dashboard({
   return (
 
     <>
-
+      {/* 1. Overview */}
       <DashboardSummary
         title={data.title}
         scenarioName={data.scenarioName}
@@ -94,33 +94,36 @@ export default function Dashboard({
         netProfit={data.netProfit}
         suggestions={data.suggestions}
       />
+
+      {/* 2. Profilo e Portafoglio */}
       <InvestmentWorkspace
         profileId={selectedProfile}
         onProfileChange={setSelectedProfile}
       />
+      <PortfolioSummary profileId={selectedProfile} />
+      <PortfolioRiskIndicator profileId={selectedProfile} />
 
-      <RealEstateRentalAnalysis />
+      {/* 3. Simulazione investimento */}
+      <InvestmentSimulation />
 
-      <RealEstateFlipAnalysis />
-
+      {/* 4. Confronto scenari e benchmark CDI */}
       <InvestmentComparisonDashboard />
 
+      {/* 5. Selettore periodo e visualizzazione evoluzione */}
       <InvestmentPeriodSelector
         value={selectedInvestmentPeriod}
         onChange={setSelectedInvestmentPeriod}
       />
-
       <InvestmentEvolutionChart
         period={selectedInvestmentPeriod}
         market={market}
       />
 
+      {/* 6. Decisione finale */}
       <InvestmentDecisionPanel />
 
-      <InvestmentSimulation />
-
+      {/* 7. Riepilogo mercato */}
       <MarketSummary />
-
     </>
 
   );
