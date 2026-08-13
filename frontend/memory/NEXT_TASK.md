@@ -2,31 +2,25 @@
 
 ## Sprint corrente
 
-BF-0101 - Rendere completo e coerente il confronto scenari vs CDI
+BF-0102 - Consolidamento del workflow finanziario MVP
 
 Stato: COMPLETATO
 
 ## Stato precedente
 
-BF-0100 - Metriche dettagliate di confronto degli scenari contro il benchmark CDI
+BF-0101 - Rendere completo e coerente il confronto scenari vs CDI
 
 Stato: COMPLETATO
 
-## Risultati BF-0101
+## Risultati BF-0102
 
-- mantenuto il rendimento dello scenario come rendimento effettivo della simulazione;
-- separato semanticamente lo scenario dal benchmark CDI;
-- mantenuto il CDI come riferimento di mercato nel confronto scenari;
-- visualizzato il valore finale del benchmark CDI;
-- visualizzata la differenza assoluta rispetto al CDI;
-- visualizzata la differenza percentuale rispetto al CDI;
-- visualizzata la posizione dello scenario rispetto al benchmark;
-- mantenuto il comportamento offline del market service;
-- mantenuta la separazione tra UI, service, provider e motore di calcolo;
-- build verificata;
-- controllo `git diff --check` verificato;
-- commit e push completati.
+- Integrazione coerente dei componenti della Dashboard in un flusso finanziario continuo;
+- Riorganizzazione della Dashboard per seguire il percorso: profilo → portafoglio → rischio → simulazione → confronto → benchmark CDI → decisione;
+- Aggiunti `PortfolioSummary` e `PortfolioRiskIndicator` al flusso, riutilizzando i servizi esistenti;
+- Rimosse duplicazioni di componenti immobiliari (già inclusi in `InvestmentWorkspace`);
+- Aggiornati gli import e la logica della Dashboard senza introdurre nuove dipendenze;
+- Build e controlli `git diff --check` superati; commit e push completati.
 
 ## Prossimo passo
 
-Definire BF-0102 sulla base dello stato aggiornato del progetto.
+Definire BF-0103 sulla base dello stato aggiornato del progetto.
