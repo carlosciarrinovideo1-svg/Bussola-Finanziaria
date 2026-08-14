@@ -104,7 +104,10 @@ export default function Dashboard({
       <PortfolioRiskIndicator profileId={selectedProfile} />
 
       {/* 3. Simulazione investimento */}
-      <InvestmentSimulation />
+      <InvestmentSimulation
+        profileId={selectedProfile}
+        market={market}
+      />
 
       {/* 4. Confronto scenari e benchmark CDI */}
       <InvestmentComparisonDashboard
@@ -123,7 +126,9 @@ export default function Dashboard({
       />
 
       {/* 6. Decisione finale */}
-      <InvestmentDecisionPanel />
+      <InvestmentDecisionPanel
+        profileId={selectedProfile}
+      />
 
       {/* 7. Riepilogo mercato */}
       <MarketSummary />

@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 import { runInvestmentSimulation } from "../services/simulationService";
+
 import {
-  loadMarketData,
-} from "../services/marketService";
+  calculatePortfolio,
+  getPortfolio,
+} from "../portfolio";
+
 import type {
   MarketSnapshot,
 } from "../services/marketService";
 import type { SimulationResult } from "../simulations/types";
-import {
-  simulationScenarios,
-} from "../simulations/config";
 import {
   compareInvestmentScenarios,
 } from "../simulations/scenarioComparison";
@@ -17,51 +17,58 @@ import type {
   ScenarioComparisonResult,
 } from "../simulations/scenarioComparison";
 
-function InvestmentSimulation() {
-  const defaultScenario = simulationScenarios[1];
+interface InvestmentSimulationProps {
+  profileId?: string;
+  market?: MarketSnapshot | null;
+}
 
-  const [selectedScenarioId, setSelectedScenarioId] =
-    useState(defaultScenario.id);
+function InvestmentSimulation({
+  profileId = "balanced",
+  market = null,
+}: InvestmentSimulationProps) {
+  const selectedPortfolio =
+    getPortfolio(profileId);
+
+  const portfolioResult =
+    calculatePortfolio(selectedPortfolio);
 
   const [initialCapital, setInitialCapital] =
-    useState(10000);
+    useState(selectedPortfolio.totalCapital);
 
   const [monthlyContribution, setMonthlyContribution] =
     useState(500);
 
   const [years, setYears] =
-    useState(10);
+    useState(2);
 
   const [annualRate, setAnnualRate] =
-    useState(defaultScenario.annualRate);
+    useState(portfolioResult.expectedAnnualReturn);
 
   const [result, setResult] =
     useState<SimulationResult | null>(null);
 
-  const [market, setMarket] =
-    useState<MarketSnapshot | null>(null);
 
   const [comparisonResults, setComparisonResults] =
     useState<ScenarioComparisonResult[]>([]);
 
   useEffect(() => {
-    loadMarketData()
-      .then(setMarket);
-  }, []);
+    setAnnualRate(portfolioResult.expectedAnnualReturn);
+  }, [profileId, portfolioResult.expectedAnnualReturn]);
 
   useEffect(() => {
-    const scenario = simulationScenarios.find(
-      (item) => item.id === selectedScenarioId
-    );
+    const portfolio = getPortfolio(profileId);
+    const result = calculatePortfolio(portfolio);
 
-    if (scenario) {
-      setAnnualRate(scenario.annualRate);
-    }
-  }, [selectedScenarioId]);
+    setInitialCapital(portfolio.totalCapital);
+    setAnnualRate(result.expectedAnnualReturn);
+  }, [profileId]);
 
   const effectiveAnnualRate = annualRate;
 
-  const rateSource = "Scenario selezionato";
+  const rateSource =
+    annualRate === portfolioResult.expectedAnnualReturn
+      ? "Profilo portafoglio selezionato"
+      : "Scenario selezionato";
 
   function calculate() {
     const simulation = runInvestmentSimulation(
@@ -92,40 +99,24 @@ function InvestmentSimulation() {
     setComparisonResults(comparison);
   }
 
-  const selectedScenario =
-    simulationScenarios.find(
-      (item) => item.id === selectedScenarioId
-    );
-
   return (
     <section>
       <h2>📊 Simulazione investimento</h2>
 
-      <label>
-        Scenario
+      <p>
+        <strong>Profilo portafoglio:</strong>{" "}
+        {selectedPortfolio.name}
+      </p>
 
-        <select
-          value={selectedScenarioId}
-          onChange={(e) =>
-            setSelectedScenarioId(e.target.value)
-          }
-        >
-          {simulationScenarios.map((scenario) => (
-            <option
-              key={scenario.id}
-              value={scenario.id}
-            >
-              {scenario.name}
-            </option>
-          ))}
-        </select>
-      </label>
+      <p>
+        Capitale del profilo: R${" "}
+        {selectedPortfolio.totalCapital.toFixed(2)}
+      </p>
 
-      {selectedScenario && (
-        <p>
-          {selectedScenario.description}
-        </p>
-      )}
+      <p>
+        Il rendimento utilizzato nella simulazione deriva
+        dal profilo di portafoglio selezionato.
+      </p>
 
       <br />
 
