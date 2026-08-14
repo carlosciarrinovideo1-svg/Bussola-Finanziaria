@@ -57,6 +57,40 @@ export default function DecisionCard({
         label="Liquidità"
         value={metrics.liquidity}
       />
+
+      {metrics.benchmarkFinalValue !== null && (
+        <MetricBadge
+          label="Valore finale CDI"
+          value={`R$ ${metrics.benchmarkFinalValue.toFixed(2)}`}
+        />
+      )}
+
+      {metrics.benchmarkDifference !== null && (
+        <MetricBadge
+          label="Differenza vs CDI"
+          value={`R$ ${metrics.benchmarkDifference.toFixed(2)}`}
+        />
+      )}
+
+      {metrics.benchmarkDifferencePercent !== null && (
+        <MetricBadge
+          label="Differenza % vs CDI"
+          value={`${metrics.benchmarkDifferencePercent.toFixed(2)}%`}
+        />
+      )}
+
+      {metrics.benchmarkPosition !== null && (
+        <MetricBadge
+          label="Posizione vs CDI"
+          value={
+            metrics.benchmarkPosition === "above"
+              ? "Sopra"
+              : metrics.benchmarkPosition === "below"
+                ? "Sotto"
+                : "Uguale"
+          }
+        />
+      )}
     </article>
   );
 }

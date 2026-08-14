@@ -7,6 +7,10 @@ import {
   getPortfolio,
 } from "../portfolio";
 
+import type {
+  MarketSnapshot,
+} from "../services/marketService";
+
 import {
   exampleInvestments,
 } from "../investments/demo/exampleInvestments";
@@ -25,10 +29,12 @@ import type {
 
 interface InvestmentDecisionPanelProps {
   profileId?: string;
+  market?: MarketSnapshot | null;
 }
 
 export default function InvestmentDecisionPanel({
   profileId = "balanced",
+  market = null,
 }: InvestmentDecisionPanelProps) {
   const portfolio =
     getPortfolio(profileId);
@@ -46,8 +52,16 @@ export default function InvestmentDecisionPanel({
     capitalization: "compound",
   };
 
+  const cdi =
+    market?.cdi.status === "ok"
+      ? market.cdi.value
+      : null;
+
   const metrics: InvestmentDecisionMetrics[] = [
-    generateInvestmentMetrics(portfolioInvestment),
+    generateInvestmentMetrics(
+      portfolioInvestment,
+      cdi,
+    ),
     ...exampleInvestments.map(
       (investment) =>
         generateInvestmentMetrics(investment),

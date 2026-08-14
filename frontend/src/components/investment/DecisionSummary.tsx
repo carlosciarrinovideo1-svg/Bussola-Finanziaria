@@ -32,6 +32,12 @@ export default function DecisionSummary({
         item.liquidity === "alta",
     );
 
+  const benchmarkProfile =
+    metrics.find(
+      (item) =>
+        item.benchmarkPosition !== null,
+    );
+
   return (
     <section>
       <h3>
@@ -62,6 +68,20 @@ export default function DecisionSummary({
           </strong>
         </p>
       )}
+
+      {benchmarkProfile &&
+        benchmarkProfile.benchmarkPosition && (
+          <p>
+            Rispetto al CDI:{" "}
+            <strong>
+              {benchmarkProfile.benchmarkPosition === "above"
+                ? "sopra il benchmark"
+                : benchmarkProfile.benchmarkPosition === "below"
+                  ? "sotto il benchmark"
+                  : "in linea con il benchmark"}
+            </strong>
+          </p>
+        )}
     </section>
   );
 }

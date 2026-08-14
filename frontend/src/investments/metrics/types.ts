@@ -16,4 +16,8 @@ export interface InvestmentDecisionMetrics {
   returnPercentage: number;
   risk: RiskLevel;
   liquidity: LiquidityLevel;
+  benchmarkFinalValue: number | null;
+  benchmarkDifference: number | null;
+  benchmarkDifferencePercent: number | null;
+  benchmarkPosition: "above" | "equal" | "below" | null;
 }
