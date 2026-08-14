@@ -2,7 +2,7 @@
 
 ## Sprint corrente
 
-BF-0102 - Consolidamento del workflow finanziario MVP
+BF-0103 - Collegamento del confronto investimenti al flusso finanziario
 
 Stato: COMPLETATO
 
@@ -21,6 +21,20 @@ Stato: COMPLETATO
 - Aggiornati gli import e la logica della Dashboard senza introdurre nuove dipendenze;
 - Build e controlli `git diff --check` superati; commit e push completati.
 
+## Risultati BF-0103
+
+- sostituito il confronto statico `compareInvestments()` nel componente Dashboard;
+- collegato `InvestmentComparisonDashboard` al sistema reale dei profili di portafoglio;
+- utilizzato `comparePortfolioProfiles()` come sorgente dei dati di confronto;
+- collegato il profilo selezionato dalla Dashboard al confronto investimenti;
+- propagato il `MarketSnapshot` dalla Dashboard;
+- integrato il CDI corrente come benchmark nel confronto del profilo selezionato;
+- mantenute le proiezioni a 6/12/24 mesi già disponibili nel servizio portfolio;
+- rimossa la precedente visualizzazione basata su valori statici a rendimento zero;
+- build verificata;
+- controllo `git diff --check` verificato;
+- commit e push completati.
+
 ## Prossimo passo
 
-Definire BF-0103 sulla base dello stato aggiornato del progetto.
+Definire BF-0104 sulla base dello stato aggiornato del progetto, senza modificare codice prima di aver individuato il prossimo incremento funzionale reale.
