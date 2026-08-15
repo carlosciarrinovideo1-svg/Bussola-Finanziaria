@@ -17,23 +17,15 @@ export function calculateInvestment(
   const rate =
     investment.annualGrossRate / 100;
 
-  let finalValue =
-    investment.initialCapital;
-
-  if (
+  const finalValue =
     investment.capitalization === "compound"
-  ) {
-    finalValue =
-      investment.initialCapital *
-      Math.pow(
-        1 + rate,
-        years
-      );
-  } else {
-    finalValue =
-      investment.initialCapital *
-      (1 + rate * years);
-  }
+      ? investment.initialCapital *
+        Math.pow(
+          1 + rate,
+          years
+        )
+      : investment.initialCapital *
+        (1 + rate * years);
 
   return {
     initialCapital:

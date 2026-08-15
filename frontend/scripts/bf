@@ -1,0 +1,180 @@
+#!/usr/bin/env bash
+
+set -u
+
+PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$PROJECT_ROOT" || exit 1
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+NC='\033[0m'
+
+fail() {
+  echo -e "${RED}✗ $1${NC}"
+  exit 1
+}
+
+ok() {
+  echo -e "${GREEN}✓ $1${NC}"
+}
+
+info() {
+  echo -e "${BLUE}→ $1${NC}"
+}
+
+warn() {
+  echo -e "${YELLOW}! $1${NC}"
+}
+
+case "${1:-help}" in
+
+  start)
+    echo
+    echo "========================================"
+    echo " BF — START"
+    echo "========================================"
+    echo
+
+    info "Verifica repository..."
+    git status --short --branch
+
+    echo
+    info "Verifica file di continuità..."
+
+    for file in \
+      ".agent/AGENT.md" \
+      ".agent/START.md" \
+      ".agent/RULES.md" \
+      ".agent/ARCHITECTURE.md" \
+      ".agent/WORKFLOW.md" \
+      ".agent/CHECKLIST.md" \
+      ".agent/DO_NOT_DO.md" \
+      ".agent/SPRINT.md" \
+      ".agent/STOP_RULES.md" \
+      ".agent/QUALITY_GATE.md" \
+      "memory/NEXT_TASK.md"
+    do
+      if [ -f "$file" ]; then
+        ok "$file"
+      else
+        fail "File obbligatorio mancante: $file"
+      fi
+    done
+
+    echo
+    info "=== PROSSIMO TASK ==="
+    cat memory/NEXT_TASK.md
+
+    echo
+    ok "BF START completato."
+    ;;
+
+  verify)
+    echo
+    echo "========================================"
+    echo " BF — VERIFY"
+    echo "========================================"
+    echo
+
+    info "Git diff check..."
+    git diff --check || fail "git diff --check fallito"
+    ok "Diff check"
+
+    info "Build..."
+    npm run build || fail "Build fallita"
+    ok "Build"
+
+    info "Lint..."
+    npm run lint || fail "Lint fallito"
+    ok "Lint"
+
+    echo
+    info "Stato repository:"
+    git status --short --branch
+
+    if [ -n "$(git status --short)" ]; then
+      warn "Il repository contiene modifiche non committate."
+    else
+      ok "Repository pulito"
+    fi
+
+    echo
+    ok "BF VERIFY completato."
+    ;;
+
+  status)
+    echo
+    echo "========================================"
+    echo " BF — STATUS"
+    echo "========================================"
+    echo
+
+    git status --short --branch
+
+    echo
+    echo "=== ULTIMO COMMIT ==="
+    git log -1 --oneline
+
+    echo
+    echo "=== NEXT TASK ==="
+    cat memory/NEXT_TASK.md
+
+    echo
+    echo "=== SPRINT STATUS ==="
+    if [ -f docs/SPRINT_STATUS.md ]; then
+      tail -40 docs/SPRINT_STATUS.md
+    else
+      warn "docs/SPRINT_STATUS.md non trovato"
+    fi
+    ;;
+
+  doctor)
+    echo
+    echo "========================================"
+    echo " BF — DOCTOR"
+    echo "========================================"
+    echo
+
+    info "Node:"
+    node --version
+
+    info "NPM:"
+    npm --version
+
+    info "Git:"
+    git --version
+
+    echo
+    info "Repository:"
+    git status --short --branch
+
+    echo
+    info "Configurazione agenti:"
+    find .agent -maxdepth 1 -type f -name '*.md' -printf '%f\n' | sort
+
+    echo
+    info "Memoria:"
+    find memory -maxdepth 1 -type f -printf '%f\n' | sort
+
+    echo
+    info "Script package.json:"
+    node -e "const p=require('./package.json'); console.log(JSON.stringify(p.scripts,null,2))"
+
+    echo
+    ok "BF DOCTOR completato."
+    ;;
+
+  help|*)
+    echo
+    echo "Bussola Finanziaria — comando operativo"
+    echo
+    echo "Uso:"
+    echo "  ./scripts/bf start     Avvia lo sprint"
+    echo "  ./scripts/bf verify    Esegue i controlli tecnici"
+    echo "  ./scripts/bf status    Mostra stato e continuità"
+    echo "  ./scripts/bf doctor    Controlla ambiente e infrastruttura"
+    echo
+    ;;
+esac

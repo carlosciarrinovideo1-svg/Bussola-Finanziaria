@@ -26,15 +26,12 @@ export function calculatePortfolioRisk(
     weightedReturn +=
       asset.expectedAnnualRate * weight;
 
-    let assetRisk = 0;
-
-    if (asset.expectedAnnualRate <= 8) {
-      assetRisk = 1;
-    } else if (asset.expectedAnnualRate <= 12) {
-      assetRisk = 2;
-    } else {
-      assetRisk = 3;
-    }
+    const assetRisk =
+      asset.expectedAnnualRate <= 8
+        ? 1
+        : asset.expectedAnnualRate <= 12
+          ? 2
+          : 3;
 
     weightedRisk +=
       assetRisk * weight;

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { runInvestmentSimulation } from "../services/simulationService";
 
 import {
@@ -41,27 +41,14 @@ function InvestmentSimulation({
   const [years, setYears] =
     useState(2);
 
-  const [annualRate, setAnnualRate] =
-    useState(portfolioResult.expectedAnnualReturn);
+  const annualRate =
+    portfolioResult.expectedAnnualReturn;
 
   const [result, setResult] =
     useState<SimulationResult | null>(null);
 
-
   const [comparisonResults, setComparisonResults] =
     useState<ScenarioComparisonResult[]>([]);
-
-  useEffect(() => {
-    setAnnualRate(portfolioResult.expectedAnnualReturn);
-  }, [profileId, portfolioResult.expectedAnnualReturn]);
-
-  useEffect(() => {
-    const portfolio = getPortfolio(profileId);
-    const result = calculatePortfolio(portfolio);
-
-    setInitialCapital(portfolio.totalCapital);
-    setAnnualRate(result.expectedAnnualReturn);
-  }, [profileId]);
 
   const effectiveAnnualRate = annualRate;
 
