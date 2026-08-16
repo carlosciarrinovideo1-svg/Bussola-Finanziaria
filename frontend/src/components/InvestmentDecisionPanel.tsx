@@ -29,11 +29,13 @@ import type {
 
 interface InvestmentDecisionPanelProps {
   profileId?: string;
+  period?: 6 | 12 | 24;
   market?: MarketSnapshot | null;
 }
 
 export default function InvestmentDecisionPanel({
   profileId = "balanced",
+  period = 12,
   market = null,
 }: InvestmentDecisionPanelProps) {
   const portfolio =
@@ -46,7 +48,7 @@ export default function InvestmentDecisionPanel({
     id: `portfolio-${profileId}`,
     name: portfolio.name,
     initialCapital: portfolio.totalCapital,
-    durationMonths: 24,
+    durationMonths: period,
     annualGrossRate:
       portfolioResult.expectedAnnualReturn,
     capitalization: "compound",
@@ -84,6 +86,11 @@ export default function InvestmentDecisionPanel({
       <p>
         <strong>Profilo selezionato:</strong>{" "}
         {profileId}
+      </p>
+
+      <p>
+        <strong>Orizzonte decisionale:</strong>{" "}
+        {period} mesi
       </p>
 
       <DecisionSummary

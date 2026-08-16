@@ -128,6 +128,7 @@ export default function Dashboard({
       {/* 6. Decisione finale */}
       <InvestmentDecisionPanel
         profileId={selectedProfile}
+        period={selectedInvestmentPeriod}
         market={market}
       />
 
