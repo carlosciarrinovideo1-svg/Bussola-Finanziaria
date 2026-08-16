@@ -5,52 +5,34 @@
 Branch:
 feature/BF-0071-continuity-kit
 
-Ultimo commit:
-e1c0377 BF-0074: update next task state
+Sprint completato:
+BF-0106 - Rendere `bf` autonomo nella gestione dello sprint
 
 ## Stato Git
 
-Repository sincronizzato con origin.
-Working tree pulito.
+Il working tree principale deve rimanere pulito al termine dello sprint.
 
 ## Stato Progetto
 
-Ultimo sprint completato:
+BF-0106 ha completato l'evoluzione degli strumenti di continuità:
 
-BF-0074 - Portfolio Configurabile
-
-Completato:
-
-- configurazione centralizzata dei portafogli;
-- supporto profili investimento;
-- integrazione portfolio service;
-- collegamento Dashboard -> PortfolioSummary;
-- mantenimento separazione service/componenti/calcolo;
-- build produzione verificata;
-- commit e push completati.
+- `bf next` rileva la relazione tra ultimo commit e sprint corrente;
+- la memoria operativa viene verificata contro lo stato del repository;
+- `bf sandbox` crea una worktree Git separata;
+- la sandbox viene creata fuori dal perimetro del repository principale;
+- build, lint e `git diff --check` sono integrati nella verifica automatizzata.
 
 ## Sprint Corrente
 
-BF-0075 - Da definire
+BF-0107 - Prossimo incremento funzionale
 
-Obiettivo:
-Definire il prossimo incremento funzionale mantenendo l'architettura esistente.
-
-## Documentazione Disponibile
-
-- docs/development/BDS.md
-- docs/development/CONTINUITY_SPEC.md
-- docs/ARCHITECTURE.md
-- docs/PROJECT_MANUAL.md
-- docs/SPRINT_STATUS.md
-- docs/ROADMAP.md
-- memory/NEXT_TASK.md
+Stato:
+DA DEFINIRE
 
 ## Regole Operative
 
-Prima di ogni sprint:
-
-1. verificare stato repository;
-2. leggere NEXT_TASK.md;
-3. evitare modifiche architetturali non necessarie;
-4. completare con build, documentazione, commit e push.
+1. verificare lo stato tramite gli strumenti `bf`;
+2. mantenere memoria e repository sincronizzati;
+3. usare la sandbox per sperimentazioni isolate;
+4. modificare il codice applicativo solo quando richiesto dallo sprint;
+5. completare ogni sprint con build, lint, documentazione, commit e push.

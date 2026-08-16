@@ -130,6 +130,80 @@ case "${1:-help}" in
     fi
     ;;
 
+  next)
+    echo
+    echo "========================================"
+    echo " BF — NEXT"
+    echo "========================================"
+    echo
+
+    LATEST_COMMIT="$(git log -1 --pretty=%s)"
+    LATEST_SPRINT="$(printf '%s' "$LATEST_COMMIT" | grep -oE 'BF-[0-9]{4}' | head -1 || true)"
+    CURRENT_SPRINT="$(grep -oE 'BF-[0-9]{4}' memory/NEXT_TASK.md | head -1 || true)"
+
+    info "Ultimo commit:"
+    echo "  ${LATEST_COMMIT}"
+
+    info "Ultimo sprint completato dal repository:"
+    echo "  ${LATEST_SPRINT:-non rilevato}"
+
+    info "Sprint corrente:"
+    echo "  ${CURRENT_SPRINT:-non definito}"
+
+    if [ -z "$CURRENT_SPRINT" ]; then
+      fail "Sprint corrente non definito in memory/NEXT_TASK.md"
+    fi
+
+    if [ -n "$LATEST_SPRINT" ] && [ "$CURRENT_SPRINT" = "$LATEST_SPRINT" ]; then
+      warn "Lo sprint corrente coincide con l'ultimo sprint del repository."
+      echo
+      warn "Verificare che NEXT_TASK.md sia stato aggiornato dopo il completamento dello sprint."
+      exit 2
+    fi
+
+    echo
+    ok "Continuità sincronizzata."
+    echo
+    info "Prossimo sprint operativo:"
+    echo "  ${CURRENT_SPRINT}"
+    echo
+
+    cat memory/NEXT_TASK.md
+    ;;
+
+  sandbox)
+    echo
+    echo "========================================"
+    echo " BF — SANDBOX"
+    echo "========================================"
+    echo
+
+    SANDBOX_ROOT="${BF_SANDBOX_ROOT:-../../Bussola-Finanziaria-sandbox}"
+    CURRENT_BRANCH="$(git branch --show-current)"
+
+    if [ -z "$CURRENT_BRANCH" ]; then
+      fail "Branch Git corrente non rilevato."
+    fi
+
+    if [ -e "$SANDBOX_ROOT" ]; then
+      fail "Sandbox già esistente: $SANDBOX_ROOT"
+    fi
+
+    info "Branch sorgente:"
+    echo "  ${CURRENT_BRANCH}"
+
+    info "Creazione sandbox:"
+    echo "  ${SANDBOX_ROOT}"
+
+    git worktree add --detach "$SANDBOX_ROOT" HEAD ||       fail "Impossibile creare la sandbox."
+
+    echo
+    ok "Sandbox creata."
+    echo
+    info "La sandbox è separata dal working tree principale."
+    echo "  ${SANDBOX_ROOT}"
+    ;;
+
   doctor)
     echo
     echo "========================================"
@@ -175,6 +249,7 @@ case "${1:-help}" in
     echo "  ./scripts/bf verify    Esegue i controlli tecnici"
     echo "  ./scripts/bf status    Mostra stato e continuità"
     echo "  ./scripts/bf doctor    Controlla ambiente e infrastruttura"
+    echo "  ./scripts/bf next      Controlla sincronizzazione continuità"
     echo
     ;;
 esac

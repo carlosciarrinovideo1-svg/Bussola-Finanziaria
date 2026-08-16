@@ -12,7 +12,8 @@
     "bf:start": "./scripts/bf start",
     "bf:verify": "./scripts/bf verify",
     "bf:status": "./scripts/bf status",
-    "bf:doctor": "./scripts/bf doctor"
+    "bf:doctor": "./scripts/bf doctor",
+    "bf:next": "./scripts/bf next"
   },
   "dependencies": {
     "react": "^19.2.7",
